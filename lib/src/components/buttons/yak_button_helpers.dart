@@ -4,7 +4,7 @@ import '../../theme/yak_theme_extension.dart';
 
 /// Shared layout and loading behavior for Yak button widgets.
 abstract final class YakButtonHelpers {
-  static const double minHeight = 48;
+  static const double minHeight = 40;
 
   static bool isDisabled(VoidCallback? onPressed, bool isLoading) =>
       onPressed == null || isLoading;
@@ -23,8 +23,8 @@ abstract final class YakButtonHelpers {
         child: CircularProgressIndicator(strokeWidth: 2, color: loadingColor),
       );
     }
-
-    return Text(label);
+    // need text black color use from ya
+    return Text(label, style: TextStyle(color: context.yakTheme.textSecondary));
   }
 
   static OutlinedBorder shape(YakThemeExtension yakTheme) {

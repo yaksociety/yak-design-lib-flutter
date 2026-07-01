@@ -13,9 +13,9 @@ abstract final class YakThemeMapper {
   static ColorScheme lightColorScheme() {
     return ColorScheme.light(
       primary: AppColors.primary500,
-      onPrimary: AppColors.textIconsOnColor,
+      onPrimary: AppColors.textIconsBaseMain,
       primaryContainer: AppColors.primary600,
-      onPrimaryContainer: AppColors.textIconsOnColor,
+      onPrimaryContainer: AppColors.textIconsBaseMain,
       secondary: AppColors.gray500,
       onSecondary: AppColors.textIconsOnColor,
       surface: AppColors.backgroundBaseMain,
@@ -31,9 +31,9 @@ abstract final class YakThemeMapper {
   static ColorScheme darkColorScheme() {
     return ColorScheme.dark(
       primary: AppColors.primary500,
-      onPrimary: AppColors.textIconsOnColor,
+      onPrimary: AppColors.textIconsBaseMain,
       primaryContainer: AppColors.primary700,
-      onPrimaryContainer: AppColors.textIconsOnColor,
+      onPrimaryContainer: AppColors.textIconsBaseMain,
       secondary: AppColors.gray400,
       onSecondary: AppColors.textIconsOnColor,
       surface: AppColors.backgroundBaseDarkMain,
@@ -99,7 +99,7 @@ abstract final class YakThemeMapper {
     return FilledButtonThemeData(
       style: FilledButton.styleFrom(
         backgroundColor: AppColors.primary500,
-        foregroundColor: AppColors.textIconsOnColor,
+        foregroundColor: AppColors.textIconsBaseMain,
         disabledBackgroundColor: AppColors.backgroundDisabled,
         disabledForegroundColor: AppColors.textIconsDisabled,
         padding: const EdgeInsets.symmetric(
@@ -107,7 +107,7 @@ abstract final class YakThemeMapper {
           vertical: AppDimensions.mainSystemNum16,
         ),
         textStyle: AppTextStyles.textMSemibold.copyWith(
-          color: AppColors.textIconsOnColor,
+          color: AppColors.textIconsBaseMain,
         ),
       ),
     );
@@ -117,7 +117,7 @@ abstract final class YakThemeMapper {
     return FilledButtonThemeData(
       style: FilledButton.styleFrom(
         backgroundColor: AppColors.primary500,
-        foregroundColor: AppColors.textIconsOnColor,
+        foregroundColor: AppColors.textIconsBaseMain,
         disabledBackgroundColor: AppColors.gray700,
         disabledForegroundColor: AppColors.textIconsDisabled,
         padding: const EdgeInsets.symmetric(
@@ -125,7 +125,7 @@ abstract final class YakThemeMapper {
           vertical: AppDimensions.mainSystemNum16,
         ),
         textStyle: AppTextStyles.textMSemibold.copyWith(
-          color: AppColors.textIconsOnColor,
+          color: AppColors.textIconsBaseMain,
         ),
       ),
     );
@@ -192,29 +192,39 @@ abstract final class YakThemeMapper {
   static InputDecorationTheme inputDecorationTheme() {
     return InputDecorationTheme(
       filled: true,
-      fillColor: AppColors.backgroundBaseSecond,
+      fillColor: AppColors.backgroundBaseMain,
       contentPadding: const EdgeInsets.symmetric(
         horizontal: AppDimensions.mainSystemNum16,
         vertical: AppDimensions.mainSystemNum12,
       ),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppRadii.roundnessSquareOutside),
+        borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
         borderSide: const BorderSide(color: AppColors.strokeBase),
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppRadii.roundnessSquareOutside),
+        borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
         borderSide: const BorderSide(color: AppColors.strokeBase),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppRadii.roundnessSquareOutside),
+        borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
         borderSide: const BorderSide(color: AppColors.strokePrimary, width: 2),
       ),
       errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppRadii.roundnessSquareOutside),
+        borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
         borderSide: const BorderSide(color: AppColors.strokeDanger),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
+        borderSide: const BorderSide(color: AppColors.strokeDanger, width: 2),
       ),
       hintStyle: AppTextStyles.textMRegular.copyWith(
         color: AppColors.textIconsBaseSecond,
+      ),
+      labelStyle: AppTextStyles.textMSemibold.copyWith(
+        color: AppColors.textIconsBaseMain,
+      ),
+      errorStyle: AppTextStyles.textSRegular.copyWith(
+        color: AppColors.textIconsDanger,
       ),
     );
   }
@@ -228,19 +238,25 @@ abstract final class YakThemeMapper {
         vertical: AppDimensions.mainSystemNum12,
       ),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppRadii.roundnessSquareOutside),
+        borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
         borderSide: const BorderSide(color: AppColors.strokeBaseDark),
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppRadii.roundnessSquareOutside),
+        borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
         borderSide: const BorderSide(color: AppColors.strokeBaseDark),
       ),
       focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(AppRadii.roundnessSquareOutside),
+        borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
         borderSide: const BorderSide(color: AppColors.strokePrimary, width: 2),
       ),
       hintStyle: AppTextStyles.textMRegular.copyWith(
         color: AppColors.neutral500,
+      ),
+      labelStyle: AppTextStyles.textMSemibold.copyWith(
+        color: AppColors.textIconsOnColor,
+      ),
+      errorStyle: AppTextStyles.textSRegular.copyWith(
+        color: AppColors.textIconsDanger,
       ),
     );
   }
