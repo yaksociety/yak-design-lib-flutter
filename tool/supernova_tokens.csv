@@ -1,0 +1,469 @@
+id,tokenType,path,value
+c2bad6a3-f7c3-47e8-be59-20c497d43406,Dimension,Main System/num-0,0px
+52e13fb1-92e6-476e-868f-d850936b5366,Dimension,Main System/num-1,1px
+deea47d1-3bbb-4de2-a783-c10c8df6ff02,Dimension,Main System/num-2,2px
+13226a61-3096-482b-95fa-da9b3639e9f3,Dimension,Main System/num-4,4px
+5bf1f1fe-14cf-42b2-8168-ac3f52a24441,Dimension,Main System/num-6,6px
+eb68cc2d-997b-48fa-879d-205c9ae1a17c,Dimension,Main System/num-8,8px
+f47e27ff-9352-41be-b758-13292d645b4a,Dimension,Main System/num-10,10px
+aaf2383f-1c8d-40f8-820f-21d8ab9d9544,Dimension,Main System/num-12,12px
+86b2901f-8592-4bcc-9de0-4d0eabc3244e,Dimension,Main System/num-14,14px
+fd03cece-1fea-4d7f-9f5e-8eb098a006d9,Dimension,Main System/num-16,16px
+aa21c4e0-a2a1-44f6-842f-21273bf6a7e9,Dimension,Main System/num-20,20px
+ff3c9173-d32b-4ff9-a1cd-f35878529d22,Dimension,Main System/num-24,24px
+ed6a0f74-6162-48dd-8230-919297847f62,Dimension,Main System/num-28,28px
+162e9cbe-c068-499a-9ef1-6f5a3ae8e7c7,Dimension,Main System/num-32,32px
+e4590738-b513-4a5d-b806-afdbd9d5281e,Dimension,Main System/num-36,36px
+5a7a65e1-4c66-4f36-9e43-fe7c9e305945,Dimension,Main System/num-40,40px
+0765c099-d018-40d3-b687-0ac69849028f,Dimension,Main System/num-44,44px
+64aeeb22-d513-4a25-96d7-c0ea465c1dae,Dimension,Main System/num-48,48px
+a0844deb-3d28-465f-8b47-2b88a7f16c53,Dimension,Main System/num-52,52px
+37c022ed-8f4d-4850-a526-f3f400a6178f,Dimension,Main System/num-56,56px
+e3f3ddbc-9348-40e1-9c22-67dd653018c9,Dimension,Main System/num-60,60px
+e7795590-8283-4d12-aebc-c867163c4a63,Dimension,Main System/num-64,64px
+d9264fa7-2ec6-4930-b4bf-d58b40b6f6cb,Dimension,Main System/num-72,72px
+579aa2ae-82c2-4dc0-9244-f5ddab194dd8,Dimension,Main System/num-96,96px
+2560ddfd-5196-4735-b62c-b19610fdd7e3,Dimension,Main System/num-112,112px
+fb727418-0630-4fd1-8f9b-d90508c31948,Dimension,Main System/num-120,120px
+79b28680-d880-4b34-b720-f8479e682f83,Dimension,Main System/num-128,128px
+6562fdc4-24d7-4e46-a3e4-b9416686ea92,Dimension,Main System/num-156,156px
+f434fda2-ed5f-4b64-b8f8-6165c80583d8,Dimension,Min & Max System/960px,960px
+5af182f5-7d7f-4c49-8e6f-dc87f1b7494d,Dimension,Min & Max System/880px,880px
+7931e7fe-7de5-48c2-a8ea-c55466bbaeac,Dimension,Min & Max System/800px,800px
+69c82428-5e42-4705-adf2-2dac86fcd5e4,Dimension,Min & Max System/720px,720px
+c8579b36-acb8-4124-84b8-7dc5640046b0,Dimension,Min & Max System/640px,640px
+2f044a0f-be05-41f8-b2f9-f1b3f7890172,Dimension,Min & Max System/560px,560px
+5dbe94bc-67dc-45e1-aed7-17aa5294d929,Dimension,Min & Max System/480px,480px
+f6fc6f41-6d2f-4299-b821-f201c1a678af,Dimension,Min & Max System/400px,400px
+3bfb3369-1900-40ed-af6b-560799ae99f7,Dimension,Min & Max System/320px,320px
+c454f3bc-f6ef-4a75-a73d-0e04e5341fc0,Dimension,Min & Max System/240px,240px
+f866c93b-58d1-4754-898a-f31b96fc000c,Dimension,Min & Max System/160px,160px
+595a50b7-df4f-4132-8dac-5b95eb9bd147,Dimension,Min & Max System/120px,120px
+e8857ef9-32a9-415f-90ce-e783af7a88e4,Dimension,Min & Max System/80px,80px
+378d3b30-d764-40bf-b838-f5ee9c1470d5,Dimension,Device/Desktop,1440px
+a7b92bc7-9d6f-42c7-97dc-6ba3ddaaeaee,Dimension,Device/Tablet,768px
+9f10e28d-18be-4da2-9adc-b3bd73945f4a,Dimension,Device/Mobile,375px
+5167f38e-530c-41ab-a277-a113addaf5ab,String,font family/Google sans,google sans
+2d876bc6-9961-42f8-bf4c-1a7d9b5d050a,Dimension,font-size/unit-8,8px
+164dff12-70a7-4484-98cf-fbe439d45fc7,Dimension,font-size/unit-10,10px
+f226c802-cf4c-4319-bb69-4239dd863520,Dimension,font-size/unit-12,12px
+25e86877-4ac8-4a62-9d04-266a87df20b6,Dimension,font-size/unit-14,14px
+d9bd4137-bb6d-4d9f-a529-2186618d0d43,Dimension,font-size/unit-16,16px
+98e12136-3d9b-4ac7-8b12-c316151025e2,Dimension,font-size/unit-18,18px
+87fd09ec-472c-42be-9433-756c7d9c6261,Dimension,font-size/unit-20,20px
+dbc8608f-d806-46b1-b8be-9e7cbe097dcc,Dimension,font-size/unit-22,22px
+37bcf2fa-1961-4947-aa80-520c4d18c8df,Dimension,font-size/unit-24,24px
+a25dbcc7-66c3-457a-bea1-361127743c23,Dimension,font-size/unit-26,26px
+125929ed-a6eb-4e6f-9779-b89efbd1601f,Dimension,font-size/unit-28,28px
+78f200d6-ade4-4ff2-a6f5-f66539dabc8c,Dimension,font-size/unit-32,32px
+9a9e1ce8-6ffd-4d06-a428-ee657ea901d5,Dimension,font-size/unit-36,36px
+4812cebf-ece1-482b-aa85-6b4937003161,Dimension,font-size/unit-40,40px
+42715765-7c8d-4168-9bb3-d4f3a3acf65b,Dimension,font-size/unit-48,48px
+0c32efdc-2878-42c5-8818-26c8d82c60ad,Dimension,font-size/unit-64,64px
+b468b4e1-aa2b-42b0-babc-2c1c6f013211,Dimension,font-size/unit-72,72px
+4724d106-1853-459c-af8b-125bda02fac4,Dimension,font-size/unit-96,96px
+a92eceb5-176c-4f43-bf65-bea104b9de1d,String,weight/Regular,Regular
+b39e7d4d-21d4-4ea4-af3e-a00a78123084,String,weight/Medium,Medium
+478dcdce-4095-4373-9dcf-122669c41c3e,String,weight/Semi-Bold,Semi Bold 
+9fb5c5e5-4e2f-4663-abd9-a5189d5f56ea,String,weight/Bold,Bold
+9f3fe979-7b13-44d5-b720-65890caea984,Dimension,letter space/tighter,-2px
+e6ccf12e-4228-41dc-97ff-c0bec0d6bc6c,Dimension,letter space/light,-1px
+65f356d9-da76-4f1c-a438-12640ffc71a5,Dimension,letter space/normal,0px
+0951ab5d-c160-4d26-a35b-08782ba06d89,Dimension,letter space/wide,1px
+f9b10693-d8f7-44f2-a43c-5a4a1eba2ec9,Dimension,letter space/wider,2px
+3fd45318-bdd5-4853-a283-20b5d575383c,Dimension,Roundness/Square-Inside,1px (num-1)
+19c7f8fc-4747-44b5-8fe4-e63c69b101e3,Dimension,Roundness/Round-Inside,12px (num-12)
+71e505b6-c78c-4af5-b97b-9decbc514846,Dimension,Roundness/Full-Inside,128px (num-128)
+d14d8e10-d8db-46bb-a4cd-319b1583ae3f,Dimension,Roundness/Square-Outside,6px (num-6)
+beea1361-4fcb-45e6-b1dd-40dfc2b46231,Dimension,Roundness/Round-Outside,12px (num-12)
+00ef9a3c-cf15-49ee-8941-1d6129c67ea0,Dimension,Roundness/Full-Outside,24px (num-24)
+ec87b591-f154-4360-8b84-23e2f265fed5,Dimension,Desktop/1-Column,720px (720px)
+2a163736-317e-4ca8-92dd-db236663fb86,Dimension,Desktop/2-Columns,560px (560px)
+663127c1-c0c8-4af4-923f-3da3dfccda7d,Dimension,Desktop/3-Columns,320px (320px)
+5fe7adc9-0d0d-4496-84cf-b4f7875eb51a,Dimension,Desktop/4-Columns,240px (240px)
+14242428-8e2f-42ed-bfec-17965d5c898c,Dimension,Tablet/1-Column,640px (640px)
+ea484e6a-d304-4690-a496-bdcba78fd40f,Dimension,Tablet/2-Column,320px (320px)
+7d2bb56c-0bcc-47d2-a945-c3d0e750ea5e,Dimension,Tablet/3-Column,160px (160px)
+e49d813a-78ce-4d27-81bc-86ec445b687d,Dimension,Mobile/1-Column,320px (320px)
+65c54c05-f507-4b72-b47f-3e5de9576ac2,Dimension,Mobile/2-Column,120px (120px)
+c76713d4-39ad-428d-ae2f-da110830b6cf,Dimension,Mobile/3-Columns,80px (80px)
+ac990761-ca39-4644-ad51-96c295d6ab8d,Dimension,Padding/Desktop/Main,112px (num-112)
+7c370899-4367-4ef7-a862-0f4a1ccc64fb,Dimension,Padding/Tablet/Main,32px (num-32)
+e074406d-1c87-4e86-9ff8-104b21776c8a,Dimension,Padding/Mobile/Web-Main,16px (num-16)
+66270167-f93a-4efb-81a6-2dee2d283ce1,Dimension,Padding/Mobile/Main,16px (num-16)
+713516b5-c134-4898-a4a4-492dcff97604,String,font family/Google sans,google sans (Google sans)
+f3a3c843-c496-4981-bb67-283870bc99b7,String,display/heading 1/semibold/weight,Semi Bold  (Semi-Bold)
+fb960ee0-5f5a-44bc-af11-1dba41e5a7e5,Dimension,display/heading 1/semibold/size,24px (unit-24)
+fade94d0-bc4a-4a6a-8a6f-74192c2f22c9,Dimension,display/heading 1/semibold/letter spacing,0px (normal)
+3d33f2d2-bb4a-484a-92a9-be878f7c545d,String,display/heading 2/semibold/weight,Semi Bold  (Semi-Bold)
+d07cee96-76f2-4f94-a235-b366d5809121,Dimension,display/heading 2/semibold/size,22px (unit-22)
+a75ffb12-ce81-473e-9756-6516e021fa3e,Dimension,display/heading 2/semibold/letter spacing,0px (normal)
+c12e88cb-2f41-4329-a479-8c88da80f057,String,display/heading 3/semibold/weight,Semi Bold  (Semi-Bold)
+6f660cea-4839-4186-aa39-2ef1b424f785,Dimension,display/heading 3/semibold/size,20px (unit-20)
+260e5205-2a22-4700-b638-20d3a71f3be1,Dimension,display/heading 3/semibold/letter spacing,0px (normal)
+26a297cf-0b67-48f4-a4ae-59bce042d709,String,text/L/regular/weight,Regular (Regular)
+0c254833-3bf7-41c9-87b1-62ff999150be,Dimension,text/L/regular/size,18px (unit-18)
+158aa8a4-bc6a-4215-9fbb-a64a7388d05a,Dimension,text/L/regular/letter spacing,0px (normal)
+5586873d-ffaa-4104-bcf5-091b45dcc444,String,text/L/medium/weight,Medium (Medium)
+ebddea32-a75d-4e40-a425-032fc69f9371,Dimension,text/L/medium/size,18px (unit-18)
+a5a79466-c623-40e7-a87a-41f1c463ef1b,Dimension,text/L/medium/letter spacing,0px (normal)
+523d0799-9d6d-4d1e-91a7-1ae9afdac79c,String,text/L/semibold/weight,Semi Bold  (Semi-Bold)
+fff4d9f4-1570-412f-955b-7976b0994b26,Dimension,text/L/semibold/size,18px (unit-18)
+505dc311-8ffa-498c-b11f-e0bc7ff2f96d,Dimension,text/L/semibold/letter spacing,0px (normal)
+cbbf6673-0449-440b-996a-3cb1a72b84b5,String,text/M - Base/regular/weight,Regular (Regular)
+6b1ff184-7d6c-4b5c-9737-e236894bf783,Dimension,text/M - Base/regular/size,16px (unit-16)
+17eb2ed5-4765-4ee7-980e-6cf19ebe6403,Dimension,text/M - Base/regular/letter spacing,0px (normal)
+4041c6f2-ab1d-4db2-9edd-98d80e0333a7,String,text/M - Base/medium/weight,Medium (Medium)
+199ae7b3-de20-412b-b78d-58f574ba0952,Dimension,text/M - Base/medium/size,16px (unit-16)
+f8ce7ae5-9408-4ff1-9526-8c93a351f139,Dimension,text/M - Base/medium/letter spacing,0px (normal)
+1cf3c119-e489-4ec8-bf2d-e45a2f304f21,String,text/M - Base/semibold/weight,Semi Bold  (Semi-Bold)
+69a97bd2-d8ac-4405-8bef-4df3b2760bca,Dimension,text/M - Base/semibold/size,16px (unit-16)
+323de04c-356f-4546-84e3-ddbbce410474,Dimension,text/M - Base/semibold/letter spacing,0px (normal)
+04d10d06-7522-4fe5-bb34-a53a9cfb1897,String,text/S/regular/weight,Regular (Regular)
+0c7c8eb2-5a41-4b07-b3c2-7e61ece6e65f,Dimension,text/S/regular/size,14px (unit-14)
+6b6153e8-5537-481d-92e8-9a61812b75d7,Dimension,text/S/regular/letter spacing,0px (normal)
+86179352-d0ca-419f-aa14-11ddf0d8667f,String,text/S/medium/weight,Medium (Medium)
+02fcf44a-8265-4f75-a6c5-e6ee7787026a,Dimension,text/S/medium/size,14px (unit-14)
+bc5f52c6-3ba4-49da-9cce-33bd1622bfea,Dimension,text/S/medium/letter spacing,0px (normal)
+35a85a7b-a8d3-4b5f-ac76-fd20e81830c2,String,text/S/semibold/weight,Semi Bold  (Semi-Bold)
+c9d11158-7bd3-473c-a87f-dac9467dca37,Dimension,text/S/semibold/size,14px (unit-14)
+dc955282-9f6f-4de4-80de-ef01d0eb89ab,Dimension,text/S/semibold/letter spacing,0px (normal)
+16a7c564-8e70-4147-a337-7bd053ca414e,String,text/XS/regular/weight,Regular (Regular)
+f2dd8ba4-c8f1-42a0-936f-1ad7299c14ac,Dimension,text/XS/regular/size,12px (unit-12)
+333c7bdf-e8c3-4d28-a08e-46cfa717964e,Dimension,text/XS/regular/letter spacing,0px (normal)
+d0f6114f-c047-413a-a299-7b1f1de4940b,String,text/XS/medium/weight,Medium (Medium)
+4aa222b3-00b6-43c0-a659-10369693b39f,Dimension,text/XS/medium/size,12px (unit-12)
+49f3e0bb-de45-460c-a831-1774c9dcac97,Dimension,text/XS/medium/letter spacing,0px (normal)
+f648774a-c36c-411d-b0ac-35f3e285570d,String,text/XS/semibold/weight,Semi Bold  (Semi-Bold)
+3697a376-eb60-4367-89f6-46e1e09003a7,Dimension,text/XS/semibold/size,12px (unit-12)
+5c92f72a-c864-49f4-b270-7a3cabcaff51,Dimension,text/XS/semibold/letter spacing,0px (normal)
+06d10da4-bb1a-4d0a-99c2-660bc71c76f9,String,text/XXS/regular/weight,Regular (Regular)
+442e14b3-de3e-4500-b587-5babe788fef8,Dimension,text/XXS/regular/size,10px (unit-10)
+dc9401d7-1d41-4e4e-9d66-627d224d9fe8,Dimension,text/XXS/regular/letter spacing,0px (normal)
+1b47b132-b007-4451-9172-5a29fcc46ef6,String,text/XXS/medium/weight,Medium (Medium)
+587fde60-5ed1-4730-ac1a-1ffa603358c3,Dimension,text/XXS/medium/size,10px (unit-10)
+7bd507dd-beff-480c-b4f1-907dfe46a722,Dimension,text/XXS/medium/letter spacing,0px (normal)
+114a446f-fff1-42f5-a650-62ee27c2ddd4,String,text/XXS/semibold/weight,Semi Bold  (Semi-Bold)
+b10b4b4e-943c-4929-8f44-f458d09f12b0,Dimension,text/XXS/semibold/size,10px (unit-10)
+626e176b-1d91-45c1-aeb2-e335d50d42f4,Dimension,text/XXS/semibold/letter spacing,0px (normal)
+80a908fd-aa91-40a7-b006-fc1d23c91553,Color,Primary/25,#FFFDF5
+5d1c413a-1c68-4ffa-b0a9-88d2e3e421e4,Color,Primary/50,#FFFAE8
+9f104f00-7b2c-41f7-bc8f-3c0872dddf2d,Color,Primary/100,#FFF1B8
+e58da1a2-dfa2-44aa-a6ab-a459a85ebb90,Color,Primary/200,#FFEA95
+6248e489-b4f0-48c8-95ce-7af47f47d338,Color,Primary/300,#FFE065
+dd8d6195-34e2-41ab-9613-b2a336af777e,Color,Primary/400,#FFDA47
+b97f6160-083e-4862-896b-6ece785e3848,Color,Primary/500,#FFD119
+6c381ec4-0018-46cc-9742-9ccd00030e92,Color,Primary/600,#E8BE17
+ebc0255d-4474-4bf7-8f46-84516450f2c8,Color,Primary/700,#B59412
+458897e6-06aa-4d43-9cf9-f785f066c33d,Color,Primary/800,#8C730E
+c879b6ae-ba8e-4eae-9a31-e266951d2729,Color,Primary/900,#6B580B
+705fa10c-38e4-4e10-a254-841e87ee5699,Color,Base/White,#FFFFFF
+24af8530-7bbe-4765-ae0c-db45ce69067b,Color,Base/Black,#000000
+97b99ea5-f299-4116-bcc9-0becb9a3cadb,Color,Neutral/25,#FCFCFC
+77266ee2-9aa3-4d43-b9e6-79befe178134,Color,Neutral/50,#F9F9F9
+b62ddcf4-2272-4a9d-8fc6-3669ac0f8a32,Color,Neutral/100,#EEEEEE
+1ad06ac1-012a-47e9-8b6f-11caf26c16e4,Color,Neutral/200,#E5E5E5
+6b5a4bc0-ec6d-49bd-bf92-12567b3a25f4,Color,Neutral/300,#D9D9D9
+4c172962-79df-4f70-8bb2-e418bf1ccc21,Color,Neutral/400,#D2D2D2
+b791bd5b-128c-4204-be4d-e3acad873e62,Color,Neutral/500,#C7C7C7
+d6ac1467-6b1c-4b42-8783-bf3fa5cc2bd0,Color,Neutral/600,#B5B5B5
+8d1d51cc-5bdf-4d84-8318-c54e0b8f7a52,Color,Neutral/700,#8D8D8D
+b78650ce-4658-4616-92b2-0fa28e827d10,Color,Neutral/800,#6D6D6D
+4dcfc5fd-a373-4813-bed5-6a8a894d11a5,Color,Neutral/900,#545454
+aa0cbc67-29fe-4e04-80c5-fab4e6b07b71,Color,Gray/25,#F6F6F6
+4ad7277c-17eb-4747-a88c-771ffb443794,Color,Gray/50,#EBEBEC
+4a762676-0a4f-44d3-af5b-243ef608d09c,Color,Gray/100,#C0C1C4
+3fbfd2a0-8696-4714-9cd4-154262622e70,Color,Gray/200,#A2A3A8
+d80d2fa3-b43c-4495-a793-366945d4b4d8,Color,Gray/300,#787A80
+83f93495-bd55-4d2c-b8eb-572856cb0282,Color,Gray/400,#5D6067
+c1878772-92df-4680-830f-e67d332b3852,Color,Gray/500,#353841
+74da02cc-5678-42eb-a823-93adea20f184,Color,Gray/600,#30333B
+08ce458f-8295-47e4-ad2d-be9e3fcba3cd,Color,Gray/700,#26282E
+5510f9f3-184c-4ec0-8cdd-6612a3affc8c,Color,Gray/800,#1D1F24
+53a7d3c6-2253-4a67-b38d-491312f0f23f,Color,Gray/900,#16181B
+d7e6e58d-8e83-48a6-b50b-4c43b9a6129e,Color,Danger/25,#FFF7F6
+232e3f5e-f23c-4c55-bb47-d5ccd847bd5d,Color,Danger/50,#FFECEB
+8c9dcb8c-adc9-47d8-8ff5-962071361d3f,Color,Danger/100,#FFC5C1
+8d28f928-fddb-47aa-a3f8-ac0a8f283a18,Color,Danger/200,#FFA9A3
+6167166e-9390-4a67-8f68-75af6b4c3488,Color,Danger/300,#FF827A
+39506a44-06c3-4b8f-97e0-05412800e442,Color,Danger/400,#FF6A60
+48e334f6-14fa-4947-814e-f07aa96d4e94,Color,Danger/500,#FF4538
+fe55aa88-a645-4d20-b905-4a5bc4048f92,Color,Danger/600,#E83F33
+207433ca-ad22-4c6b-bd73-7b8ac9db253d,Color,Danger/700,#B53128
+5631c63d-8d6d-4042-8065-4cb5318853a5,Color,Danger/800,#8C261F
+0fd1dc45-5506-48ba-ad54-edfe0a3b68b6,Color,Danger/900,#6B1D18
+2745d785-30d5-4065-baad-abbe3af83322,Color,Danger/950,#590C0C
+69b1d2e2-ac02-4209-b671-c03daad52893,Color,Success/25,#F6FFFB
+aecd8eb9-3116-4e84-9810-77e6d6ae579d,Color,Success/50,#EBFBF4
+caa7b916-c1fe-4ed8-8a9f-46b80909f6c6,Color,Success/100,#C2F3DC
+c2c9b82f-e042-43f3-8e76-6a3bda7349fe,Color,Success/200,#A4EDCB
+4ace2e88-bd7f-4a97-a2af-e97e66d480d1,Color,Success/300,#7BE5B3
+0224311e-1882-4eab-9573-98e8b9c5e284,Color,Success/400,#61E0A5
+45d57cc5-9418-4ad1-9396-6b101d4b2678,Color,Success/500,#3AD88E
+4a91ee31-ea5d-4aa9-a88a-d7d95d35ea88,Color,Success/600,#35C581
+d8bcb486-8e2d-485a-b42e-9d2b12d5e2c5,Color,Success/700,#299965
+2fab2e50-699e-4e4c-a451-8e0ec656e94e,Color,Success/800,#20774E
+df666756-a0a3-46a0-bf8e-9b5c9fad2c92,Color,Success/900,#185B3C
+de2e30e0-0668-40b7-9ce7-396640b96303,Color,Success/950,#0D3510
+c17ef48d-edb3-44c8-8002-f56de4f37ae4,Color,Warning/25,#FFF9F1
+f62b0b2c-5146-4f0b-92f2-fb8001e55036,Color,Warning/50,#FEF5E7
+3e759a4b-b77f-482a-b9e9-a49efacdde40,Color,Warning/100,#FDE1B4
+54ace439-8e18-4e89-b0c0-f340616fb563,Color,Blue/25,#F3FAFF
+cceeb59e-3bc3-40c0-a246-f7b0c4c37625,Color,Blue/50,#E6F4FF
+43ccaa76-522a-4a25-b48d-e5b0529719a3,Color,Blue/100,#B0DCFF
+4517c1e4-76a6-429d-b4df-ab6f6ca8c920,Color,Blue/200,#8ACBFF
+5cf3c8a4-1bf3-45ff-b659-c32624db532e,Color,Blue/300,#54B3FF
+09425ecf-46e6-4c1a-9a0d-8086937e3e6c,Color,Blue/400,#33A4FF
+72026771-75c0-4d5b-998f-ea80a8d9b152,Color,Blue/500,#008DFF
+78275c6f-5870-4952-baa4-96adc6fc1d0d,Color,Blue/600,#0080E8
+c7e61952-66e6-4011-a1a9-75912dd4d82d,Color,Blue/700,#0064B5
+23920b6a-bcb0-46dc-a381-7bd8c09c581a,Color,Blue/800,#0064B5
+94d7ffbc-a29c-4ef2-a229-0524c1e9ffe7,Color,Blue/900,#004E8C
+c8311aab-22a2-4b38-864c-7e0890148b9b,Color,Blue/950,#003B6B
+f5f48dc4-d519-4db1-be63-f2d1a44c105d,Color,Purple/25,#F9F8FB
+e38155d0-1759-46fe-aede-d5d7549fca26,Color,Purple/50,#ECEBFF
+7d5f487f-d677-43b1-979e-87c77d394ce3,Color,Purple/100,#C7C4FD
+f58a374a-382f-432d-9baa-61282be10a86,Color,Purple/200,#ABA7FD
+fe8fe169-cf39-485c-90cf-3870d9b99177,Color,Purple/300,#8F89FC
+61826462-67ca-4cba-88cf-83d70747e612,Color,Purple/400,#736CFB
+5118e826-dfd7-43da-839f-a6e660510e4f,Color,Purple/500,#5D55F6
+83c96296-0b1d-405f-a2b7-6f5222c8d148,Color,Purple/600,#574EFA
+61c298ef-4b48-4425-befb-69b0d1916916,Color,Purple/700,#463EE3
+73dc3ce7-ff7b-46e9-b447-77801b6e92b9,Color,Purple/800,#352DC8
+85a4a44e-7452-4d7e-aff1-9fd6612e18a2,Color,Purple/900,#33059F
+22939451-f405-4f71-b4e6-b7f2f876078c,Color,Purple/950,#1B0354
+befa80fa-9e87-46f9-aaa2-17f9cb4523c7,Color,Warning/200,#FCD290
+7798bc65-f2d6-48bd-978e-bc1d31bc9714,Color,Warning/300,#FBBD5E
+2631a883-a066-49e8-9f4b-c96a56ef9dc7,Color,Warning/400,#FAB13E
+e72f537d-6638-46de-a4ec-4ab122d90bcd,Color,Warning/500,#F99D0E
+63cc76e3-1a6a-496c-96e1-5a0e161c5d8c,Color,Warning/600,#E38F0D
+0838e263-99dc-40c2-a0aa-3865c715afb8,Color,Gradient/Overlay/Blur Dark,#181818 / 80%
+bd498cb7-8443-41d3-ae52-fc43d64b6632,Color,Gradient/Overlay/Bg Blur Fill,#181818 / 50%
+e052313f-451b-4c5a-b243-899ec48b99e5,Color,Gradient/Overlay/Overlay Dark,#181818 / 85%
+6c4ec76c-904a-4a74-8dcd-319806b2c141,Color,Gradient/Overlay/Overlay Light,#FFFFFF / 95%
+e2d8fb9e-b959-4f82-b8df-4a11b8d4d898,Color,Gradient/Overlay/Selected Gray,#747A8B / 15%
+899659fd-6994-43cb-84cc-63ad18cd3cbe,Color,Gradient/Overlay/Hover Gray,#747A8B / 10%
+5cfdc701-4c8e-444b-8e6e-bf2abc9b5078,Color,Auto-Tint/Light dark transparent,#FFFFFF
+e58eba48-9bd4-4f5a-b14e-02f52484b86d,Color,Auto-Tint/Auto-tint,#000000
+8795692f-0a19-4c08-b6a1-23823cc5b04b,Color,Warning/700,#B16F0A
+59ef2d70-1024-426d-8968-4e3b4e42c8ef,Color,Warning/800,#895608
+b0f0dd67-0faf-478b-a9cd-1c02737fa240,Color,Warning/900,#694206
+d0e72f72-41e6-47e8-903f-ba9291d52074,Color,Warning/950,#4D2C00
+6ad6ad6e-d8f1-4542-8427-f96d92f6e137,Color,Primary/Primary-25,#FFFDF5
+e55a2708-bada-489c-85c9-b9cb4afe1f52,Color,Primary/Primary-50,#FFFAE8
+5282858c-b718-4f8b-b2dd-78f01eeb14d8,Color,Primary/Primary-100,#FFF1B8
+4cae8718-ba8e-4683-be94-e75af4eb779c,Color,Primary/Primary-200,#FFEA95
+f59b0499-6685-4209-a0a5-63a108ce8042,Color,Primary/Primary-300,#FFE065
+75a27e45-8ee1-413f-b88b-8fb56e1fb3fb,Color,Primary/Primary-400,#FFDA47
+3a1da1ab-0d0e-464e-9277-4209afaad4b6,Color,Primary/Primary-500,#FFD119
+3c39fee1-2f77-4dc0-a6f1-4a2c9e3d00f2,Color,Primary/Primary-600,#E8BE17
+d665fea6-d061-4712-aded-612034e4c193,Color,Primary/Primary-700,#B59412
+bc904e57-6ae8-4ef1-88cb-921f92df0986,Color,Primary/Primary-800,#8C730E
+bc3437bd-acad-4448-bf8e-e57eacb6ac70,Color,Primary/Primary-900,#6B580B
+067c03e4-b002-4406-abda-2de0aa90b235,Color,Base/White,#FFFFFF
+b470b41c-33b4-4437-b17e-2d4ddfc728c7,Color,Base/White-opacity,#FFFFFF / 40%
+e704d3f5-4233-4612-8794-0d82c6a2ec7c,Color,Base/White-opacity-secondary,#FFFFFF / 20%
+e94ca3be-2003-431f-8587-02711b189387,Color,Base/Black,#000000
+cf5eb779-bbc6-4bde-9b64-68d5b72ba72a,Color,Base/Black-opacity,#000000 / 40%
+de58fcd4-0566-46b3-93e7-9bcbac209356,Color,Neutral/25,#FCFCFC
+fb15dcf6-db13-499b-ab64-44438f6f6651,Color,Neutral/50,#F9F9F9
+56d44d7d-183e-4f18-8614-2abbc51cfdb9,Color,Neutral/100,#EEEEEE
+5b5b7020-3b94-4539-a663-4247bc494f96,Color,Neutral/200,#E5E5E5
+00e85deb-af44-4338-8ea5-49b22f0db001,Color,Neutral/300,#D9D9D9
+02d66f76-81e1-4587-be3e-b0d8b8227f0e,Color,Neutral/400,#D2D2D2
+7a0de4db-1cf6-44a0-b2be-170009ce2351,Color,Neutral/500,#C7C7C7
+0478c8f0-25a6-4db6-aaa8-a4c2779bde11,Color,Neutral/600,#B5B5B5
+495a3860-3b09-4216-be67-ecc2fb2f32ad,Color,Neutral/700,#8D8D8D
+b33b5ef2-a373-4fc4-9689-880ca41c7b96,Color,Neutral/800,#6D6D6D
+9113b7b4-c838-4463-8291-a07406f958b0,Color,Neutral/900,#545454
+0b35a839-8bd1-4554-86e0-d62d6b27fde5,Color,Gray/25,#F6F6F6
+b2928a5d-4831-4638-8f87-910a88009b8e,Color,Gray/50,#EBEBEC
+2925e108-9953-46e7-aea8-38c2f799bec8,Color,Gray/100,#C0C1C4
+648f6ce1-bb45-4aeb-b1e8-95d81854365d,Color,Gray/200,#A2A3A8
+8720c881-52bb-414e-9592-3f54e9f95654,Color,Gray/300,#787A80
+fba02067-6921-4db6-8554-fcbf8c138454,Color,Gray/400,#5D6067
+f7a36896-8dff-43cc-8bd0-713241ca7d6d,Color,Gray/500,#353841
+d26f7d89-bb11-4060-b1fb-e4ed17b79dd0,Color,Gray/600,#30333B
+deae4bc7-63e0-47fd-a3d1-bf5c767e921e,Color,Gray/700,#26282E
+abf4cc1a-9337-4475-a9d5-149da81fa1b8,Color,Gray/800,#1D1F24
+25d3a63d-337b-4f6e-af0e-6fd091aed7d1,Color,Gray/900,#16181B
+3e2c179c-c187-4bae-9c0b-79902a9b509a,Color,Danger/25,#FFF7F6
+21e8b356-0087-47a7-beac-6395b60859dd,Color,Danger/50,#FFECEB
+a2f31efd-0ee3-403f-8304-33d4a5376a91,Color,Danger/100,#FFC5C1
+afc238de-a842-443a-9d70-0b1d010aaac6,Color,Danger/200,#FFA9A3
+d222083d-74f7-4511-bd0d-d473d405af0f,Color,Danger/300,#FF827A
+a551fb15-a59a-454e-8cb4-bbe6deda58e8,Color,Danger/400,#FF6A60
+918cd660-0616-42a9-bbc9-94a78ede7b01,Color,Danger/500,#FF4538
+582603c0-8abf-458e-a8bb-8dd22c7c621a,Color,Danger/600,#E83F33
+eabb9dde-4407-461f-be31-b6389e28f72c,Color,Danger/700,#B53128
+431b8594-e4da-4924-9944-4a93ac0cbf17,Color,Danger/800,#8C261F
+3c5a79f9-a789-41e4-bcab-989aea1ef606,Color,Danger/900,#6B1D18
+0aacbcff-a023-46a2-a483-4e30eebf997a,Color,Success/25,#F6FFFB
+3b6592d8-f5f0-4383-a915-d85ee9cc5e09,Color,Success/50,#EBFBF4
+c55c84d7-4371-4eef-93bb-0c869df21285,Color,Success/100,#C2F3DC
+29f48cda-d760-4766-9df4-b864e14b5489,Color,Success/200,#A4EDCB
+5ab34add-4a86-4692-8a27-db6bd63e6607,Color,Success/300,#7BE5B3
+c6edccfb-910a-4369-b8e4-d12c0b7916fc,Color,Success/400,#61E0A5
+121c8df7-77b1-4034-940d-738b5ebc6b38,Color,Success/500,#3AD88E
+d8ffb99b-8534-4268-bd7f-a73ec1dc0c4e,Color,Success/600,#35C581
+649b2ce7-a687-40f1-bb63-175cb3792bd4,Color,Success/700,#299965
+1832898e-d28f-492f-9811-bf8950d65f63,Color,Success/800,#20774E
+83a76f39-4a86-4d65-8540-b7f27f454aa8,Color,Success/900,#185B3C
+546405f2-e7e2-4895-bf9c-d71c6fae5b23,Color,Warning/25,#FFF9F1
+2d7db213-6c68-430d-b167-12495099f518,Color,Warning/50,#FEF5E7
+655ea1d7-6db1-4f7f-91f7-58534116d204,Color,Warning/100,#FDE1B4
+29a7e876-daf4-4086-becf-82c85eef69d8,Color,Warning/200,#FCD290
+a760053a-e011-42eb-94d9-eded8116aa6a,Color,Warning/300,#FBBD5E
+b3c60e4f-b66c-4827-816e-e82ae2e59801,Color,Warning/400,#FAB13E
+7ae1f957-f14e-424b-bb6a-16aea434087e,Color,Warning/500,#F99D0E
+eaa0dc94-5729-4ae9-a286-d953cb298fee,Color,Warning/600,#E38F0D
+d1e4f2e6-392c-4821-8766-6ecf15bc9cb8,Color,Warning/700,#B16F0A
+f3377d86-02c8-4bea-b023-7d2d4643444f,Color,Warning/800,#895608
+4c1eac74-839a-47ac-9a07-d0565166cde8,Color,Warning/900,#694206
+bb8d49b6-0b30-482f-99bd-aa6a4d8fabe2,Color,Blue/25,#F3FAFF
+dd2c260f-ef2f-4e62-8067-ea58ac4a93de,Color,Purple/25,#F9F8FB
+c7d8686c-0399-4b5c-9439-9d0ab481bed3,Color,Purple/50,#ECEBFF
+da0b08c8-7fc0-45d6-ad6f-885472d4d56f,Color,Purple/100,#C7C4FD
+dddfdcd9-f305-42c0-882d-11fd77804657,Color,Purple/200,#ABA7FD
+d6af0792-ce70-4c4b-94f8-b7b95c724299,Color,Purple/300,#8F89FC
+21ffa68c-587e-4252-b8c4-e8d542f6e658,Color,Purple/400,#736CFB
+511f99a2-49c4-4e4a-9a93-e38fc77592cc,Color,Purple/500,#5D55F6
+b8eaeeab-323b-4ae7-bba7-1901eb5cd384,Color,Purple/600,#574EFA
+d99d61bf-18b9-4d35-a6cb-5d7fc0a4c717,Color,Purple/700,#463EE3
+f18acf32-e595-42ad-ab51-d1a84fda913e,Color,Purple/800,#352DC8
+3384eb92-5af2-427a-b1ca-4c268ec03af3,Color,Purple/900,#33059F
+8be25fee-c8bf-4498-b506-c67d3047a01c,Color,Blue/50,#E6F4FF
+f7bcc616-6e11-48e2-9831-252814b2fc96,Color,Blue/100,#B0DCFF
+3abb8ec0-bc4b-465f-90f1-25fb39d87a9b,Color,Blue/200,#8ACBFF
+7a479a5b-02a8-4ab4-84c3-4b6a2b9fbaab,Color,Blue/300,#54B3FF
+01f5df84-a79c-461a-bb56-0d94aa572397,Color,Blue/400,#33A4FF
+eaf75e01-f946-4940-9122-ac8188f5b557,Color,Blue/500,#008DFF
+e0390776-e32c-4321-b7e7-dc75205d4658,Color,Blue/600,#0080E8
+70a85d3f-6918-4f41-a571-6f7a74f1b94f,Color,Blue/700,#0064B5
+1edcd152-4656-4c7d-811d-1e706ce355b4,Color,Blue/800,#004E8C
+7d9e568e-2d90-4d31-998a-1ccf30813729,Color,Blue/900,#003B6B
+78953e2e-c68a-499e-9f44-de7253c3de82,Color,Background/Base-Main,#FFFFFF (White)
+6e27698c-f8be-4876-bde1-8291378367ad,Color,Text & Icons/Base-Main,#353841 (Gray/500)
+e735b7c4-a13d-4fc5-9462-12f0504a51ed,Color,Text & Icons/Base-Second,#8D8D8D (Neutral/700)
+3e51985b-bc2e-4d32-a23c-2c67b0b6bd58,Color,Text & Icons/On-Color,#FFFFFF (White)
+61372597-516b-4062-a444-cd78969a1125,Color,Text & Icons/Disabled,#A2A3A8 (Gray/200)
+4cb9f44a-8cf9-4fd7-b950-2b2e9e4564d8,Color,Text & Icons/Primary,#E8BE17 (Primary-600)
+9baa3e6a-7b8d-4d88-a113-5f18a2944299,Color,Text & Icons/Primary-Second,#FFD119 (Primary-500)
+7aa76054-26d0-4fbf-97ea-7386aaedeaf5,Color,Text & Icons/Success,#3AD88E (Success/500)
+086ccf9f-8402-44a0-ae1d-c30fc23a2738,Color,Text & Icons/Danger,#FF4538 (Danger/500)
+1e28ca09-5c55-45d4-8808-e57aeaa5fd8f,Color,Text & Icons/Warning,#F99D0E (Warning/500)
+a3b9ef1c-2443-4076-851b-5c071d5bae96,Color,Text & Icons/Red,#FF6A60 (Danger/400)
+3fad36b9-c89d-4810-896f-4a1bd3446ee3,Color,Text & Icons/Blue,#008DFF (Blue/500)
+b923ad4d-70a1-41ea-ae36-8ccebfdc3530,Color,Text & Icons/Purple,#5D55F6 (Purple/500)
+c3d3d79d-e9f2-47d2-8277-0dd710237de9,Color,Background/Base-Second,#F9F9F9 (Neutral/50)
+f99bebc7-2543-4748-8fda-b4cae4120544,Color,Background/Base-Third,#EEEEEE (Neutral/100)
+544b02d7-e4ab-46ce-9f7a-f11b9d568bf6,Color,Background/Base-Opacity,#FFFFFF (White-opacity-secondary) / 20%
+cc30750f-43c2-418a-a591-b207cdf6727d,Color,Background/Primary-Main,#FFDA47 (Primary-400)
+ae9c1c34-89bf-408e-858d-2b299f615f5d,Color,Background/Primary-Second,#FFFAE8 (Primary-50)
+aebe7a48-d751-4cab-bc96-69913fa54125,Color,Background/Success-Main,#3AD88E (Success/500)
+db549413-fcd0-4507-a449-951a60a3eba2,Color,Background/Success-Second,#EBFBF4 (Success/50)
+32179cf2-609c-4763-a54b-2d574e407883,Color,Background/Danger-Main,#FF4538 (Danger/500)
+e6733298-2368-4cd2-9fc9-ab2b67aec416,Color,Background/Danger-Second,#FFECEB (Danger/50)
+bc95ff99-42fc-4aed-808e-3a1b5f17da1d,Color,Background/Warning-Main,#F99D0E (Warning/500)
+c678ce35-b76f-467f-97bf-562919175888,Color,Background/Warning-Second,#FEF5E7 (Warning/50)
+825c9e69-3f24-4051-8ff6-c0fb99312e67,Color,Background/Red-Main,#FF6A60 (Danger/400)
+c7b705ae-9941-4778-b97e-9b82f2b5f9ac,Color,Background/Red-Second,#FFF7F6 (Danger/25)
+0f459373-c00c-4898-a298-62bf31c9c1fd,Color,Background/Blue-Main,#008DFF (Blue/500)
+aa1a6364-94de-45ba-a1ed-b8321fc14ae9,Color,Background/Blue-Second,#E6F4FF (Blue/50)
+efd18dd6-87c7-4289-aa97-cadbb32f9333,Color,Background/Purple-Main,#5D55F6 (Purple/500)
+03e77d1e-8c34-457e-bdc2-5c010246ca78,Color,Background/Purple-Second,#ECEBFF (Purple/50)
+0ec2f17e-3a61-423d-830e-9415ab652636,Color,Stroke/Base,#E5E5E5 (Neutral/200)
+41e9282f-2f65-4d25-a621-b1fe2ad59f91,Color,Stroke/Base-opacity,#FFFFFF (White-opacity) / 40%
+9f2168dd-4d0b-4b13-8e8d-412ec5e8fddd,Color,Stroke/Base-Dark,#26282E (Gray/700)
+a694cc49-1bf5-4ad6-875b-3f5a1c804385,Color,Stroke/Primary,#FFD119 (Primary-500)
+4e0a0416-51ee-4d94-bb75-cea26ad98536,Color,Stroke/Success,#35C581 (Success/600)
+8724d44f-2ffa-4953-8b6f-e370b878a7a3,Color,Stroke/Danger,#E83F33 (Danger/600)
+ca99d5d7-d533-4b67-9b10-6a4ce61cf3cd,Color,Stroke/Warning,#E38F0D (Warning/600)
+eb948e8f-5284-4094-9550-790ced148dbb,Color,Stroke/Red,#FF4538 (Danger/500)
+c156f714-d49f-460c-9fb5-471146e30576,Color,Stroke/Blue,#0080E8 (Blue/600)
+575d6b4f-1cd4-406f-95d2-6f333b1b9dbe,Color,Stroke/Purple,#574EFA (Purple/600)
+5da81822-863a-4ff3-a339-72010e110546,Color,Background/Disabled,#EBEBEC (Gray/50)
+309a0591-9084-4d69-a9a2-7aa304eab652,Color,Background/Base-Dark-Main,#353841 (Gray/500)
+98260d56-de36-4354-bd32-48b48ed9b0d8,Color,Background/Base-Dark-Second,#1D1F24 (Gray/800)
+54be1dfa-66fa-40d8-a1db-2743b18a50a5,Color,Background/Base-Dark-Opaciy,#000000 (Black-opacity) / 40%
+d19d52c9-492a-4329-86e8-2284ced7c4e4,Typography,Headline 1/Semibold,24px / 150% Google Sans 600
+1ab749d0-9b5f-4d07-9f0c-c2b8b4522e8f,Typography,Headline 2/Semibold,22px / 150% Google Sans 600
+b5c03e7c-6e54-486f-b5c4-0d18e1eb2786,Typography,Headline 3/Semibold,20px / 150% Google Sans 600
+98954fd9-a111-42f9-bb00-d2f38ac082c6,Typography,Text L/Regular,18px / 150% Google Sans 400
+5b9ec650-43f6-4ecb-b365-90c288f7eb6b,Typography,Text L/Medium,18px / 150% Google Sans 500
+a53976c0-1f4c-45d4-9710-f60510d31d1d,Typography,Text L/Semibold,18px / 150% Google Sans 600
+8dea9e82-8898-43b3-9fe3-27e6f4ee75ff,Typography,Text M/Regular,16px / 150% Google Sans 400
+4868a4dd-6d5f-4268-a2b9-80bf145904c0,Typography,Text M/Medium,16px / 150% Google Sans 500
+87cbddc0-eb18-46d6-a3e8-91b9586b1d41,Typography,Text M/Semibold,16px / 150% Google Sans 600
+fced2e87-f89a-4261-a0cd-919cb1e960e7,Typography,Text S/Regular,14px / 150% Google Sans 400
+ebc2a4b8-34bd-4a85-af33-b988f5fa981d,Typography,Text S/Medium,14px / 150% Google Sans 500
+9ca9314d-eca0-43b4-b04c-2481764b20ab,Typography,Text S/Semibold,14px / 150% Google Sans 600
+8b0dc1e1-522d-4e27-8e93-56d4d359e3fc,Typography,Text XS/Regular,12px / 150% Google Sans 400
+de0aa25b-8f51-4d45-80f5-eeef41203f29,Typography,Text XS/Medium,12px / 150% Google Sans 500
+11b7d560-ccba-4c89-8cb6-d5de050c0a1d,Typography,Text XS/Semibold,12px / 150% Google Sans 600
+9d7f04e5-6e4f-4ebe-8d86-f6e7a50bec6f,Typography,Text XXS/Regular,10px / 150% Google Sans 400
+593e8ddb-7d6d-4bd9-8422-4c9d41ace372,Typography,Text XXS/Medium,10px / 150% Google Sans 500
+4c3056a5-7065-4848-aa2b-e8ea7453be79,Typography,Text XXS/Semibold,10px / 150% Google Sans 600
+f4aa0bc9-8aaa-47bd-a333-50c6fcdd7e04,Shadow,Shadow/XSM,0 1px 2px 0 #101828 / 4%
+945681c6-1b35-4f4d-9d3e-14701dfb4288,Shadow,Shadow/SM,rgba(16, 24, 40, 0.1) 0px 1px 3px 0px, rgba(16, 24, 40, 0.1) 0px 1px 2px -1px
+1ce87fc2-734a-4160-ba33-36f38c4490e8,Shadow,Shadow/MD,rgba(16, 24, 40, 0.1) 0px 4px 6px -1px, rgba(16, 24, 40, 0.1) 0px 2px 4px -2px
+526a090b-0409-4398-a6b6-33cb411f20f8,Shadow,Shadow/LG,rgba(16, 24, 40, 0.1) 0px 10px 15px -3px, rgba(16, 24, 40, 0.1) 0px 4px 6px -4px
+030928cd-323d-4266-b138-80f45764319c,Shadow,Shadow/XL,rgba(16, 24, 40, 0.1) 0px 20px 25px -5px, rgba(16, 24, 40, 0.1) 0px 8px 10px -6px
+ae11185a-4ffd-4940-a34b-d5b504a6f48d,Shadow,Shadow/2XL,0 25px 50px -12px #101828 / 25%
+8244bfb7-2f16-48bf-a5cc-e67d7b2a453c,Shadow,Shadow/Hover shaddow,rgba(16, 24, 40, 0.03) 0px 4px 6px -1px, rgba(16, 24, 40, 0.05) 0px 2px 4px -2px
+5228b2df-e79d-4ee8-9cde-8f7a76098dcc,Shadow,Shadow/Soft Shadow,rgba(113, 128, 150, 0.08) 0px 0px 8px 0px, rgba(113, 128, 150, 0.04) 0px 0px 4px 0px
+af50dd08-6b50-49ee-bd0a-feda0e7197b2,Shadow,Shadow/Center Shadow,0 0 40px 4px #101828 / 12%
+d9ff2d3e-3f8f-4fda-ae5f-0db18820f8a2,Blur,Blur/Navbar Blur,background 64px
+11a3bdac-6341-40ed-8632-4f7d214954e6,Blur,Blur/Bg Blur 2,background 7px
+00a9fadf-c4a5-43d9-bd61-684fe9b98076,Shadow,Focused/Light Gray,0 0 0 3px #EFF1F3
+932bfdc9-ccd6-48eb-bbec-c7ab4f656a16,Shadow,Focused/Primary,0 0 0 3px #FFF1B8
+01931915-2eee-41cf-b4a3-37cd3297053a,Shadow,Focused/Danger,0 0 0 3px #FDDDDC
+af15e9cf-553a-4015-b4ff-6c6a382b02d8,Shadow,Focused/Warning,0 0 0 3px #FFE4C0
+d31cd85a-6afd-4c9b-bd06-dabf99b52c0d,Blur,Blur/Item Blur 3,background 16px
+361f043a-753f-4acd-9f6d-f700606b47c9,Shadow,Focused/Success,0 0 0 3px #B1EEB9
+176892ce-4f50-4088-be49-3d510d031f6e,Shadow,Focused/Purple,0 0 0 3px #C7C4FD
+0b24d833-36b0-4ba2-9e67-b94c01d2d879,Shadow,Focused/Dark Gray,0 0 0 3px #454D56
+e2c887f1-3440-46b1-9b23-a60b87db3dfb,Gradient,Gradient/Primary/Liniar/100 -> 400 (90 deg),linear
+5c5e03af-a0fd-4117-b060-be18268fe845,Gradient,Gradient/Primary/Liniar/800 -> 400 (45 deg),linear
+e561d0ac-132d-4f6e-8096-0c4d23132699,Gradient,Gradient/Primary/Liniar/900 -> 600 (25 deg),linear
+4a2bde6b-ea62-4464-8af6-67dac4f510f0,Gradient,Gradient/Primary/Liniar/Soft base,linear
+d2ea6f3e-15b9-48b3-83d2-16fba0262d56,Gradient,Gradient/Primary/Liniar/Decorative base,linear
+00732256-979c-4183-adb2-16956cf67763,Gradient,Gradient/Primary/Liniar/Line,linear
+0364c473-792e-4c5f-a29a-2507abc24778,Gradient,Gradient/Primary/Liniar/Liniar white,linear
+3319dc98-d530-4e4c-af36-4d15c3bacf94,Gradient,Gradient/Gray/Liniar/900 -> 600 (25 deg),linear
+3f5a0439-da3a-49d8-a620-2be10d9435a4,Gradient,Gradient/Gray/Liniar/100 -> 400 (90 deg),linear
+dd3c0172-9a2e-49e0-aa03-455d3505b5cf,Gradient,Gradient/Gray/Liniar/800 -> 400 (45 deg),linear
+e728105f-6ac1-4b0b-a7f9-3a647f10309e,Gradient,Gradient/Gray/Liniar/Lines,linear
+8189c0a0-9136-4754-a5bf-054e04d51a0a,Gradient,Gradient/Overlay/Chart gradient,linear
+699f5d1d-c41e-4b3f-91ff-22651a5eb5a1,Gradient,Gradient/Overlay/Gray,linear
+002f26d9-fe29-42e1-94ab-8e9eb02dd127,Gradient,Gradient/Display Icon,linear
+cbab9ac4-31e5-4778-aff2-ffeac28058a4,Gradient,Gradient/Display white,linear
+22a7ce61-60f1-4ac8-82f2-2f2b9e1039dc,Gradient,Gradient/Display,linear
+832bd171-23ae-4863-a31e-37126652d456,Gradient,Gradient/Colorful/1,linear
+9e7f8c1e-7d61-41c0-923a-5877fc5b21c6,Gradient,Gradient/Colorful/2,linear
+f4e61857-da9d-4ad7-8886-d51bfd87905b,Gradient,Gradient/Colorful/3,linear
+fc49f14d-173b-487d-857d-ff20741d4979,Gradient,Gradient/Colorful/4,linear
+fa9c6b12-6cd1-4475-903c-d2f9c3b159aa,Gradient,Gradient/Colorful/5,linear
+3f821fe7-8d10-4bc1-b612-712ab8d1313e,Gradient,Gradient/Colorful/6,linear
+b0f8583c-3e6f-4cda-812d-045b9fdf3005,Gradient,Gradient/Colorful/7,linear
+b4e54c6f-d3c4-4dea-ad38-0475424f588b,Gradient,Gradient/Colorful/8,linear
+858353c0-d751-4e28-8352-c115dceb0427,Gradient,Gradient/Colorful/9,linear
+e5800bde-050c-470b-a841-1acc46bb3994,Gradient,Gradient/Colorful/10,linear
+4ff21309-ffa1-4aba-a53c-169a0469cb9f,Gradient,Gradient/Colorful/11,linear
+efed87e0-dcc5-4b12-9633-88a2e167e4e1,Gradient,Gradient/Colorful/12,linear
+9b868aea-fde0-4dfb-8471-def1dcc1127f,Gradient,Gradient/Colorful/13,linear
+ff1f4ec0-8fc9-4070-9528-82c621619871,Gradient,Gradient/Colorful/14,linear
+dde7c621-dc88-475f-a984-17ef7de0f6e7,Gradient,Gradient/Colorful/15,linear
+35a4418d-bae7-4673-bc80-610f8bea5c25,Gradient,Gradient/Colorful/16,linear
+d7f0f90f-5df7-417b-ab14-595bab4beccf,Gradient,Gradient/Pastel/1,linear
+1acfb197-bf33-4ada-9066-5dd8bfb89f43,Gradient,Gradient/Pastel/2,linear
+e9a2d8c7-64dc-4a41-8c31-f6809235409b,Gradient,Gradient/Pastel/3,linear
+08cd5ce3-141f-47a4-9b32-a8990e974119,Gradient,Gradient/Pastel/4,linear
+f11b4faa-928a-4abf-b08f-0257976d8745,Gradient,Gradient/Pastel/4,linear
+db3c8940-aebf-45a4-94e1-6857e8321a98,Gradient,Gradient/Pastel/6,linear
+b6bc3ded-fe3c-4faf-beb8-bfe1002fd5cb,Gradient,Gradient/Pastel/7,linear
+5c82bd0a-6c0f-4ff3-ab49-192de815f80b,Gradient,Gradient/Pastel/8,linear
+8051ee98-c6f3-4014-a0e6-6df636c68f95,Gradient,Gradient/Pastel/9,linear
+64d47119-3251-4a64-a795-83cd9001c237,Gradient,Gradient/Pastel/10,linear
+8339aab1-65ac-4f4f-86db-fdea578f451b,Gradient,Gradient/Pastel/11,linear
+b648806a-549c-49a9-bcbd-9e4ca2ecd371,Gradient,Gradient/Pastel/12,linear

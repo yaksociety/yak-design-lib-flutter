@@ -1,0 +1,161 @@
+id,name
+19ccbeb0-5236-4925-9492-7671892dac79,.Card footer
+bacc0d19-2623-4d53-b5d0-2e606291765d,.Card header
+7d51e635-4f30-4408-9b51-b1778895ac55,.Legend
+0cc8b97f-2a91-4b9f-aaf7-683b3881e9ad,.Side menu header
+48ecdaca-3031-457a-b34f-bf92153e3466,7
+0f33c42a-2d77-42bb-8d90-4351a9e0b4d4,Accordion
+3d54ba92-d239-4463-88c2-0620a7e51783,Action-item
+11bb820c-e9e5-464f-a4ca-90f27d5e0a6f,Actions
+67a8cdca-9a70-43fc-ac8c-22e3393196cf,Additional-service
+5b35b04b-d54d-4597-b67d-ad5b9296f85d,address-picker
+7f9b36a2-5306-4010-affb-8e8017dddcd8,Alert
+d0983b5a-7ee2-4db0-a758-e563d3e9c7b8,Anatomy Dot
+3f3ccb95-aaf4-439f-b33f-e894ec1f831b,Android
+559113f8-c3e7-4300-be65-bb93fc49b11c,Avatar
+70137393-e401-4a2f-8bac-1128dcd99127,Avatar & description
+42b009a9-f8bb-48bc-957c-37fcb98f5616,Avatar group
+c669468e-e4a3-48b1-92ee-62a8ae25ae97,Badge
+ff7ca0c5-dc2e-4663-a59f-2c8e1db79261,Bank Logos
+a8fbd706-6f82-45d9-ae7e-67be95e77f95,Banner
+e9314c72-bfee-464c-ae8c-ac4dc5be2a6b,bottom-navigation
+1619420b-8032-4043-9459-37cd1b5ecd78,BottomSheet
+44a18e53-b497-4d30-8d38-0581370065a3,Breadcrumb
+8b8ddd89-39bc-43af-b0ad-7ff10e34ab7e,Button
+b9ce3137-c73b-45f4-9a19-6c13d6987408,Button Close
+2d8ec950-9212-4fb5-a41a-1c7609291381,Button group
+4ec1f459-79d6-4a46-be7d-880f2cb16da2,Button Love
+635bb6d9-d2ae-46e6-9717-7fd6f701ee14,Calendar
+b4342bac-0219-44a8-994a-a203a3bc2f23,Calendar Dropdown
+d8856301-af17-46b5-9205-5b43ec47f51d,Card-FinanceSummary
+9a40f1a4-663f-45b8-9ef3-56281bae26b0,Card-Message
+94901342-03de-4ce7-aa81-c9bb066909d4,Card-progress
+797af59e-cd07-40d7-8410-67a9718a0c67,Card-Transaction
+3aeded35-620f-4168-9e00-b1c40759bd36,Card-Transfer
+7350232c-ba60-4a41-b09c-8c7264742628,carousel
+9cea123f-9ed1-4810-8a16-b30183dfe266,Chart
+e13662f4-3e1e-4fc2-aff6-a73b71172ab2,Chat
+11d180b2-8df8-4ec8-abef-fa1bc01af1e1,Chat-Category
+66405bc7-f228-476d-bb10-5f90dcd0f658,Checkbox
+194f853f-43f1-4a13-8999-d31ba94dba3b,Checkbox group
+7b7c2062-9aa2-4ead-bb14-131cf6ab8592,chip
+9169036f-3619-429d-8fe5-a981d45e1196,Color
+547eef3a-2960-4d81-a5b4-070e9f095672,Comment
+b119c514-b775-4c15-b4a0-90d3923f4d0a,Component 1
+9f882987-5b05-46a2-aaae-9fbcf7bd1bc5,Component Icon
+7a632884-6b9d-486e-a7ee-a4b1c305436f,confirm-delegate
+279fda45-662b-4cdd-9e30-9eb2c836de97,Country
+6b49ecf6-7eb0-42a5-b7f8-deac2bab0e43,Credit Banner Balance
+137fce40-5834-4b87-b170-bed5e28b1d1d,Detail-expand
+5ecbbfdc-3576-4f4a-897b-c962340927a0,Display Date
+03821855-8a87-4978-8574-a0c3a310ad17,Display Icon
+837a967b-1a36-417f-aa01-a74b57fec8b2,Divider stepper
+bc322855-8a81-403a-83ca-200f367e3851,Document Action-item
+3b21e3fd-d9fd-4de8-a01e-9cdddc97c579,Document-state
+4ad20b71-38cb-471f-9022-b3949fff2ce2,Earning-progress
+caaf10db-d3f2-46c7-b01a-b9bc06c7ad4a,Earning-rate
+ee25f588-bda1-4e19-af3c-6f4c20b34549,Earning-Type
+55274417-9b09-4a49-8310-e737ac5287de,EarningActivityCard
+f68eb453-9e8e-4fa1-a389-7254f060f98b,EarningSummary
+88aad2d9-ee08-4814-8c7d-fdcdc0e8abb4,element
+7dfbc518-b0da-4e80-b85a-a9bd8103a01d,Feature-card
+7aed33d2-8d1e-47f1-bc15-a6a61eeb7c2e,Feature-comment
+947ac4ff-7fd1-4eea-a7e1-56ae648d3d0d,Feature-Progress
+ad27a2f6-1f28-4aa2-9883-c7db74331863,Feature-vote-CTA
+41f2014c-2d00-41e3-adaf-d500842e8166,File extensions icon
+bddc0577-3f7b-4ede-a7a7-a7f4d452a327,File Upload
+1b4dbadb-be03-4b99-88ee-200c7f57881e,filter-chip
+e94521a8-53cc-4981-95a4-0c8b44920fea,FinanceSummary
+d88be8da-6994-43ea-ab29-8fea7288f04a,FooterSheet
+60f90f26-1d76-4a35-82e0-7ecb7deba9e6,Freame Icon
+270f5172-966b-4f1c-8485-75d140322278,Headline
+debfc7ee-f04f-4724-8aed-1736a50a49c9,hint text
+25377669-77b3-4a86-b954-563eabd2d644,home-indicator
+6e49b513-463b-40f2-9ad1-f324483f3a73,hourglass
+a584f961-2c37-4952-8b5b-268ff5546e34,Icon
+e909b9dc-7e40-4b13-9472-c5ad134bc4e8,Icon Button
+23855b27-0db7-4283-a07c-db9bf452ad1d,ID Card
+2541c119-4cfd-4e01-8c50-d5a93a34b158,illustration
+8ea6db09-45f6-42f5-9754-a28f650bb415,image
+0493541a-4c98-4b02-be8a-103eb56cf9aa,Incentive
+16995272-2520-400f-9ee3-6247db273640,Indicator
+50aaecdf-89f5-4cfc-a10d-22dc86e038c7,Input field
+ffaf0f8b-d746-4562-aae5-675462ad41af,Input Text area
+e91355ab-1907-4422-8eea-785c1c35c9f2,Input Verification code
+82a258b3-8395-4f19-8e3a-5e3f7e055a32,iOS-push-notifications
+cd9c7e9f-c4ed-4c6b-9a44-d9f5454db8b0,iPhone
+5765dd88-d107-42f1-b11c-8a235058af26,Job-type
+fa698574-a4f4-4685-a010-48d164f16b77,Label
+1140dbcd-49ff-4397-a3dd-36cd419d7fa1,location
+2656a1f8-d9f2-4a77-a51a-91dc253c0385,logo-app
+981df66b-edbc-4919-9f87-22533c53a3b9,Map Pointer
+573d5724-dcd0-43eb-80b3-ca86dc4db00c,Mobile Segmented Control
+b129d553-0fcc-4024-a497-0ddb6f56eb91,MobileScreenTemplate
+d8935fa0-63be-43e2-b706-0d4deccd2ad7,Modal
+2c020d81-84a5-4fb5-8835-fbd2a7ce7d06,Modal BG
+29add46a-17a7-4ef3-8a09-99429a07ba42,Notification
+864afd63-aff1-4eb8-8ee5-b9b503f7bac5,Notification-Card
+6047562c-25db-47a9-a3c4-f99e83ec1710,Pagination
+9324fd9d-fbe6-4bf5-bf7d-949b95de37bd,Parcel-type
+aa51a7f2-8c13-49ff-85c8-93c5c396f545,Password indicator
+5ab46010-01c7-4111-87f4-dca4113acb00,Payment
+1fd0f883-ad08-4176-a918-fab0cf67d4f3,Payment Logos
+dc9d43e0-0604-4114-8372-c843c17b0ca8,payment-fail
+34c26b4d-86c5-49c7-a882-9d1b48541839,Payout-expand
+2ed7c553-93c4-4784-bbce-a00678e12289,Payout-state
+33c2f843-1dd1-4d4a-a12e-ab06975b0523,Phone Number
+ac142a39-6749-47f6-ad26-24078e89caf1,Pie Chart
+9a18cc9e-44a6-4dd8-a39a-a45302ec4122,placement
+9ef5a473-b36d-48d4-bd0d-8a169f3b4d6f,placement
+5de9d202-e606-426b-a865-1299f3996eb7,process
+4472756c-fa41-4cbb-8df6-5ca15fdbb908,processCard
+36bf808b-3603-48e8-ae58-7e5cc859d144,Profile-rider
+72437939-9842-4794-acc8-837cd227dfd7,progress
+ff7c52c2-72b7-46f5-8236-a3462ad58d3e,Progress bar
+4a208180-1de8-4627-9648-17e1c8816d42,Progress circle
+19110752-fa6d-49a7-bb1d-6488911c5891,Progress semicircle
+140bb4a7-9478-481c-acb5-e8c1eab9aa89,Project status
+5964fc04-807d-4cb3-b190-48a1b6e3e432,Rating
+6589b028-ddca-4990-a6a9-36e82a445904,Rating
+407e0150-141c-493c-85e6-9adbce286e60,Rating
+97798a23-6919-4ba6-b804-f6fd2abd4fe2,Rating-Chip
+76bd9c95-11e3-49be-9b22-bb0457dd05b3,referral-bonus
+b44fe442-7028-410e-8b5e-15bb3bd79ebe,referral-code-card
+265e9206-7875-4f19-8ae5-900a0509ca52,referral-stepper
+0d751f2b-f487-47f2-95bd-9fe7fd542dd7,Result-State
+0659d4c1-c870-4d70-8d0d-53b307c1bff3,RichtextEditor
+8fba2b64-c77e-4452-b501-ca8586ddccaf,RichtextToolbar
+5cc2f573-df31-4ad9-82ac-8d0c01eae31e,Rider-type
+88598f34-cf15-49ab-84ca-31310ad7a2b7,Scroll bar
+35d4dd0c-b6c8-4522-ac64-c98dca2dfdd8,Search
+c1958c14-b748-442c-bd86-8ee75ccb1171,Search Action
+c6a116df-0c63-46e6-b2de-72a02b27be49,Search Display
+ee906da2-8568-4ae7-90ea-b81214a4ea68,Section-Header
+909b329b-b9cf-42cd-b823-1ab1e1ef454c,Selector-Group
+2bae44a0-141c-4b3a-b2d5-13c6b1a58147,Selects
+3a395072-f3a3-4e8a-af2c-04a3425fc4a0,Slider
+bbb53cf8-3c42-499d-851c-16b6ed78f771,Social button groups
+a2c476df-7f27-4dbb-9409-a2b78141c2e4,Social platforms logos
+baa2b3c5-7986-43d8-a94e-a211948655b1,status-bar
+1cc90f08-abcd-49aa-818c-ddaf505e5684,Stepper
+e9aefb81-3489-44d2-9188-71df6f6a67c4,Steps
+0a39a831-f6e0-4cc1-9ff8-1e26bb272722,Swipe left action
+b0d70e73-6c38-4a56-851a-386c01f13851,Tabs
+e133a1fc-d343-4b0b-931d-e570f1cbaad8,Text Icon
+fe99d0fd-f59a-47ef-8743-70ea295953a2,Thumbnail
+f1f88470-b8c0-4963-bba3-346514a99d70,Tile
+dfe45b70-93e4-4084-86af-13be40891d0a,Title
+2db4d585-2b1e-4b28-a9a5-4faf0d2406bd,Title-Progress
+ae8974db-d56d-470c-8154-82ca5074ee5b,Toggle
+a6326033-d172-4ebc-9898-bc75092dc8cc,Tool tip
+7d84ce69-7956-43f4-8342-b5a29a75a39f,top-navigation
+1faae90e-47ac-4c51-beee-cb884ff9d629,TransferStatus
+f9a97aaa-9609-4f38-8e70-37de4803c7e7,User-comment-card
+f66c050d-c7ab-4ee8-a05f-9be31693aa39,Vehicle
+f88a6aa5-8efe-4a9c-aba4-a9f37fa9c409,Vehicle
+c0c5407e-48b0-42ad-982e-145ada8df3a0,Venn Chart
+f095b0dd-689e-490c-a0f0-6f9f6b820c8b,Video Call UI
+31ea8f93-69fc-41dd-bd7b-052a8935c3dc,Video player
+1fc981fe-3e97-4412-8eb0-38f98ba7e4c7,World map
+0be2750f-4bfa-4204-acb1-9fc14f884f6c,YAK-Expression
+9d1c1837-1d9f-4547-99b1-96fa917b736d,YAK-Poses

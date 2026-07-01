@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "supernova": {
+      "url": "https://mcp.supernova.io/mcp/ds/YOUR_DESIGN_SYSTEM_ID"
+    }
+  }
+}
