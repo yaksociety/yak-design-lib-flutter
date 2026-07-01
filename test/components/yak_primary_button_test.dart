@@ -28,6 +28,25 @@ void main() {
     expect(tapped, isTrue);
   });
 
+  testWidgets('YakPrimaryButton uses textIconsBaseMain for label color', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: YakTheme.light(),
+        home: Scaffold(
+          body: YakPrimaryButton(label: 'Continue', onPressed: () {}),
+        ),
+      ),
+    );
+
+    final scheme = Theme.of(
+      tester.element(find.byType(YakPrimaryButton)),
+    ).colorScheme;
+    final text = tester.widget<Text>(find.text('Continue'));
+    expect(text.style?.color, scheme.onPrimary);
+  });
+
   testWidgets('YakPrimaryButton shows loading indicator when isLoading', (
     WidgetTester tester,
   ) async {

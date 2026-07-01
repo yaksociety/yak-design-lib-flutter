@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/yak_theme_extension.dart';
+import '../../tokens/generated/text_styles.dart';
 
 /// Shared layout and loading behavior for Yak button widgets.
 abstract final class YakButtonHelpers {
@@ -23,8 +24,11 @@ abstract final class YakButtonHelpers {
         child: CircularProgressIndicator(strokeWidth: 2, color: loadingColor),
       );
     }
-    // need text black color use from ya
-    return Text(label, style: TextStyle(color: context.yakTheme.textSecondary));
+    final foregroundColor = DefaultTextStyle.of(context).style.color;
+    return Text(
+      label,
+      style: AppTextStyles.textMSemibold.copyWith(color: foregroundColor),
+    );
   }
 
   static OutlinedBorder shape(YakThemeExtension yakTheme) {
