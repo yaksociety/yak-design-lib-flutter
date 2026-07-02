@@ -30,7 +30,7 @@ abstract final class YakInputTheme {
   }
 
   static TextStyle labelStyle({bool isDestructive = false}) {
-    return AppTextStyles.textMSemibold.copyWith(
+    return AppTextStyles.textSMedium.copyWith(
       color: isDestructive
           ? AppColors.textIconsDanger
           : AppColors.textIconsBaseMain,

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../theme/yak_theme_extension.dart';
+import '../../tokens/generated/colors.dart';
+import '../../tokens/generated/text_styles.dart';
 import '../buttons/yak_primary_button.dart';
 import 'yak_input_theme.dart';
 
@@ -24,14 +26,13 @@ class YakLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final color = isDestructive
+        ? AppColors.textIconsDanger
+        : AppColors.textIconsBaseMain;
     final style = switch (size) {
-      YakInputSize.sm => YakInputTheme.labelStyle(
-        isDestructive: isDestructive,
-      ).copyWith(fontSize: 14),
+      YakInputSize.sm => AppTextStyles.textXSMedium.copyWith(color: color),
       YakInputSize.md => YakInputTheme.labelStyle(isDestructive: isDestructive),
-      YakInputSize.lg => YakInputTheme.labelStyle(
-        isDestructive: isDestructive,
-      ).copyWith(fontSize: 18),
+      YakInputSize.lg => AppTextStyles.textMMedium.copyWith(color: color),
     };
 
     return Text.rich(
