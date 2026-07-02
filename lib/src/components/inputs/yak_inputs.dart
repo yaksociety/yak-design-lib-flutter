@@ -237,6 +237,7 @@ class YakTextArea extends StatelessWidget {
     this.controller,
     this.onChanged,
     this.minLines = 4,
+    this.isRequired = false,
     this.size = YakInputSize.md,
   });
 
@@ -247,6 +248,7 @@ class YakTextArea extends StatelessWidget {
   final TextEditingController? controller;
   final ValueChanged<String>? onChanged;
   final int minLines;
+  final bool isRequired;
   final YakInputSize size;
 
   @override
@@ -258,6 +260,7 @@ class YakTextArea extends StatelessWidget {
       errorText: errorText,
       controller: controller,
       onChanged: onChanged,
+      isRequired: isRequired,
       keyboardType: TextInputType.multiline,
       maxLines: minLines,
       minLines: minLines,
