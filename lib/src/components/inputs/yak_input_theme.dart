@@ -5,7 +5,7 @@ import '../../tokens/generated/dimensions.dart';
 import '../../tokens/generated/radii.dart';
 import '../../tokens/generated/text_styles.dart';
 
-/// Supernova Input field sizes (sm / md / lg).
+/// Supernova input sizes (S / M / L — no XS for inputs).
 enum YakInputSize { sm, md, lg }
 
 /// Supernova Input field visual states.
@@ -16,16 +16,16 @@ abstract final class YakInputTheme {
   static double heightFor(YakInputSize size) {
     return switch (size) {
       YakInputSize.sm => AppDimensions.mainSystemNum40,
-      YakInputSize.md => AppDimensions.mainSystemNum48,
-      YakInputSize.lg => AppDimensions.mainSystemNum56,
+      YakInputSize.md => AppDimensions.mainSystemNum44,
+      YakInputSize.lg => AppDimensions.mainSystemNum48,
     };
   }
 
   static double verificationBoxSize(YakInputSize size) {
     return switch (size) {
       YakInputSize.sm => AppDimensions.mainSystemNum40,
-      YakInputSize.md => AppDimensions.mainSystemNum48,
-      YakInputSize.lg => AppDimensions.mainSystemNum56,
+      YakInputSize.md => AppDimensions.mainSystemNum44,
+      YakInputSize.lg => AppDimensions.mainSystemNum48,
     };
   }
 

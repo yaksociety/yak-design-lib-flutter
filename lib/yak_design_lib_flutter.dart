@@ -1,6 +1,7 @@
 // Buttons
 export 'src/components/buttons/yak_actions.dart';
 export 'src/components/buttons/yak_button.dart';
+export 'src/components/buttons/yak_button_helpers.dart';
 export 'src/components/buttons/yak_destructive_button.dart';
 export 'src/components/buttons/yak_primary_button.dart';
 export 'src/components/buttons/yak_secondary_button.dart';

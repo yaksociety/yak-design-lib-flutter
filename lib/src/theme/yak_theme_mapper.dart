@@ -104,8 +104,9 @@ abstract final class YakThemeMapper {
         disabledForegroundColor: AppColors.textIconsDisabled,
         padding: const EdgeInsets.symmetric(
           horizontal: AppDimensions.mainSystemNum32,
-          vertical: AppDimensions.mainSystemNum16,
         ),
+        minimumSize: const Size(0, AppDimensions.mainSystemNum44),
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         textStyle: AppTextStyles.textMSemibold.copyWith(
           color: AppColors.textIconsBaseMain,
         ),
@@ -122,8 +123,9 @@ abstract final class YakThemeMapper {
         disabledForegroundColor: AppColors.textIconsDisabled,
         padding: const EdgeInsets.symmetric(
           horizontal: AppDimensions.mainSystemNum32,
-          vertical: AppDimensions.mainSystemNum16,
         ),
+        minimumSize: const Size(0, AppDimensions.mainSystemNum44),
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         textStyle: AppTextStyles.textMSemibold.copyWith(
           color: AppColors.textIconsBaseMain,
         ),
@@ -139,8 +141,9 @@ abstract final class YakThemeMapper {
         side: const BorderSide(color: AppColors.strokeBase),
         padding: const EdgeInsets.symmetric(
           horizontal: AppDimensions.mainSystemNum32,
-          vertical: AppDimensions.mainSystemNum16,
         ),
+        minimumSize: const Size(0, AppDimensions.mainSystemNum44),
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         textStyle: AppTextStyles.textMSemibold,
       ),
     );
@@ -154,8 +157,9 @@ abstract final class YakThemeMapper {
         side: const BorderSide(color: AppColors.strokeBaseDark),
         padding: const EdgeInsets.symmetric(
           horizontal: AppDimensions.mainSystemNum32,
-          vertical: AppDimensions.mainSystemNum16,
         ),
+        minimumSize: const Size(0, AppDimensions.mainSystemNum44),
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         textStyle: AppTextStyles.textMSemibold,
       ),
     );
@@ -168,8 +172,9 @@ abstract final class YakThemeMapper {
         disabledForegroundColor: AppColors.textIconsDisabled,
         padding: const EdgeInsets.symmetric(
           horizontal: AppDimensions.mainSystemNum16,
-          vertical: AppDimensions.mainSystemNum12,
         ),
+        minimumSize: const Size(0, AppDimensions.mainSystemNum44),
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         textStyle: AppTextStyles.textMSemibold,
       ),
     );
@@ -182,8 +187,9 @@ abstract final class YakThemeMapper {
         disabledForegroundColor: AppColors.textIconsDisabled,
         padding: const EdgeInsets.symmetric(
           horizontal: AppDimensions.mainSystemNum16,
-          vertical: AppDimensions.mainSystemNum12,
         ),
+        minimumSize: const Size(0, AppDimensions.mainSystemNum44),
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         textStyle: AppTextStyles.textMSemibold,
       ),
     );

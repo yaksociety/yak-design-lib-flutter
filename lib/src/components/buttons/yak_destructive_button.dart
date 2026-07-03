@@ -11,12 +11,14 @@ class YakDestructiveButton extends StatelessWidget {
     required this.onPressed,
     this.isLoading = false,
     this.isExpanded = false,
+    this.size = YakButtonSize.md,
   });
 
   final String label;
   final VoidCallback? onPressed;
   final bool isLoading;
   final bool isExpanded;
+  final YakButtonSize size;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,12 @@ class YakDestructiveButton extends StatelessWidget {
         backgroundColor: yakTheme.danger,
         foregroundColor: Theme.of(context).colorScheme.onError,
         disabledBackgroundColor: Theme.of(context).disabledColor,
-        minimumSize: Size(isExpanded ? double.infinity : 0, YakButtonHelpers.minHeight),
+        minimumSize: YakButtonHelpers.minimumSize(
+          size: size,
+          isExpanded: isExpanded,
+        ),
+        padding: YakButtonHelpers.paddingFor(size),
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         shape: YakButtonHelpers.shape(yakTheme),
       ),
       child: YakButtonHelpers.child(

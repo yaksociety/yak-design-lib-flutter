@@ -1,14 +1,76 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/yak_theme_extension.dart';
+import '../../tokens/generated/dimensions.dart';
 import '../../tokens/generated/text_styles.dart';
+
+/// Supernova button sizes (XS / S / M / L).
+enum YakButtonSize {
+  /// 36px — button only.
+  xs,
+
+  /// 40px (S).
+  sm,
+
+  /// 44px (M, default).
+  md,
+
+  /// 48px (L).
+  lg,
+}
 
 /// Shared layout and loading behavior for Yak button widgets.
 abstract final class YakButtonHelpers {
-  static const double minHeight = 40;
+  static double heightFor(YakButtonSize size) {
+    return switch (size) {
+      YakButtonSize.xs => AppDimensions.mainSystemNum36,
+      YakButtonSize.sm => AppDimensions.mainSystemNum40,
+      YakButtonSize.md => AppDimensions.mainSystemNum44,
+      YakButtonSize.lg => AppDimensions.mainSystemNum48,
+    };
+  }
+
+  static EdgeInsets paddingFor(YakButtonSize size) {
+    return switch (size) {
+      YakButtonSize.xs => const EdgeInsets.symmetric(
+        horizontal: AppDimensions.mainSystemNum12,
+      ),
+      YakButtonSize.sm => const EdgeInsets.symmetric(
+        horizontal: AppDimensions.mainSystemNum24,
+      ),
+      YakButtonSize.md => const EdgeInsets.symmetric(
+        horizontal: AppDimensions.mainSystemNum32,
+      ),
+      YakButtonSize.lg => const EdgeInsets.symmetric(
+        horizontal: AppDimensions.mainSystemNum32,
+      ),
+    };
+  }
 
   static bool isDisabled(VoidCallback? onPressed, bool isLoading) =>
       onPressed == null || isLoading;
+
+  static Size minimumSize({
+    required YakButtonSize size,
+    required bool isExpanded,
+  }) {
+    return Size(isExpanded ? double.infinity : 0, heightFor(size));
+  }
+
+  static ButtonStyle baseStyle({
+    required YakThemeExtension yakTheme,
+    required YakButtonSize size,
+    required bool isExpanded,
+  }) {
+    return ButtonStyle(
+      minimumSize: WidgetStatePropertyAll(
+        minimumSize(size: size, isExpanded: isExpanded),
+      ),
+      padding: WidgetStatePropertyAll(paddingFor(size)),
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      shape: WidgetStatePropertyAll(shape(yakTheme)),
+    );
+  }
 
   static Widget child({
     required BuildContext context,

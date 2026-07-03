@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../theme/yak_theme_extension.dart';
 import '../display/yak_display_icon.dart';
+import 'yak_button_helpers.dart';
 
 /// Supernova Button styles (Display Icon / Button variants).
 enum YakButtonStyle {
@@ -24,6 +25,7 @@ class YakButton extends StatelessWidget {
     required this.label,
     required this.onPressed,
     this.style = YakButtonStyle.primary,
+    this.size = YakButtonSize.md,
     this.isLoading = false,
     this.isExpanded = false,
     this.leading,
@@ -33,6 +35,7 @@ class YakButton extends StatelessWidget {
   final String label;
   final VoidCallback? onPressed;
   final YakButtonStyle style;
+  final YakButtonSize size;
   final bool isLoading;
   final bool isExpanded;
   final Widget? leading;
@@ -118,7 +121,9 @@ class YakButton extends StatelessWidget {
     return FilledButton.styleFrom(
       backgroundColor: bg,
       foregroundColor: fg,
-      minimumSize: const Size(0, 48),
+      minimumSize: YakButtonHelpers.minimumSize(size: size, isExpanded: false),
+      padding: YakButtonHelpers.paddingFor(size),
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(yakTheme.radiusMd),
       ),
@@ -127,7 +132,9 @@ class YakButton extends StatelessWidget {
 
   ButtonStyle _outlinedStyle(BuildContext context, YakThemeExtension yakTheme) {
     return OutlinedButton.styleFrom(
-      minimumSize: const Size(0, 48),
+      minimumSize: YakButtonHelpers.minimumSize(size: size, isExpanded: false),
+      padding: YakButtonHelpers.paddingFor(size),
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(yakTheme.radiusMd),
       ),
@@ -137,7 +144,9 @@ class YakButton extends StatelessWidget {
 
   ButtonStyle _textStyle(BuildContext context, YakThemeExtension yakTheme) {
     return TextButton.styleFrom(
-      minimumSize: const Size(0, 48),
+      minimumSize: YakButtonHelpers.minimumSize(size: size, isExpanded: false),
+      padding: YakButtonHelpers.paddingFor(size),
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(yakTheme.radiusMd),
       ),
@@ -196,9 +205,7 @@ class _YakLoveButtonState extends State<YakLoveButton> {
               setState(() => _isLoved = !_isLoved);
               widget.onChanged!(_isLoved);
             },
-      style: _isLoved
-          ? YakDisplayIconStyle.danger
-          : YakDisplayIconStyle.ghost,
+      style: _isLoved ? YakDisplayIconStyle.danger : YakDisplayIconStyle.ghost,
       size: widget.size,
     );
   }
