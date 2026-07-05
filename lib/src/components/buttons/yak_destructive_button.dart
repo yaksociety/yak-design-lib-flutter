@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/yak_theme_extension.dart';
+import '../../tokens/generated/colors.dart';
 import 'yak_button_helpers.dart';
 
 /// Destructive action button for irreversible or dangerous operations.
@@ -29,8 +30,9 @@ class YakDestructiveButton extends StatelessWidget {
       onPressed: isDisabled ? null : onPressed,
       style: FilledButton.styleFrom(
         backgroundColor: yakTheme.danger,
-        foregroundColor: Theme.of(context).colorScheme.onError,
-        disabledBackgroundColor: Theme.of(context).disabledColor,
+        foregroundColor: AppColors.textIconsOnColor,
+        disabledBackgroundColor: AppColors.backgroundDisabled,
+        disabledForegroundColor: yakTheme.textSecondary,
         minimumSize: YakButtonHelpers.minimumSize(
           size: size,
           isExpanded: isExpanded,
@@ -43,7 +45,10 @@ class YakDestructiveButton extends StatelessWidget {
         context: context,
         label: label,
         isLoading: isLoading,
-        loadingColor: Theme.of(context).colorScheme.onError,
+        loadingColor: AppColors.textIconsOnColor,
+        labelColor: isDisabled
+            ? yakTheme.textSecondary
+            : AppColors.textIconsOnColor,
       ),
     );
   }

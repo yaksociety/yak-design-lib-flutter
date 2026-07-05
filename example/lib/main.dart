@@ -124,7 +124,10 @@ class _LivePreviewPageState extends State<LivePreviewPage> {
           SizedBox(height: yakTheme.spacingSm),
           Text('Tapped $_tapCount'),
           SizedBox(height: yakTheme.spacingSm),
-          const YakSecondaryButton(label: 'Secondary', onPressed: null),
+          YakSecondaryButton(
+            label: 'Secondary',
+            onPressed: () => setState(() => _tapCount++),
+          ),
           SizedBox(height: yakTheme.spacingSm),
           YakDestructiveButton(label: 'Delete', onPressed: () {}),
           SizedBox(height: yakTheme.spacingSm),

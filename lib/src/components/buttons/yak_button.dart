@@ -101,10 +101,9 @@ class YakButton extends StatelessWidget {
 
   Color _loadingColor(BuildContext context) {
     return switch (style) {
-      YakButtonStyle.primary ||
-      YakButtonStyle.danger ||
-      YakButtonStyle.success ||
-      YakButtonStyle.warning => Theme.of(context).colorScheme.onPrimary,
+      YakButtonStyle.primary => Theme.of(context).colorScheme.onPrimary,
+      YakButtonStyle.danger => AppColors.textIconsOnColor,
+      YakButtonStyle.success || YakButtonStyle.warning => Colors.white,
       YakButtonStyle.secondary => YakButtonHelpers.secondaryColors(context).$2,
       _ => Theme.of(context).colorScheme.primary,
     };
@@ -122,7 +121,7 @@ class YakButton extends StatelessWidget {
 
     final scheme = Theme.of(context).colorScheme;
     final (bg, fg) = switch (style) {
-      YakButtonStyle.danger => (yakTheme.danger, scheme.onError),
+      YakButtonStyle.danger => (yakTheme.danger, AppColors.textIconsOnColor),
       YakButtonStyle.success => (yakTheme.success, Colors.white),
       YakButtonStyle.warning => (yakTheme.warning, Colors.white),
       _ => (scheme.primary, scheme.onPrimary),

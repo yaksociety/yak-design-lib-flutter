@@ -105,10 +105,7 @@ abstract final class YakButtonHelpers {
   static (Color background, Color foreground) secondaryColors(
     BuildContext context,
   ) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    return isDark
-        ? (AppColors.backgroundBaseDarkSecond, AppColors.textIconsOnColor)
-        : (AppColors.backgroundBaseSecond, AppColors.textIconsBaseMain);
+    return (AppColors.backgroundPrimarySecond, AppColors.textIconsBaseMain);
   }
 
   static ButtonStyle secondaryFilledStyle({
