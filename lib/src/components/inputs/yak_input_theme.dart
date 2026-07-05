@@ -45,9 +45,11 @@ abstract final class YakInputTheme {
     );
   }
 
-  static TextStyle fieldTextStyle() {
+  static TextStyle fieldTextStyle({bool enabled = true}) {
     return AppTextStyles.textMRegular.copyWith(
-      color: AppColors.textIconsBaseMain,
+      color: enabled
+          ? AppColors.textIconsBaseMain
+          : AppColors.textIconsDisabled,
     );
   }
 

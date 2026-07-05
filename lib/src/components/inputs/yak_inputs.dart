@@ -209,7 +209,7 @@ class _YakTextFieldState extends State<YakTextField> {
           textAlignVertical: widget.maxLines > 1
               ? TextAlignVertical.top
               : TextAlignVertical.center,
-          style: YakInputTheme.fieldTextStyle(),
+          style: YakInputTheme.fieldTextStyle(enabled: widget.enabled),
           decoration: YakInputTheme.decoration(
             context: context,
             hintText: widget.hint,
