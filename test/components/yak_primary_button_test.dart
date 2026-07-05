@@ -47,6 +47,25 @@ void main() {
     expect(text.style?.color, scheme.onPrimary);
   });
 
+  testWidgets('YakPrimaryButton uses textSecondary when disabled', (
+    WidgetTester tester,
+  ) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: YakTheme.light(),
+        home: Scaffold(
+          body: YakPrimaryButton(label: 'Continue', onPressed: null),
+        ),
+      ),
+    );
+
+    final yakTheme = Theme.of(
+      tester.element(find.byType(YakPrimaryButton)),
+    ).extension<YakThemeExtension>()!;
+    final text = tester.widget<Text>(find.text('Continue'));
+    expect(text.style?.color, yakTheme.textSecondary);
+  });
+
   testWidgets('YakPrimaryButton shows loading indicator when isLoading', (
     WidgetTester tester,
   ) async {

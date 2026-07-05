@@ -77,6 +77,7 @@ abstract final class YakButtonHelpers {
     required String label,
     required bool isLoading,
     required Color? loadingColor,
+    Color? labelColor,
   }) {
     if (isLoading) {
       final yakTheme = context.yakTheme;
@@ -86,7 +87,8 @@ abstract final class YakButtonHelpers {
         child: CircularProgressIndicator(strokeWidth: 2, color: loadingColor),
       );
     }
-    final foregroundColor = DefaultTextStyle.of(context).style.color;
+    final foregroundColor =
+        labelColor ?? DefaultTextStyle.of(context).style.color;
     return Text(
       label,
       style: AppTextStyles.textMSemibold.copyWith(color: foregroundColor),

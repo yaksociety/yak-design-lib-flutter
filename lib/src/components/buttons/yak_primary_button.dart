@@ -23,6 +23,7 @@ class YakPrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final yakTheme = context.yakTheme;
+    final scheme = Theme.of(context).colorScheme;
     final isDisabled = YakButtonHelpers.isDisabled(onPressed, isLoading);
 
     return FilledButton(
@@ -35,12 +36,14 @@ class YakPrimaryButton extends StatelessWidget {
         padding: YakButtonHelpers.paddingFor(size),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         shape: YakButtonHelpers.shape(yakTheme),
+        disabledForegroundColor: yakTheme.textSecondary,
       ),
       child: YakButtonHelpers.child(
         context: context,
         label: label,
         isLoading: isLoading,
-        loadingColor: Theme.of(context).colorScheme.onPrimary,
+        loadingColor: scheme.onPrimary,
+        labelColor: isDisabled ? yakTheme.textSecondary : null,
       ),
     );
   }
