@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/yak_theme_extension.dart';
+import '../../tokens/generated/text_styles.dart';
 
 /// Semantic alert variants matching Supernova Alert states.
 enum YakAlertVariant { info, destructive, gray, success, warning }
@@ -31,7 +32,7 @@ class YakAlert extends StatelessWidget {
   Widget build(BuildContext context) {
     final yakTheme = context.yakTheme;
     final colors = _resolveColors(context, yakTheme);
-    final borderRadius = BorderRadius.circular(yakTheme.radiusSm);
+    final borderRadius = BorderRadius.circular(yakTheme.radiusMd);
     final resolvedIcon = icon ?? _defaultIcon();
 
     return DecoratedBox(
@@ -56,18 +57,17 @@ class YakAlert extends StatelessWidget {
                   if (title != null) ...[
                     Text(
                       title!,
-                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                      style: AppTextStyles.textMSemibold.copyWith(
                         color: colors.foreground,
-                        fontWeight: FontWeight.w600,
                       ),
                     ),
                     SizedBox(height: yakTheme.spacingXs),
                   ],
                   Text(
                     message,
-                    style: Theme.of(
-                      context,
-                    ).textTheme.bodyMedium?.copyWith(color: colors.foreground),
+                    style: AppTextStyles.textXSRegular.copyWith(
+                      color: colors.foreground,
+                    ),
                   ),
                 ],
               ),
