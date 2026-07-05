@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/yak_theme_extension.dart';
+import '../../tokens/generated/colors.dart';
 import '../display/yak_display_icon.dart';
 import 'yak_button_helpers.dart';
 
@@ -110,9 +111,17 @@ class YakButton extends StatelessWidget {
   }
 
   ButtonStyle _filledStyle(BuildContext context, YakThemeExtension yakTheme) {
+    if (style == YakButtonStyle.secondary) {
+      return YakButtonHelpers.secondaryFilledStyle(
+        context: context,
+        yakTheme: yakTheme,
+        size: size,
+        isExpanded: false,
+      );
+    }
+
     final scheme = Theme.of(context).colorScheme;
     final (bg, fg) = switch (style) {
-      YakButtonStyle.secondary => YakButtonHelpers.secondaryColors(context),
       YakButtonStyle.danger => (yakTheme.danger, scheme.onError),
       YakButtonStyle.success => (yakTheme.success, Colors.white),
       YakButtonStyle.warning => (yakTheme.warning, Colors.white),
@@ -122,6 +131,8 @@ class YakButton extends StatelessWidget {
     return FilledButton.styleFrom(
       backgroundColor: bg,
       foregroundColor: fg,
+      disabledBackgroundColor: AppColors.backgroundDisabled,
+      disabledForegroundColor: yakTheme.textSecondary,
       minimumSize: YakButtonHelpers.minimumSize(size: size, isExpanded: false),
       padding: YakButtonHelpers.paddingFor(size),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -133,13 +144,17 @@ class YakButton extends StatelessWidget {
 
   ButtonStyle _outlinedStyle(BuildContext context, YakThemeExtension yakTheme) {
     return OutlinedButton.styleFrom(
+      backgroundColor: AppColors.backgroundBaseMain,
+      foregroundColor: AppColors.textIconsBaseMain,
+      disabledBackgroundColor: AppColors.backgroundDisabled,
+      disabledForegroundColor: yakTheme.textSecondary,
       minimumSize: YakButtonHelpers.minimumSize(size: size, isExpanded: false),
       padding: YakButtonHelpers.paddingFor(size),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(yakTheme.radiusMd),
       ),
-      side: BorderSide(color: yakTheme.borderDefault),
+      side: const BorderSide(color: AppColors.strokeBase),
     );
   }
 

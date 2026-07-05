@@ -123,7 +123,7 @@ abstract final class YakButtonHelpers {
       backgroundColor: background,
       foregroundColor: foreground,
       disabledBackgroundColor: AppColors.backgroundDisabled,
-      disabledForegroundColor: AppColors.textIconsDisabled,
+      disabledForegroundColor: yakTheme.textSecondary,
       minimumSize: minimumSize(size: size, isExpanded: isExpanded),
       padding: paddingFor(size),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/yak_theme_extension.dart';
+import '../../tokens/generated/colors.dart';
 import 'yak_button_helpers.dart';
 
 /// Primary action button for the Yak design system.
@@ -29,6 +30,10 @@ class YakPrimaryButton extends StatelessWidget {
     return FilledButton(
       onPressed: isDisabled ? null : onPressed,
       style: FilledButton.styleFrom(
+        backgroundColor: scheme.primary,
+        foregroundColor: scheme.onPrimary,
+        disabledBackgroundColor: AppColors.backgroundDisabled,
+        disabledForegroundColor: yakTheme.textSecondary,
         minimumSize: YakButtonHelpers.minimumSize(
           size: size,
           isExpanded: isExpanded,
@@ -36,7 +41,6 @@ class YakPrimaryButton extends StatelessWidget {
         padding: YakButtonHelpers.paddingFor(size),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         shape: YakButtonHelpers.shape(yakTheme),
-        disabledForegroundColor: yakTheme.textSecondary,
       ),
       child: YakButtonHelpers.child(
         context: context,
