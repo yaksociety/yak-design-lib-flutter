@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../theme/yak_theme_extension.dart';
 import 'yak_button_helpers.dart';
 
-/// Outlined secondary action button.
+/// Filled secondary action button (same layout as [YakPrimaryButton]).
 class YakSecondaryButton extends StatelessWidget {
   const YakSecondaryButton({
     super.key,
@@ -24,24 +24,22 @@ class YakSecondaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final yakTheme = context.yakTheme;
     final isDisabled = YakButtonHelpers.isDisabled(onPressed, isLoading);
-    final colorScheme = Theme.of(context).colorScheme;
+    final (_, foreground) = YakButtonHelpers.secondaryColors(context);
 
-    return OutlinedButton(
+    return FilledButton(
       onPressed: isDisabled ? null : onPressed,
-      style: OutlinedButton.styleFrom(
-        minimumSize: YakButtonHelpers.minimumSize(
-          size: size,
-          isExpanded: isExpanded,
-        ),
-        padding: YakButtonHelpers.paddingFor(size),
-        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        shape: YakButtonHelpers.shape(yakTheme),
+      style: YakButtonHelpers.secondaryFilledStyle(
+        context: context,
+        yakTheme: yakTheme,
+        size: size,
+        isExpanded: isExpanded,
       ),
       child: YakButtonHelpers.child(
         context: context,
         label: label,
         isLoading: isLoading,
-        loadingColor: colorScheme.primary,
+        loadingColor: foreground,
+        labelColor: isDisabled ? yakTheme.textSecondary : null,
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/yak_theme_extension.dart';
+import '../../tokens/generated/colors.dart';
 import '../../tokens/generated/dimensions.dart';
 import '../../tokens/generated/text_styles.dart';
 
@@ -98,6 +99,35 @@ abstract final class YakButtonHelpers {
   static OutlinedBorder shape(YakThemeExtension yakTheme) {
     return RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(yakTheme.radiusMd),
+    );
+  }
+
+  static (Color background, Color foreground) secondaryColors(
+    BuildContext context,
+  ) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return isDark
+        ? (AppColors.backgroundBaseDarkSecond, AppColors.textIconsOnColor)
+        : (AppColors.backgroundBaseSecond, AppColors.textIconsBaseMain);
+  }
+
+  static ButtonStyle secondaryFilledStyle({
+    required BuildContext context,
+    required YakThemeExtension yakTheme,
+    required YakButtonSize size,
+    required bool isExpanded,
+  }) {
+    final (background, foreground) = secondaryColors(context);
+
+    return FilledButton.styleFrom(
+      backgroundColor: background,
+      foregroundColor: foreground,
+      disabledBackgroundColor: AppColors.backgroundDisabled,
+      disabledForegroundColor: AppColors.textIconsDisabled,
+      minimumSize: minimumSize(size: size, isExpanded: isExpanded),
+      padding: paddingFor(size),
+      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      shape: shape(yakTheme),
     );
   }
 }

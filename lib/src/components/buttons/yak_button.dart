@@ -49,6 +49,7 @@ class YakButton extends StatelessWidget {
 
     final button = switch (style) {
       YakButtonStyle.primary ||
+      YakButtonStyle.secondary ||
       YakButtonStyle.danger ||
       YakButtonStyle.success ||
       YakButtonStyle.warning => FilledButton(
@@ -56,9 +57,7 @@ class YakButton extends StatelessWidget {
         style: _filledStyle(context, yakTheme),
         child: child,
       ),
-      YakButtonStyle.secondary ||
-      YakButtonStyle.outline ||
-      YakButtonStyle.gray => OutlinedButton(
+      YakButtonStyle.outline || YakButtonStyle.gray => OutlinedButton(
         onPressed: disabled ? null : onPressed,
         style: _outlinedStyle(context, yakTheme),
         child: child,
@@ -105,6 +104,7 @@ class YakButton extends StatelessWidget {
       YakButtonStyle.danger ||
       YakButtonStyle.success ||
       YakButtonStyle.warning => Theme.of(context).colorScheme.onPrimary,
+      YakButtonStyle.secondary => YakButtonHelpers.secondaryColors(context).$2,
       _ => Theme.of(context).colorScheme.primary,
     };
   }
@@ -112,6 +112,7 @@ class YakButton extends StatelessWidget {
   ButtonStyle _filledStyle(BuildContext context, YakThemeExtension yakTheme) {
     final scheme = Theme.of(context).colorScheme;
     final (bg, fg) = switch (style) {
+      YakButtonStyle.secondary => YakButtonHelpers.secondaryColors(context),
       YakButtonStyle.danger => (yakTheme.danger, scheme.onError),
       YakButtonStyle.success => (yakTheme.success, Colors.white),
       YakButtonStyle.warning => (yakTheme.warning, Colors.white),
