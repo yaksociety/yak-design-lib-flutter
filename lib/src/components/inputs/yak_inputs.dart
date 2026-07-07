@@ -875,6 +875,9 @@ class YakCheckboxGroup extends StatelessWidget {
   }
 }
 
+/// Layout for [YakToggle].
+enum YakToggleVariant { list, compact }
+
 /// Switch toggle (Supernova: Toggle).
 class YakToggle extends StatelessWidget {
   const YakToggle({
@@ -882,19 +885,126 @@ class YakToggle extends StatelessWidget {
     required this.label,
     required this.value,
     this.onChanged,
+    this.variant = YakToggleVariant.list,
+    this.labelTapToggles = false,
   });
 
   final String label;
   final bool value;
   final ValueChanged<bool>? onChanged;
+  final YakToggleVariant variant;
+  final bool labelTapToggles;
 
   @override
   Widget build(BuildContext context) {
+    if (variant == YakToggleVariant.compact) {
+      return _YakToggleCompact(
+        label: label,
+        value: value,
+        onChanged: onChanged,
+        labelTapToggles: labelTapToggles,
+      );
+    }
+
     return SwitchListTile(
       value: value,
       onChanged: onChanged,
       title: Text(label, style: YakInputTheme.fieldTextStyle()),
       contentPadding: EdgeInsets.zero,
+    );
+  }
+}
+
+class _YakToggleCompact extends StatelessWidget {
+  const _YakToggleCompact({
+    required this.label,
+    required this.value,
+    required this.onChanged,
+    required this.labelTapToggles,
+  });
+
+  final String label;
+  final bool value;
+  final ValueChanged<bool>? onChanged;
+  final bool labelTapToggles;
+
+  static const _trackWidth = 51.0;
+  static const _trackHeight = 31.0;
+  static const _thumbSize = 27.0;
+  static const _duration = Duration(milliseconds: 200);
+
+  void _toggle() {
+    if (onChanged == null) return;
+    onChanged!(!value);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final enabled = onChanged != null;
+    final labelWidget = Text(
+      label,
+      style: YakInputTheme.toggleLabelStyle().copyWith(
+        color: enabled
+            ? AppColors.textIconsBaseMain
+            : AppColors.textIconsDisabled,
+      ),
+    );
+
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Semantics(
+          button: true,
+          toggled: value,
+          enabled: enabled,
+          label: label,
+          child: GestureDetector(
+            onTap: enabled ? _toggle : null,
+            child: AnimatedContainer(
+              duration: _duration,
+              curve: Curves.easeInOut,
+              width: _trackWidth,
+              height: _trackHeight,
+              padding: const EdgeInsets.all(2),
+              decoration: BoxDecoration(
+                color: YakInputTheme.toggleTrackColor(isOn: value),
+                borderRadius: BorderRadius.circular(_trackHeight),
+              ),
+              child: AnimatedAlign(
+                duration: _duration,
+                curve: Curves.easeInOut,
+                alignment: value ? Alignment.centerRight : Alignment.centerLeft,
+                child: Container(
+                  width: _thumbSize,
+                  height: _thumbSize,
+                  decoration: BoxDecoration(
+                    color: YakInputTheme.toggleThumbColor(),
+                    shape: BoxShape.circle,
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Color(0x1A000000),
+                        blurRadius: 2,
+                        offset: Offset(0, 1),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(width: 8),
+        labelTapToggles
+            ? GestureDetector(
+                onTap: enabled ? _toggle : null,
+                behavior: HitTestBehavior.opaque,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: labelWidget,
+                ),
+              )
+            : labelWidget,
+      ],
     );
   }
 }

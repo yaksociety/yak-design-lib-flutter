@@ -155,6 +155,18 @@ abstract final class YakInputTheme {
       YakInputIndicatorType.number => AppColors.primary500,
     };
   }
+
+  static Color toggleTrackColor({required bool isOn}) {
+    return isOn ? AppColors.success500 : AppColors.neutral200;
+  }
+
+  static Color toggleThumbColor() => AppColors.backgroundBaseMain;
+
+  static TextStyle toggleLabelStyle() {
+    return AppTextStyles.textMMedium.copyWith(
+      color: AppColors.textIconsBaseMain,
+    );
+  }
 }
 
 /// Supernova Indicator types.
