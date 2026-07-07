@@ -137,6 +137,7 @@ class YakTextField extends StatefulWidget {
     this.minLines,
     this.textInputAction,
     this.onSubmitted,
+    this.inputFormatters,
   });
 
   final String? label;
@@ -156,6 +157,7 @@ class YakTextField extends StatefulWidget {
   final int? minLines;
   final TextInputAction? textInputAction;
   final ValueChanged<String>? onSubmitted;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   State<YakTextField> createState() => _YakTextFieldState();
@@ -206,6 +208,7 @@ class _YakTextFieldState extends State<YakTextField> {
           maxLines: widget.maxLines,
           minLines: widget.minLines,
           textInputAction: widget.textInputAction,
+          inputFormatters: widget.inputFormatters,
           textAlignVertical: widget.maxLines > 1
               ? TextAlignVertical.top
               : TextAlignVertical.center,
