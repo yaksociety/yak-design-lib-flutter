@@ -7,6 +7,8 @@ import '../../tokens/generated/text_styles.dart';
 import '../display/yak_display.dart' show YakIndicator;
 import 'yak_alert.dart';
 
+enum YakNotificationPlacement { top, bottom }
+
 OverlayEntry? _activeYakNotificationEntry;
 Timer? _activeYakNotificationTimer;
 Future<void> Function()? _activeYakNotificationDismiss;
@@ -37,6 +39,7 @@ class YakNotification extends StatelessWidget {
     this.actionLabel,
     this.onAction,
     this.duration = const Duration(seconds: 4),
+    this.placement = YakNotificationPlacement.top,
   });
 
   final String message;
@@ -44,6 +47,7 @@ class YakNotification extends StatelessWidget {
   final String? actionLabel;
   final VoidCallback? onAction;
   final Duration duration;
+  final YakNotificationPlacement placement;
 
   static void hide(BuildContext context) {
     unawaited(_hideActiveYakNotification());
@@ -61,7 +65,7 @@ class YakNotification extends StatelessWidget {
     final overlay = Overlay.maybeOf(context, rootOverlay: true);
     final yakTheme = context.yakTheme;
     final horizontal = yakTheme.spacingMd;
-    final topInset = MediaQuery.paddingOf(context).top;
+    final placement = notification.placement;
 
     await _hideActiveYakNotification();
 
@@ -73,18 +77,32 @@ class YakNotification extends StatelessWidget {
 
     final controller = _YakNotificationToastController();
     late OverlayEntry entry;
+    final topOffset = _topOffsetFor(context, yakTheme);
+    final bottomOffset =
+        MediaQuery.paddingOf(context).bottom + yakTheme.spacingMd;
 
     entry = OverlayEntry(
       builder: (overlayContext) {
+        final child = _YakNotificationToast(
+          controller: controller,
+          notification: notification,
+          onDismissed: _clearActiveYakNotification,
+        );
+
+        if (placement == YakNotificationPlacement.bottom) {
+          return Positioned(
+            bottom: bottomOffset,
+            left: horizontal,
+            right: horizontal,
+            child: child,
+          );
+        }
+
         return Positioned(
-          top: topInset + yakTheme.spacingSm,
+          top: topOffset,
           left: horizontal,
           right: horizontal,
-          child: _YakNotificationToast(
-            controller: controller,
-            notification: notification,
-            onDismissed: _clearActiveYakNotification,
-          ),
+          child: child,
         );
       },
     );
@@ -100,6 +118,18 @@ class YakNotification extends StatelessWidget {
     });
   }
 
+  static double _topOffsetFor(
+    BuildContext context,
+    YakThemeExtension yakTheme,
+  ) {
+    final safeTop = MediaQuery.paddingOf(context).top;
+    final appBarHeight = Scaffold.maybeOf(context)?.appBarMaxHeight ?? 0;
+    if (appBarHeight > 0) {
+      return safeTop + appBarHeight + yakTheme.spacingSm;
+    }
+    return safeTop + yakTheme.spacingSm;
+  }
+
   static void _showFallbackSnackBar(
     BuildContext context,
     YakNotification notification,
@@ -107,7 +137,8 @@ class YakNotification extends StatelessWidget {
     final messenger = ScaffoldMessenger.of(context);
     final yakTheme = context.yakTheme;
     final mediaQuery = MediaQuery.of(context);
-    const estimatedHeight = 72.0;
+    final topOffset = _topOffsetFor(context, yakTheme);
+    final bottomOffset = mediaQuery.padding.bottom + yakTheme.spacingMd;
 
     messenger.hideCurrentSnackBar();
     messenger.showSnackBar(
@@ -116,15 +147,17 @@ class YakNotification extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         padding: EdgeInsets.zero,
-        margin: EdgeInsets.only(
-          left: yakTheme.spacingMd,
-          right: yakTheme.spacingMd,
-          bottom:
-              mediaQuery.size.height -
-              mediaQuery.padding.top -
-              yakTheme.spacingMd -
-              estimatedHeight,
-        ),
+        margin: notification.placement == YakNotificationPlacement.bottom
+            ? EdgeInsets.only(
+                left: yakTheme.spacingMd,
+                right: yakTheme.spacingMd,
+                bottom: bottomOffset,
+              )
+            : EdgeInsets.only(
+                left: yakTheme.spacingMd,
+                right: yakTheme.spacingMd,
+                top: topOffset,
+              ),
         duration: notification.duration,
         content: _YakToastBanner(
           message: notification.message,
@@ -186,8 +219,16 @@ class _YakNotificationToastState extends State<_YakNotificationToast>
       duration: _showDuration,
       reverseDuration: _hideDuration,
     );
-    _slide = Tween<Offset>(begin: const Offset(0, -0.35), end: Offset.zero)
-        .animate(
+    _slide =
+        Tween<Offset>(
+          begin: Offset(
+            0,
+            widget.notification.placement == YakNotificationPlacement.bottom
+                ? 0.35
+                : -0.35,
+          ),
+          end: Offset.zero,
+        ).animate(
           CurvedAnimation(
             parent: _controller,
             curve: Curves.easeOutCubic,

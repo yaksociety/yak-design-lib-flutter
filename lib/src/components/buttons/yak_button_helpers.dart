@@ -92,6 +92,9 @@ abstract final class YakButtonHelpers {
         labelColor ?? DefaultTextStyle.of(context).style.color;
     return Text(
       label,
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+      textAlign: TextAlign.center,
       style: AppTextStyles.textMSemibold.copyWith(color: foregroundColor),
     );
   }

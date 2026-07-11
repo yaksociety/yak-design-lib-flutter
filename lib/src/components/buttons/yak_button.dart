@@ -88,12 +88,19 @@ class YakButton extends StatelessWidget {
       );
     }
 
+    final labelWidget = Text(
+      label,
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+      textAlign: TextAlign.center,
+    );
+
     return Row(
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize: isExpanded ? MainAxisSize.max : MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         if (leading != null) ...[leading!, const SizedBox(width: 8)],
-        Text(label),
+        if (isExpanded) Flexible(child: labelWidget) else labelWidget,
         if (trailing != null) ...[const SizedBox(width: 8), trailing!],
       ],
     );
@@ -115,7 +122,7 @@ class YakButton extends StatelessWidget {
         context: context,
         yakTheme: yakTheme,
         size: size,
-        isExpanded: false,
+        isExpanded: isExpanded,
       );
     }
 
@@ -132,7 +139,10 @@ class YakButton extends StatelessWidget {
       foregroundColor: fg,
       disabledBackgroundColor: AppColors.backgroundDisabled,
       disabledForegroundColor: yakTheme.textSecondary,
-      minimumSize: YakButtonHelpers.minimumSize(size: size, isExpanded: false),
+      minimumSize: YakButtonHelpers.minimumSize(
+        size: size,
+        isExpanded: isExpanded,
+      ),
       padding: YakButtonHelpers.paddingFor(size),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       shape: RoundedRectangleBorder(
@@ -147,7 +157,10 @@ class YakButton extends StatelessWidget {
       foregroundColor: AppColors.textIconsBaseMain,
       disabledBackgroundColor: AppColors.backgroundDisabled,
       disabledForegroundColor: yakTheme.textSecondary,
-      minimumSize: YakButtonHelpers.minimumSize(size: size, isExpanded: false),
+      minimumSize: YakButtonHelpers.minimumSize(
+        size: size,
+        isExpanded: isExpanded,
+      ),
       padding: YakButtonHelpers.paddingFor(size),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       shape: RoundedRectangleBorder(
@@ -159,7 +172,10 @@ class YakButton extends StatelessWidget {
 
   ButtonStyle _textStyle(BuildContext context, YakThemeExtension yakTheme) {
     return TextButton.styleFrom(
-      minimumSize: YakButtonHelpers.minimumSize(size: size, isExpanded: false),
+      minimumSize: YakButtonHelpers.minimumSize(
+        size: size,
+        isExpanded: isExpanded,
+      ),
       padding: YakButtonHelpers.paddingFor(size),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       shape: RoundedRectangleBorder(
