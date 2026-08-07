@@ -58,28 +58,54 @@ class YakNotification extends StatelessWidget {
     unawaited(_present(context, notification));
   }
 
+  /// Shows [notification] on a known [OverlayState] (e.g. root navigator overlay).
+  static void showOnOverlay(
+    OverlayState overlay,
+    YakNotification notification,
+  ) {
+    unawaited(_presentOnOverlay(overlay, notification));
+  }
+
   static Future<void> _present(
     BuildContext context,
     YakNotification notification,
   ) async {
-    final overlay = Overlay.maybeOf(context, rootOverlay: true);
-    final yakTheme = context.yakTheme;
+    // Prefer Navigator.overlay — Overlay is a *child* of Navigator, so
+    // Overlay.maybeOf(navigatorContext) is null and wrongly hits SnackBar.
+    final overlay =
+        Navigator.maybeOf(context, rootNavigator: true)?.overlay ??
+        Overlay.maybeOf(context, rootOverlay: true) ??
+        Overlay.maybeOf(context);
+
+    if (overlay != null) {
+      await _presentOnOverlay(overlay, notification);
+      return;
+    }
+
+    if (!context.mounted) return;
+    _showFallbackSnackBar(context, notification);
+  }
+
+  static Future<void> _presentOnOverlay(
+    OverlayState overlay,
+    YakNotification notification,
+  ) async {
+    final themeContext = overlay.context;
+    if (!themeContext.mounted) return;
+
+    final yakTheme = themeContext.yakTheme;
     final horizontal = yakTheme.spacingMd;
     final placement = notification.placement;
 
     await _hideActiveYakNotification();
 
-    if (overlay == null) {
-      if (!context.mounted) return;
-      _showFallbackSnackBar(context, notification);
-      return;
-    }
+    if (!themeContext.mounted) return;
 
     final controller = _YakNotificationToastController();
     late OverlayEntry entry;
-    final topOffset = _topOffsetFor(context, yakTheme);
+    final topOffset = _topOffsetFor(themeContext, yakTheme);
     final bottomOffset =
-        MediaQuery.paddingOf(context).bottom + yakTheme.spacingMd;
+        MediaQuery.paddingOf(themeContext).bottom + yakTheme.spacingMd;
 
     entry = OverlayEntry(
       builder: (overlayContext) {
@@ -122,11 +148,9 @@ class YakNotification extends StatelessWidget {
     BuildContext context,
     YakThemeExtension yakTheme,
   ) {
+    // Always pin under the status bar — do not shift below Scaffold AppBars,
+    // so toasts land in the same place on every screen / sheet.
     final safeTop = MediaQuery.paddingOf(context).top;
-    final appBarHeight = Scaffold.maybeOf(context)?.appBarMaxHeight ?? 0;
-    if (appBarHeight > 0) {
-      return safeTop + appBarHeight + yakTheme.spacingSm;
-    }
     return safeTop + yakTheme.spacingSm;
   }
 
@@ -134,10 +158,17 @@ class YakNotification extends StatelessWidget {
     BuildContext context,
     YakNotification notification,
   ) {
+    if (notification.placement == YakNotificationPlacement.top) {
+      final overlay = Overlay.maybeOf(context, rootOverlay: true);
+      if (overlay != null) {
+        unawaited(_presentOnOverlay(overlay, notification));
+        return;
+      }
+    }
+
     final messenger = ScaffoldMessenger.of(context);
     final yakTheme = context.yakTheme;
     final mediaQuery = MediaQuery.of(context);
-    final topOffset = _topOffsetFor(context, yakTheme);
     final bottomOffset = mediaQuery.padding.bottom + yakTheme.spacingMd;
 
     messenger.hideCurrentSnackBar();
@@ -147,17 +178,11 @@ class YakNotification extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         padding: EdgeInsets.zero,
-        margin: notification.placement == YakNotificationPlacement.bottom
-            ? EdgeInsets.only(
-                left: yakTheme.spacingMd,
-                right: yakTheme.spacingMd,
-                bottom: bottomOffset,
-              )
-            : EdgeInsets.only(
-                left: yakTheme.spacingMd,
-                right: yakTheme.spacingMd,
-                top: topOffset,
-              ),
+        margin: EdgeInsets.only(
+          left: yakTheme.spacingMd,
+          right: yakTheme.spacingMd,
+          bottom: bottomOffset,
+        ),
         duration: notification.duration,
         content: _YakToastBanner(
           message: notification.message,
