@@ -177,16 +177,17 @@ TEMPLATE_COMPONENTS = {
 }
 
 
-def load_names() -> list[str]:
-    names: list[str] = []
+def load_rows() -> list[tuple[str, str]]:
+    """Return (id, name) for every CSV row."""
+    rows: list[tuple[str, str]] = []
     with CSV_PATH.open(newline="", encoding="utf-8") as f:
         for row in csv.DictReader(f):
-            names.append(row["name"])
-    return names
+            rows.append((row["id"], row["name"]))
+    return rows
 
 
 def generate() -> None:
-    names = load_names()
+    rows = load_rows()
     lines = [
         "// GENERATED — run: python3 tool/generate_supernova_components.py",
         "",
@@ -202,14 +203,17 @@ def generate() -> None:
         "  template,",
         "}",
         "",
-        "/// Maps a Supernova component name to its Flutter representation.",
+        "/// Maps a Supernova Figma component to its Flutter representation.",
         "class SupernovaComponentEntry {",
         "  const SupernovaComponentEntry({",
+        "    required this.supernovaId,",
         "    required this.supernovaName,",
         "    required this.kind,",
         "    this.flutterWidget,",
         "  });",
         "",
+        "  /// Stable Supernova / Figma component id.",
+        "  final String supernovaId;",
         "  final String supernovaName;",
         "  final SupernovaComponentKind kind;",
         "  final String? flutterWidget;",
@@ -220,11 +224,12 @@ def generate() -> None:
         "  static const List<SupernovaComponentEntry> all = [",
     ]
 
-    for name in names:
+    for cid, name in rows:
         if name in WIDGET_MAP:
             widget = WIDGET_MAP[name]
             lines.append(
                 f"    SupernovaComponentEntry("
+                f"supernovaId: {dart_str(cid)}, "
                 f"supernovaName: {dart_str(name)}, "
                 f"kind: SupernovaComponentKind.widget, "
                 f"flutterWidget: '{widget}'),"
@@ -232,20 +237,22 @@ def generate() -> None:
         elif name in ASSET_COMPONENTS:
             lines.append(
                 f"    SupernovaComponentEntry("
+                f"supernovaId: {dart_str(cid)}, "
                 f"supernovaName: {dart_str(name)}, "
                 f"kind: SupernovaComponentKind.asset),"
             )
         elif name in TEMPLATE_COMPONENTS:
             lines.append(
                 f"    SupernovaComponentEntry("
+                f"supernovaId: {dart_str(cid)}, "
                 f"supernovaName: {dart_str(name)}, "
                 f"kind: SupernovaComponentKind.template),"
             )
         else:
-            # Unknown — treat as widget placeholder for tracking
-            safe = re.sub(r"[^a-zA-Z0-9]", "", name)
+            # Unknown — treat as template for tracking
             lines.append(
                 f"    SupernovaComponentEntry("
+                f"supernovaId: {dart_str(cid)}, "
                 f"supernovaName: {dart_str(name)}, "
                 f"kind: SupernovaComponentKind.template),"
             )
@@ -261,6 +268,13 @@ def generate() -> None:
             "    return null;",
             "  }",
             "",
+            "  static SupernovaComponentEntry? findById(String supernovaId) {",
+            "    for (final entry in all) {",
+            "      if (entry.supernovaId == supernovaId) return entry;",
+            "    }",
+            "    return null;",
+            "  }",
+            "",
             "  static List<SupernovaComponentEntry> get widgets =>",
             "      all.where((e) => e.kind == SupernovaComponentKind.widget).toList();",
             "",
@@ -272,8 +286,8 @@ def generate() -> None:
     )
 
     OUT_PATH.write_text("\n".join(lines), encoding="utf-8")
-    widget_count = sum(1 for n in names if n in WIDGET_MAP)
-    print(f"Wrote {OUT_PATH} ({len(names)} entries, {widget_count} widgets)")
+    widget_count = sum(1 for _, n in rows if n in WIDGET_MAP)
+    print(f"Wrote {OUT_PATH} ({len(rows)} entries, {widget_count} widgets)")
 
 
 def dart_str(value: str) -> str:

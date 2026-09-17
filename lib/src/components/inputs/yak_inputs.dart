@@ -196,7 +196,7 @@ class _YakTextFieldState extends State<YakTextField> {
       field: SizedBox(
         height: widget.maxLines > 1
             ? null
-            : YakInputTheme.heightFor(widget.size),
+            : YakInputTheme.heightForTheme(context, widget.size),
         child: TextField(
           controller: widget.controller,
           focusNode: _focusNode,
@@ -323,7 +323,10 @@ class _YakVerificationCodeInputState extends State<YakVerificationCodeInput> {
   @override
   Widget build(BuildContext context) {
     final yakTheme = context.yakTheme;
-    final boxSize = YakInputTheme.verificationBoxSize(widget.size);
+    final boxSize = YakInputTheme.verificationBoxSizeTheme(
+      context,
+      widget.size,
+    );
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,

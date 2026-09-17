@@ -1,6 +1,6 @@
 # Components
 
-Hand-written Flutter widgets mapped to all **160** Supernova / Figma top-level components.
+Hand-written Flutter widgets mapped to all **157** Supernova / Figma top-level components.
 
 ## Registry
 
@@ -8,8 +8,8 @@ Hand-written Flutter widgets mapped to all **160** Supernova / Figma top-level c
 
 | Kind       | Count | Representation                                           |
 | ---------- | ----- | -------------------------------------------------------- |
-| `widget`   | 118   | Flutter widget class (exported from package)             |
-| `asset`    | 36    | Static assets in `assets/` (logos, illustrations, icons) |
+| `widget`   | 116   | Flutter widget class (exported from package)             |
+| `asset`    | 35    | Static assets in `assets/` (logos, illustrations, icons) |
 | `template` | 6     | Compose from other widgets (Figma layout shells)         |
 
 Regenerate after Supernova sync:

@@ -5,6 +5,17 @@ import '../tokens/generated/text_styles.dart';
 import 'yak_theme_mapper.dart';
 
 /// Yak design system themes mapped to Flutter [ThemeData].
+///
+/// Install once on [MaterialApp]:
+/// ```dart
+/// MaterialApp(
+///   theme: YakTheme.light(),
+///   darkTheme: YakTheme.dark(),
+/// )
+/// ```
+///
+/// Then read tokens via Yak Society Context:
+/// `context.yakTheme`, `context.yakColorScheme`, `context.yakTextTheme`.
 abstract final class YakTheme {
   static ThemeData light() {
     return ThemeData(

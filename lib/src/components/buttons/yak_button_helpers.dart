@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/yak_theme_extension.dart';
-import '../../tokens/generated/colors.dart';
 import '../../tokens/generated/dimensions.dart';
 import '../../tokens/generated/text_styles.dart';
 
@@ -31,6 +30,16 @@ abstract final class YakButtonHelpers {
     };
   }
 
+  /// Prefer [YakThemeExtension] heights when a [BuildContext] is available.
+  static double heightForTheme(YakThemeExtension yakTheme, YakButtonSize size) {
+    return switch (size) {
+      YakButtonSize.xs => yakTheme.heightXs,
+      YakButtonSize.sm => yakTheme.heightSm,
+      YakButtonSize.md => yakTheme.heightMd,
+      YakButtonSize.lg => yakTheme.heightLg,
+    };
+  }
+
   static EdgeInsets paddingFor(YakButtonSize size) {
     return switch (size) {
       YakButtonSize.xs => const EdgeInsets.symmetric(
@@ -54,8 +63,12 @@ abstract final class YakButtonHelpers {
   static Size minimumSize({
     required YakButtonSize size,
     required bool isExpanded,
+    YakThemeExtension? yakTheme,
   }) {
-    return Size(isExpanded ? double.infinity : 0, heightFor(size));
+    final height = yakTheme == null
+        ? heightFor(size)
+        : heightForTheme(yakTheme, size);
+    return Size(isExpanded ? double.infinity : 0, height);
   }
 
   static ButtonStyle baseStyle({
@@ -65,7 +78,7 @@ abstract final class YakButtonHelpers {
   }) {
     return ButtonStyle(
       minimumSize: WidgetStatePropertyAll(
-        minimumSize(size: size, isExpanded: isExpanded),
+        minimumSize(size: size, isExpanded: isExpanded, yakTheme: yakTheme),
       ),
       padding: WidgetStatePropertyAll(paddingFor(size)),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -108,7 +121,8 @@ abstract final class YakButtonHelpers {
   static (Color background, Color foreground) secondaryColors(
     BuildContext context,
   ) {
-    return (AppColors.backgroundPrimarySecond, AppColors.textIconsBaseMain);
+    final yakTheme = context.yakTheme;
+    return (yakTheme.backgroundPrimarySecond, yakTheme.textMain);
   }
 
   static ButtonStyle secondaryFilledStyle({
@@ -122,9 +136,13 @@ abstract final class YakButtonHelpers {
     return FilledButton.styleFrom(
       backgroundColor: background,
       foregroundColor: foreground,
-      disabledBackgroundColor: AppColors.backgroundDisabled,
+      disabledBackgroundColor: yakTheme.backgroundDisabled,
       disabledForegroundColor: yakTheme.textSecondary,
-      minimumSize: minimumSize(size: size, isExpanded: isExpanded),
+      minimumSize: minimumSize(
+        size: size,
+        isExpanded: isExpanded,
+        yakTheme: yakTheme,
+      ),
       padding: paddingFor(size),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       shape: shape(yakTheme),

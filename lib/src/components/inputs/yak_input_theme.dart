@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/yak_theme_extension.dart';
 import '../../tokens/generated/colors.dart';
 import '../../tokens/generated/dimensions.dart';
 import '../../tokens/generated/radii.dart';
@@ -21,12 +22,25 @@ abstract final class YakInputTheme {
     };
   }
 
-  static double verificationBoxSize(YakInputSize size) {
+  /// Prefer [YakThemeExtension] heights when available (same S/M/L as buttons).
+  static double heightForTheme(BuildContext context, YakInputSize size) {
+    final yakTheme = context.yakTheme;
     return switch (size) {
-      YakInputSize.sm => AppDimensions.mainSystemNum40,
-      YakInputSize.md => AppDimensions.mainSystemNum44,
-      YakInputSize.lg => AppDimensions.mainSystemNum48,
+      YakInputSize.sm => yakTheme.heightSm,
+      YakInputSize.md => yakTheme.heightMd,
+      YakInputSize.lg => yakTheme.heightLg,
     };
+  }
+
+  static double verificationBoxSize(YakInputSize size) {
+    return heightFor(size);
+  }
+
+  static double verificationBoxSizeTheme(
+    BuildContext context,
+    YakInputSize size,
+  ) {
+    return heightForTheme(context, size);
   }
 
   static TextStyle labelStyle({bool isDestructive = false}) {
@@ -89,7 +103,7 @@ abstract final class YakInputTheme {
     final lineHeight =
         AppTextStyles.textMRegular.fontSize! *
         (AppTextStyles.textMRegular.height ?? 1.0);
-    final fieldHeight = heightFor(size);
+    final fieldHeight = heightForTheme(context, size);
     final verticalPad = ((fieldHeight - 2 - lineHeight) / 2).clamp(8.0, 16.0);
 
     return InputDecoration(

@@ -3,7 +3,6 @@ id,name
 bacc0d19-2623-4d53-b5d0-2e606291765d,.Card header
 7d51e635-4f30-4408-9b51-b1778895ac55,.Legend
 0cc8b97f-2a91-4b9f-aaf7-683b3881e9ad,.Side menu header
-48ecdaca-3031-457a-b34f-bf92153e3466,7
 0f33c42a-2d77-42bb-8d90-4351a9e0b4d4,Accordion
 3d54ba92-d239-4463-88c2-0620a7e51783,Action-item
 11bb820c-e9e5-464f-a4ca-90f27d5e0a6f,Actions
@@ -68,7 +67,6 @@ bddc0577-3f7b-4ede-a7a7-a7f4d452a327,File Upload
 e94521a8-53cc-4981-95a4-0c8b44920fea,FinanceSummary
 d88be8da-6994-43ea-ab29-8fea7288f04a,FooterSheet
 60f90f26-1d76-4a35-82e0-7ecb7deba9e6,Freame Icon
-270f5172-966b-4f1c-8485-75d140322278,Headline
 debfc7ee-f04f-4724-8aed-1736a50a49c9,hint text
 25377669-77b3-4a86-b954-563eabd2d644,home-indicator
 6e49b513-463b-40f2-9ad1-f324483f3a73,hourglass
@@ -77,7 +75,6 @@ e909b9dc-7e40-4b13-9472-c5ad134bc4e8,Icon Button
 23855b27-0db7-4283-a07c-db9bf452ad1d,ID Card
 2541c119-4cfd-4e01-8c50-d5a93a34b158,illustration
 8ea6db09-45f6-42f5-9754-a28f650bb415,image
-0493541a-4c98-4b02-be8a-103eb56cf9aa,Incentive
 16995272-2520-400f-9ee3-6247db273640,Indicator
 50aaecdf-89f5-4cfc-a10d-22dc86e038c7,Input field
 ffaf0f8b-d746-4562-aae5-675462ad41af,Input Text area
@@ -115,9 +112,9 @@ ff7c52c2-72b7-46f5-8236-a3462ad58d3e,Progress bar
 4a208180-1de8-4627-9648-17e1c8816d42,Progress circle
 19110752-fa6d-49a7-bb1d-6488911c5891,Progress semicircle
 140bb4a7-9478-481c-acb5-e8c1eab9aa89,Project status
+407e0150-141c-493c-85e6-9adbce286e60,Rating
 5964fc04-807d-4cb3-b190-48a1b6e3e432,Rating
 6589b028-ddca-4990-a6a9-36e82a445904,Rating
-407e0150-141c-493c-85e6-9adbce286e60,Rating
 97798a23-6919-4ba6-b804-f6fd2abd4fe2,Rating-Chip
 76bd9c95-11e3-49be-9b22-bb0457dd05b3,referral-bonus
 b44fe442-7028-410e-8b5e-15bb3bd79ebe,referral-code-card

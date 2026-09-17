@@ -8,16 +8,21 @@ import 'yak_theme_extension.dart';
 
 /// Maps Supernova-generated tokens to Flutter theme objects.
 ///
-/// Update token references here after each Supernova sync if names change.
+/// Keep this file in sync with component conventions:
+/// - Button / Input heights: S=40, M=44, L=48 (Button XS=36)
+/// - Primary fill: [AppColors.primary500], text: [AppColors.textIconsBaseMain]
+/// - Secondary fill: [AppColors.backgroundPrimarySecond]
+/// - Danger text: [AppColors.textIconsOnColor]
+/// - Input label: [AppTextStyles.textSMedium]
 abstract final class YakThemeMapper {
   static ColorScheme lightColorScheme() {
     return ColorScheme.light(
       primary: AppColors.primary500,
       onPrimary: AppColors.textIconsBaseMain,
-      primaryContainer: AppColors.primary600,
+      primaryContainer: AppColors.backgroundPrimarySecond,
       onPrimaryContainer: AppColors.textIconsBaseMain,
-      secondary: AppColors.gray500,
-      onSecondary: AppColors.textIconsOnColor,
+      secondary: AppColors.backgroundPrimarySecond,
+      onSecondary: AppColors.textIconsBaseMain,
       surface: AppColors.backgroundBaseMain,
       onSurface: AppColors.textIconsBaseMain,
       onSurfaceVariant: AppColors.textIconsBaseSecond,
@@ -34,8 +39,8 @@ abstract final class YakThemeMapper {
       onPrimary: AppColors.textIconsBaseMain,
       primaryContainer: AppColors.primary700,
       onPrimaryContainer: AppColors.textIconsBaseMain,
-      secondary: AppColors.gray400,
-      onSecondary: AppColors.textIconsOnColor,
+      secondary: AppColors.backgroundPrimarySecond,
+      onSecondary: AppColors.textIconsBaseMain,
       surface: AppColors.backgroundBaseDarkMain,
       onSurface: AppColors.textIconsOnColor,
       onSurfaceVariant: AppColors.neutral500,
@@ -53,10 +58,24 @@ abstract final class YakThemeMapper {
     spacingLg: AppDimensions.mainSystemNum24,
     spacingXl: AppDimensions.mainSystemNum32,
     radiusSm: AppRadii.roundnessSquareOutside,
-    radiusMd: AppRadii.roundnessRoundInside,
+    radiusMd: AppRadii.roundnessRoundOutside,
     radiusLg: AppRadii.roundnessFullOutside,
+    heightXs: AppDimensions.mainSystemNum36,
+    heightSm: AppDimensions.mainSystemNum40,
+    heightMd: AppDimensions.mainSystemNum44,
+    heightLg: AppDimensions.mainSystemNum48,
+    textMain: AppColors.textIconsBaseMain,
     textSecondary: AppColors.textIconsBaseSecond,
+    textOnColor: AppColors.textIconsOnColor,
+    textDisabled: AppColors.textIconsDisabled,
     borderDefault: AppColors.strokeBase,
+    borderFocus: AppColors.strokePrimary,
+    borderDanger: AppColors.strokeDanger,
+    backgroundMain: AppColors.backgroundBaseMain,
+    backgroundSecond: AppColors.backgroundBaseSecond,
+    backgroundDisabled: AppColors.backgroundDisabled,
+    backgroundPrimary: AppColors.backgroundPrimaryMain,
+    backgroundPrimarySecond: AppColors.backgroundPrimarySecond,
     success: AppColors.success500,
     warning: AppColors.warning500,
     danger: AppColors.danger500,
@@ -69,10 +88,24 @@ abstract final class YakThemeMapper {
     spacingLg: AppDimensions.mainSystemNum24,
     spacingXl: AppDimensions.mainSystemNum32,
     radiusSm: AppRadii.roundnessSquareOutside,
-    radiusMd: AppRadii.roundnessRoundInside,
+    radiusMd: AppRadii.roundnessRoundOutside,
     radiusLg: AppRadii.roundnessFullOutside,
+    heightXs: AppDimensions.mainSystemNum36,
+    heightSm: AppDimensions.mainSystemNum40,
+    heightMd: AppDimensions.mainSystemNum44,
+    heightLg: AppDimensions.mainSystemNum48,
+    textMain: AppColors.textIconsOnColor,
     textSecondary: AppColors.neutral500,
+    textOnColor: AppColors.textIconsOnColor,
+    textDisabled: AppColors.textIconsDisabled,
     borderDefault: AppColors.strokeBaseDark,
+    borderFocus: AppColors.strokePrimary,
+    borderDanger: AppColors.strokeDanger,
+    backgroundMain: AppColors.backgroundBaseDarkMain,
+    backgroundSecond: AppColors.backgroundBaseDarkSecond,
+    backgroundDisabled: AppColors.gray700,
+    backgroundPrimary: AppColors.backgroundPrimaryMain,
+    backgroundPrimarySecond: AppColors.backgroundPrimarySecond,
     success: AppColors.success500,
     warning: AppColors.warning500,
     danger: AppColors.danger500,
@@ -91,6 +124,7 @@ abstract final class YakThemeMapper {
       bodyMedium: AppTextStyles.textMRegular.copyWith(color: defaultColor),
       bodySmall: AppTextStyles.textSRegular.copyWith(color: defaultColor),
       labelLarge: AppTextStyles.textMSemibold.copyWith(color: defaultColor),
+      labelMedium: AppTextStyles.textSMedium.copyWith(color: defaultColor),
       labelSmall: AppTextStyles.textXSRegular.copyWith(color: defaultColor),
     );
   }
@@ -107,6 +141,9 @@ abstract final class YakThemeMapper {
         ),
         minimumSize: const Size(0, AppDimensions.mainSystemNum44),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
+        ),
         textStyle: AppTextStyles.textMSemibold.copyWith(
           color: AppColors.textIconsBaseMain,
         ),
@@ -126,6 +163,9 @@ abstract final class YakThemeMapper {
         ),
         minimumSize: const Size(0, AppDimensions.mainSystemNum44),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
+        ),
         textStyle: AppTextStyles.textMSemibold.copyWith(
           color: AppColors.textIconsBaseMain,
         ),
@@ -144,6 +184,9 @@ abstract final class YakThemeMapper {
         ),
         minimumSize: const Size(0, AppDimensions.mainSystemNum44),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
+        ),
         textStyle: AppTextStyles.textMSemibold,
       ),
     );
@@ -160,6 +203,9 @@ abstract final class YakThemeMapper {
         ),
         minimumSize: const Size(0, AppDimensions.mainSystemNum44),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
+        ),
         textStyle: AppTextStyles.textMSemibold,
       ),
     );
@@ -175,6 +221,9 @@ abstract final class YakThemeMapper {
         ),
         minimumSize: const Size(0, AppDimensions.mainSystemNum44),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
+        ),
         textStyle: AppTextStyles.textMSemibold,
       ),
     );
@@ -190,6 +239,9 @@ abstract final class YakThemeMapper {
         ),
         minimumSize: const Size(0, AppDimensions.mainSystemNum44),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
+        ),
         textStyle: AppTextStyles.textMSemibold,
       ),
     );
@@ -197,11 +249,12 @@ abstract final class YakThemeMapper {
 
   static InputDecorationTheme inputDecorationTheme() {
     return InputDecorationTheme(
+      isDense: true,
       filled: true,
       fillColor: AppColors.backgroundBaseMain,
       contentPadding: const EdgeInsets.symmetric(
         horizontal: AppDimensions.mainSystemNum16,
-        vertical: AppDimensions.mainSystemNum12,
+        vertical: AppDimensions.mainSystemNum10,
       ),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
@@ -226,7 +279,7 @@ abstract final class YakThemeMapper {
       hintStyle: AppTextStyles.textMRegular.copyWith(
         color: AppColors.textIconsBaseSecond,
       ),
-      labelStyle: AppTextStyles.textMSemibold.copyWith(
+      labelStyle: AppTextStyles.textSMedium.copyWith(
         color: AppColors.textIconsBaseMain,
       ),
       errorStyle: AppTextStyles.textSRegular.copyWith(
@@ -237,11 +290,12 @@ abstract final class YakThemeMapper {
 
   static InputDecorationTheme inputDecorationThemeDark() {
     return InputDecorationTheme(
+      isDense: true,
       filled: true,
       fillColor: AppColors.backgroundBaseDarkMain,
       contentPadding: const EdgeInsets.symmetric(
         horizontal: AppDimensions.mainSystemNum16,
-        vertical: AppDimensions.mainSystemNum12,
+        vertical: AppDimensions.mainSystemNum10,
       ),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
@@ -258,7 +312,7 @@ abstract final class YakThemeMapper {
       hintStyle: AppTextStyles.textMRegular.copyWith(
         color: AppColors.neutral500,
       ),
-      labelStyle: AppTextStyles.textMSemibold.copyWith(
+      labelStyle: AppTextStyles.textSMedium.copyWith(
         color: AppColors.textIconsOnColor,
       ),
       errorStyle: AppTextStyles.textSRegular.copyWith(

@@ -24,14 +24,16 @@ class YakTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final yakTheme = context.yakTheme;
     final isDisabled = YakButtonHelpers.isDisabled(onPressed, isLoading);
-    final colorScheme = Theme.of(context).colorScheme;
 
     return TextButton(
       onPressed: isDisabled ? null : onPressed,
       style: TextButton.styleFrom(
+        foregroundColor: yakTheme.textMain,
+        disabledForegroundColor: yakTheme.textSecondary,
         minimumSize: YakButtonHelpers.minimumSize(
           size: size,
           isExpanded: isExpanded,
+          yakTheme: yakTheme,
         ),
         padding: YakButtonHelpers.paddingFor(size),
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -41,7 +43,8 @@ class YakTextButton extends StatelessWidget {
         context: context,
         label: label,
         isLoading: isLoading,
-        loadingColor: colorScheme.primary,
+        loadingColor: context.yakColorScheme.primary,
+        labelColor: isDisabled ? yakTheme.textSecondary : null,
       ),
     );
   }

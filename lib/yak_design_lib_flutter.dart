@@ -28,6 +28,10 @@ export 'src/components/overlays/yak_overlays.dart';
 export 'src/components/supernova_component_registry.dart';
 // Surfaces
 export 'src/components/surfaces/yak_accordion.dart';
-// Theme
+// Theme / system
 export 'src/theme/yak_theme.dart';
 export 'src/theme/yak_theme_extension.dart';
+export 'src/theme/yak_theme_mapper.dart';
+// Tokens (Supernova-generated)
+export 'src/tokens/generated_tokens.dart';
+export 'src/tokens/yak_assets.dart';

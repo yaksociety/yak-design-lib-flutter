@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/yak_theme_extension.dart';
-import '../../tokens/generated/colors.dart';
 import '../display/yak_display_icon.dart';
 import 'yak_button_helpers.dart';
 
@@ -107,12 +106,13 @@ class YakButton extends StatelessWidget {
   }
 
   Color _loadingColor(BuildContext context) {
+    final yakTheme = context.yakTheme;
     return switch (style) {
-      YakButtonStyle.primary => Theme.of(context).colorScheme.onPrimary,
-      YakButtonStyle.danger => AppColors.textIconsOnColor,
+      YakButtonStyle.primary => context.yakColorScheme.onPrimary,
+      YakButtonStyle.danger => yakTheme.textOnColor,
       YakButtonStyle.success || YakButtonStyle.warning => Colors.white,
       YakButtonStyle.secondary => YakButtonHelpers.secondaryColors(context).$2,
-      _ => Theme.of(context).colorScheme.primary,
+      _ => context.yakColorScheme.primary,
     };
   }
 
@@ -126,9 +126,9 @@ class YakButton extends StatelessWidget {
       );
     }
 
-    final scheme = Theme.of(context).colorScheme;
+    final scheme = context.yakColorScheme;
     final (bg, fg) = switch (style) {
-      YakButtonStyle.danger => (yakTheme.danger, AppColors.textIconsOnColor),
+      YakButtonStyle.danger => (yakTheme.danger, yakTheme.textOnColor),
       YakButtonStyle.success => (yakTheme.success, Colors.white),
       YakButtonStyle.warning => (yakTheme.warning, Colors.white),
       _ => (scheme.primary, scheme.onPrimary),
@@ -137,11 +137,12 @@ class YakButton extends StatelessWidget {
     return FilledButton.styleFrom(
       backgroundColor: bg,
       foregroundColor: fg,
-      disabledBackgroundColor: AppColors.backgroundDisabled,
+      disabledBackgroundColor: yakTheme.backgroundDisabled,
       disabledForegroundColor: yakTheme.textSecondary,
       minimumSize: YakButtonHelpers.minimumSize(
         size: size,
         isExpanded: isExpanded,
+        yakTheme: yakTheme,
       ),
       padding: YakButtonHelpers.paddingFor(size),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -153,20 +154,21 @@ class YakButton extends StatelessWidget {
 
   ButtonStyle _outlinedStyle(BuildContext context, YakThemeExtension yakTheme) {
     return OutlinedButton.styleFrom(
-      backgroundColor: AppColors.backgroundBaseMain,
-      foregroundColor: AppColors.textIconsBaseMain,
-      disabledBackgroundColor: AppColors.backgroundDisabled,
+      backgroundColor: yakTheme.backgroundMain,
+      foregroundColor: yakTheme.textMain,
+      disabledBackgroundColor: yakTheme.backgroundDisabled,
       disabledForegroundColor: yakTheme.textSecondary,
       minimumSize: YakButtonHelpers.minimumSize(
         size: size,
         isExpanded: isExpanded,
+        yakTheme: yakTheme,
       ),
       padding: YakButtonHelpers.paddingFor(size),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(yakTheme.radiusMd),
       ),
-      side: const BorderSide(color: AppColors.strokeBase),
+      side: BorderSide(color: yakTheme.borderDefault),
     );
   }
 
@@ -175,6 +177,7 @@ class YakButton extends StatelessWidget {
       minimumSize: YakButtonHelpers.minimumSize(
         size: size,
         isExpanded: isExpanded,
+        yakTheme: yakTheme,
       ),
       padding: YakButtonHelpers.paddingFor(size),
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,

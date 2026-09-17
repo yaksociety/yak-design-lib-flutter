@@ -44,10 +44,10 @@ YakAvatar(initials: 'YK');
 
 ## Components
 
-All **160** Supernova Figma components are tracked in [`SupernovaComponentRegistry`](lib/src/components/supernova_component_registry.dart):
+All **157** Supernova Figma components are tracked in [`SupernovaComponentRegistry`](lib/src/components/supernova_component_registry.dart):
 
-- **118** → Flutter widgets (`YakButton`, `YakTextField`, `YakCardTransaction`, …)
-- **36** → Asset libraries (logos, illustrations — bundle in `assets/`)
+- **116** → Flutter widgets (`YakButton`, `YakTextField`, `YakCardTransaction`, …)
+- **35** → Asset libraries (logos, illustrations — bundle in `assets/`)
 - **6** → Figma layout templates
 
 Browse the full index: `cd example && flutter run`
