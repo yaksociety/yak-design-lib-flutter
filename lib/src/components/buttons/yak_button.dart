@@ -106,11 +106,11 @@ class YakButton extends StatelessWidget {
   }
 
   Color _loadingColor(BuildContext context) {
-    final yakTheme = context.yakTheme;
     return switch (style) {
       YakButtonStyle.primary => context.yakColorScheme.onPrimary,
-      YakButtonStyle.danger => yakTheme.textOnColor,
-      YakButtonStyle.success || YakButtonStyle.warning => Colors.white,
+      YakButtonStyle.danger ||
+      YakButtonStyle.success ||
+      YakButtonStyle.warning => context.yakColors.textIconsOnDark,
       YakButtonStyle.secondary => YakButtonHelpers.secondaryColors(context).$2,
       _ => context.yakColorScheme.primary,
     };
@@ -126,19 +126,28 @@ class YakButton extends StatelessWidget {
       );
     }
 
-    final scheme = context.yakColorScheme;
+    final colors = context.yakColors;
     final (bg, fg) = switch (style) {
-      YakButtonStyle.danger => (yakTheme.danger, yakTheme.textOnColor),
-      YakButtonStyle.success => (yakTheme.success, Colors.white),
-      YakButtonStyle.warning => (yakTheme.warning, Colors.white),
-      _ => (scheme.primary, scheme.onPrimary),
+      YakButtonStyle.danger => (
+        colors.backgroundDangerMain,
+        colors.textIconsOnDark,
+      ),
+      YakButtonStyle.success => (
+        colors.backgroundSuccessMain,
+        colors.textIconsOnDark,
+      ),
+      YakButtonStyle.warning => (
+        colors.backgroundWarningMain,
+        colors.textIconsOnDark,
+      ),
+      _ => (colors.backgroundPrimaryMain, colors.textIconsOnLight),
     };
 
     return FilledButton.styleFrom(
       backgroundColor: bg,
       foregroundColor: fg,
-      disabledBackgroundColor: yakTheme.backgroundDisabled,
-      disabledForegroundColor: yakTheme.textSecondary,
+      disabledBackgroundColor: colors.backgroundDisabled,
+      disabledForegroundColor: colors.textIconsDisabled,
       minimumSize: YakButtonHelpers.minimumSize(
         size: size,
         isExpanded: isExpanded,
@@ -157,7 +166,7 @@ class YakButton extends StatelessWidget {
       backgroundColor: yakTheme.backgroundMain,
       foregroundColor: yakTheme.textMain,
       disabledBackgroundColor: yakTheme.backgroundDisabled,
-      disabledForegroundColor: yakTheme.textSecondary,
+      disabledForegroundColor: yakTheme.textDisabled,
       minimumSize: YakButtonHelpers.minimumSize(
         size: size,
         isExpanded: isExpanded,

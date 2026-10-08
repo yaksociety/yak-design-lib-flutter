@@ -41,6 +41,15 @@ These Supernova components are **asset collections** — add files under `assets
 - Icon, YAK-Expression, YAK-Poses, illustration, logo-app
 - Device chrome: status-bar, home-indicator, iPhone, Android
 
+## Colors
+
+Components read colors from `context.yakColors` (`YakSemanticColors`), generated from the Figma **Semantic: Color** collection with Light and Dark modes. Never use `AppColors` primitives or `Colors.white`/`Colors.black` directly.
+
+```bash
+# Replace tool/yak_semantic_color.json with a fresh Figma variables export
+python3 tool/generate_semantic_colors.py
+```
+
 ## Adding a component
 
 1. Add widget under the matching folder (or `domain/` for app-specific cards).

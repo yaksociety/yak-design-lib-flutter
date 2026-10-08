@@ -28,7 +28,7 @@ void main() {
     expect(tapped, isTrue);
   });
 
-  testWidgets('YakPrimaryButton uses textIconsBaseMain for label color', (
+  testWidgets('YakPrimaryButton uses onPrimary (On-Light) for label color', (
     WidgetTester tester,
   ) async {
     await tester.pumpWidget(
@@ -47,7 +47,7 @@ void main() {
     expect(text.style?.color, scheme.onPrimary);
   });
 
-  testWidgets('YakPrimaryButton uses textSecondary when disabled', (
+  testWidgets('YakPrimaryButton uses Text & Icons/Disabled when disabled', (
     WidgetTester tester,
   ) async {
     await tester.pumpWidget(
@@ -59,11 +59,8 @@ void main() {
       ),
     );
 
-    final yakTheme = Theme.of(
-      tester.element(find.byType(YakPrimaryButton)),
-    ).extension<YakThemeExtension>()!;
     final text = tester.widget<Text>(find.text('Continue'));
-    expect(text.style?.color, yakTheme.textSecondary);
+    expect(text.style?.color, YakSemanticColors.light.textIconsDisabled);
   });
 
   testWidgets('YakPrimaryButton shows loading indicator when isLoading', (

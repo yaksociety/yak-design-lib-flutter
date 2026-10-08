@@ -29,7 +29,7 @@ class YakTextButton extends StatelessWidget {
       onPressed: isDisabled ? null : onPressed,
       style: TextButton.styleFrom(
         foregroundColor: yakTheme.textMain,
-        disabledForegroundColor: yakTheme.textSecondary,
+        disabledForegroundColor: yakTheme.textDisabled,
         minimumSize: YakButtonHelpers.minimumSize(
           size: size,
           isExpanded: isExpanded,
@@ -44,7 +44,7 @@ class YakTextButton extends StatelessWidget {
         label: label,
         isLoading: isLoading,
         loadingColor: context.yakColorScheme.primary,
-        labelColor: isDisabled ? yakTheme.textSecondary : null,
+        labelColor: isDisabled ? yakTheme.textDisabled : null,
       ),
     );
   }

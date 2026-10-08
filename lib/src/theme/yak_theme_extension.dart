@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../tokens/generated/semantic_colors.dart';
+
 /// Semantic Yak design tokens exposed via [ThemeExtension].
 ///
-/// Values come from Supernova via [YakThemeMapper]. Prefer
-/// `context.yakTheme` in components instead of hard-coded [AppColors].
+/// Color fields are shortcuts into [YakSemanticColors] for the active mode.
+/// Use `context.yakColors` for the full semantic palette; never read
+/// [AppColors] primitives directly in components.
 @immutable
 class YakThemeExtension extends ThemeExtension<YakThemeExtension> {
   const YakThemeExtension({
@@ -197,6 +200,10 @@ class YakThemeExtension extends ThemeExtension<YakThemeExtension> {
 extension YakThemeExtensionContext on BuildContext {
   YakThemeExtension get yakTheme =>
       Theme.of(this).extension<YakThemeExtension>()!;
+
+  /// Semantic colors (Light / Dark) from the Figma "Semantic: Color" collection.
+  YakSemanticColors get yakColors =>
+      Theme.of(this).extension<YakSemanticColors>()!;
 
   ColorScheme get yakColorScheme => Theme.of(this).colorScheme;
 

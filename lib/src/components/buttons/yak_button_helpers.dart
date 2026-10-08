@@ -137,7 +137,7 @@ abstract final class YakButtonHelpers {
       backgroundColor: background,
       foregroundColor: foreground,
       disabledBackgroundColor: yakTheme.backgroundDisabled,
-      disabledForegroundColor: yakTheme.textSecondary,
+      disabledForegroundColor: yakTheme.textDisabled,
       minimumSize: minimumSize(
         size: size,
         isExpanded: isExpanded,

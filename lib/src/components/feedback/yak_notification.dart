@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../theme/yak_theme_extension.dart';
+import '../../tokens/generated/semantic_colors.dart';
 import '../../tokens/generated/text_styles.dart';
 import '../display/yak_display.dart' show YakIndicator;
 import 'yak_alert.dart';
@@ -323,17 +324,15 @@ class _YakToastBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final yakTheme = context.yakTheme;
-    final colorScheme = Theme.of(context).colorScheme;
-    final accent = _accentFor(context, yakTheme, variant);
+    final colors = context.yakColors;
+    final (accentSurface, accent) = _accentFor(colors, variant);
     final icon = _iconFor(variant);
 
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: colorScheme.surface,
+        color: colors.backgroundBaseMain,
         borderRadius: BorderRadius.circular(yakTheme.radiusMd),
-        border: Border.all(
-          color: yakTheme.borderDefault.withValues(alpha: 0.45),
-        ),
+        border: Border.all(color: colors.strokeBase),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.08),
@@ -352,7 +351,7 @@ class _YakToastBanner extends StatelessWidget {
           children: [
             DecoratedBox(
               decoration: BoxDecoration(
-                color: accent.withValues(alpha: 0.12),
+                color: accentSurface,
                 shape: BoxShape.circle,
               ),
               child: Padding(
@@ -365,7 +364,7 @@ class _YakToastBanner extends StatelessWidget {
               child: Text(
                 message,
                 style: AppTextStyles.textSRegular.copyWith(
-                  color: colorScheme.onSurface,
+                  color: colors.textIconsBaseMain,
                   height: 1.4,
                 ),
                 maxLines: 4,
@@ -391,18 +390,31 @@ class _YakToastBanner extends StatelessWidget {
     );
   }
 
-  static Color _accentFor(
-    BuildContext context,
-    YakThemeExtension yakTheme,
+  static (Color surface, Color foreground) _accentFor(
+    YakSemanticColors colors,
     YakAlertVariant variant,
   ) {
-    final colorScheme = Theme.of(context).colorScheme;
     return switch (variant) {
-      YakAlertVariant.destructive => yakTheme.danger,
-      YakAlertVariant.success => yakTheme.success,
-      YakAlertVariant.warning => yakTheme.warning,
-      YakAlertVariant.gray => yakTheme.textSecondary,
-      YakAlertVariant.info => colorScheme.primary,
+      YakAlertVariant.destructive => (
+        colors.backgroundDangerSecond,
+        colors.textIconsDanger,
+      ),
+      YakAlertVariant.success => (
+        colors.backgroundSuccessSecond,
+        colors.textIconsSuccess,
+      ),
+      YakAlertVariant.warning => (
+        colors.backgroundWarningSecond,
+        colors.textIconsWarning,
+      ),
+      YakAlertVariant.gray => (
+        colors.backgroundBaseSecond,
+        colors.textIconsBaseSecond,
+      ),
+      YakAlertVariant.info => (
+        colors.backgroundPrimarySecond,
+        colors.textIconsPrimary,
+      ),
     };
   }
 

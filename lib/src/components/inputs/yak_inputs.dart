@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../theme/yak_theme_extension.dart';
-import '../../tokens/generated/colors.dart';
 import '../../tokens/generated/text_styles.dart';
 import '../buttons/yak_primary_button.dart';
 import 'yak_input_theme.dart';
@@ -26,12 +25,16 @@ class YakLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.yakColors;
     final color = isDestructive
-        ? AppColors.textIconsDanger
-        : AppColors.textIconsBaseMain;
+        ? colors.textIconsDanger
+        : colors.textIconsBaseMain;
     final style = switch (size) {
       YakInputSize.sm => AppTextStyles.textXSMedium.copyWith(color: color),
-      YakInputSize.md => YakInputTheme.labelStyle(isDestructive: isDestructive),
+      YakInputSize.md => YakInputTheme.labelStyle(
+        context,
+        isDestructive: isDestructive,
+      ),
       YakInputSize.lg => AppTextStyles.textMMedium.copyWith(color: color),
     };
 
@@ -43,7 +46,7 @@ class YakLabel extends StatelessWidget {
           if (isRequired)
             TextSpan(
               text: ' *',
-              style: TextStyle(color: context.yakTheme.danger),
+              style: TextStyle(color: colors.textIconsDanger),
             ),
         ],
       ),
@@ -66,7 +69,7 @@ class YakHintText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: YakInputTheme.helperStyle(isDestructive: isDestructive),
+      style: YakInputTheme.helperStyle(context, isDestructive: isDestructive),
     );
   }
 }
@@ -212,7 +215,7 @@ class _YakTextFieldState extends State<YakTextField> {
           textAlignVertical: widget.maxLines > 1
               ? TextAlignVertical.top
               : TextAlignVertical.center,
-          style: YakInputTheme.fieldTextStyle(enabled: widget.enabled),
+          style: YakInputTheme.fieldTextStyle(context, enabled: widget.enabled),
           decoration: YakInputTheme.decoration(
             context: context,
             hintText: widget.hint,
@@ -354,7 +357,7 @@ class _YakVerificationCodeInputState extends State<YakVerificationCodeInput> {
                       textAlign: TextAlign.center,
                       keyboardType: TextInputType.number,
                       maxLength: 1,
-                      style: YakInputTheme.fieldTextStyle(),
+                      style: YakInputTheme.fieldTextStyle(context),
                       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                       onChanged: (value) {
                         if (value.isNotEmpty && i < widget.length - 1) {
@@ -430,7 +433,7 @@ class YakPhoneNumberField extends StatelessWidget {
             children: [
               Text(flagLabel, style: const TextStyle(fontSize: 18)),
               SizedBox(width: yakTheme.spacingXs),
-              Text(countryCode, style: YakInputTheme.fieldTextStyle()),
+              Text(countryCode, style: YakInputTheme.fieldTextStyle(context)),
               Icon(
                 Icons.arrow_drop_down,
                 color: yakTheme.textSecondary,
@@ -657,7 +660,7 @@ class YakInputIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = YakInputTheme.indicatorColor(type);
+    final color = YakInputTheme.indicatorColor(context, type);
 
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -669,7 +672,7 @@ class YakInputIndicator extends StatelessWidget {
         ),
         if (label != null) ...[
           SizedBox(width: context.yakTheme.spacingXs),
-          Text(label!, style: YakInputTheme.helperStyle()),
+          Text(label!, style: YakInputTheme.helperStyle(context)),
         ],
       ],
     );
@@ -738,7 +741,7 @@ class YakInputTitleProgress extends StatelessWidget {
       children: [
         Icon(icon, color: color, size: 20),
         SizedBox(width: yakTheme.spacingSm),
-        Text(title, style: YakInputTheme.labelStyle()),
+        Text(title, style: YakInputTheme.labelStyle(context)),
       ],
     );
   }
@@ -777,7 +780,7 @@ class YakSelect<T> extends StatelessWidget {
         initialValue: value,
         hint: hint == null
             ? null
-            : Text(hint!, style: YakInputTheme.placeholderStyle()),
+            : Text(hint!, style: YakInputTheme.placeholderStyle(context)),
         items: [
           for (final item in items)
             DropdownMenuItem(value: item, child: Text(itemLabel(item))),
@@ -838,7 +841,7 @@ class YakCheckbox extends StatelessWidget {
     return CheckboxListTile(
       value: value,
       onChanged: onChanged == null ? null : (v) => onChanged!(v ?? false),
-      title: Text(label, style: YakInputTheme.fieldTextStyle()),
+      title: Text(label, style: YakInputTheme.fieldTextStyle(context)),
       activeColor: activeColor,
       contentPadding: EdgeInsets.zero,
       controlAffinity: ListTileControlAffinity.leading,
@@ -912,7 +915,7 @@ class YakToggle extends StatelessWidget {
     return SwitchListTile(
       value: value,
       onChanged: onChanged,
-      title: Text(label, style: YakInputTheme.fieldTextStyle()),
+      title: Text(label, style: YakInputTheme.fieldTextStyle(context)),
       contentPadding: EdgeInsets.zero,
     );
   }
@@ -944,12 +947,11 @@ class _YakToggleCompact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final enabled = onChanged != null;
+    final colors = context.yakColors;
     final labelWidget = Text(
       label,
-      style: YakInputTheme.toggleLabelStyle().copyWith(
-        color: enabled
-            ? AppColors.textIconsBaseMain
-            : AppColors.textIconsDisabled,
+      style: YakInputTheme.toggleLabelStyle(context).copyWith(
+        color: enabled ? colors.textIconsBaseMain : colors.textIconsDisabled,
       ),
     );
 
@@ -970,7 +972,7 @@ class _YakToggleCompact extends StatelessWidget {
               height: _trackHeight,
               padding: const EdgeInsets.all(2),
               decoration: BoxDecoration(
-                color: YakInputTheme.toggleTrackColor(isOn: value),
+                color: YakInputTheme.toggleTrackColor(context, isOn: value),
                 borderRadius: BorderRadius.circular(_trackHeight),
               ),
               child: AnimatedAlign(
@@ -981,7 +983,7 @@ class _YakToggleCompact extends StatelessWidget {
                   width: _thumbSize,
                   height: _thumbSize,
                   decoration: BoxDecoration(
-                    color: YakInputTheme.toggleThumbColor(),
+                    color: YakInputTheme.toggleThumbColor(context),
                     shape: BoxShape.circle,
                     boxShadow: const [
                       BoxShadow(
@@ -1075,7 +1077,7 @@ class YakFileUpload extends StatelessWidget {
             children: [
               Icon(Icons.upload_file, color: yakTheme.textSecondary),
               SizedBox(height: yakTheme.spacingSm),
-              Text(hint, style: YakInputTheme.helperStyle()),
+              Text(hint, style: YakInputTheme.helperStyle(context)),
             ],
           ),
         ),
@@ -1184,9 +1186,9 @@ class YakAddressPicker extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(label, style: YakInputTheme.labelStyle()),
+                  Text(label, style: YakInputTheme.labelStyle(context)),
                   if (value != null)
-                    Text(value!, style: YakInputTheme.helperStyle()),
+                    Text(value!, style: YakInputTheme.helperStyle(context)),
                 ],
               ),
             ),
@@ -1212,7 +1214,7 @@ class YakDisplayDate extends StatelessWidget {
         '${date.day.toString().padLeft(2, '0')}/'
             '${date.month.toString().padLeft(2, '0')}/'
             '${date.year}';
-    return Text(text, style: YakInputTheme.fieldTextStyle());
+    return Text(text, style: YakInputTheme.fieldTextStyle(context));
   }
 }
 
@@ -1295,11 +1297,11 @@ class YakMapPointer extends StatelessWidget {
             decoration: BoxDecoration(
               color: Theme.of(context).colorScheme.surface,
               borderRadius: BorderRadius.circular(yakTheme.radiusSm),
-              boxShadow: const [
-                BoxShadow(blurRadius: 4, color: Colors.black26),
+              boxShadow: [
+                BoxShadow(blurRadius: 4, color: context.yakColors.overlayScrim),
               ],
             ),
-            child: Text(label!, style: YakInputTheme.helperStyle()),
+            child: Text(label!, style: YakInputTheme.helperStyle(context)),
           ),
       ],
     );

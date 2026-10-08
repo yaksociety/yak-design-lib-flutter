@@ -39,7 +39,7 @@ class YakSecondaryButton extends StatelessWidget {
         label: label,
         isLoading: isLoading,
         loadingColor: foreground,
-        labelColor: isDisabled ? yakTheme.textSecondary : null,
+        labelColor: isDisabled ? yakTheme.textDisabled : null,
       ),
     );
   }

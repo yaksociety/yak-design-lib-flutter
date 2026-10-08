@@ -32,7 +32,7 @@ class YakPrimaryButton extends StatelessWidget {
         backgroundColor: scheme.primary,
         foregroundColor: scheme.onPrimary,
         disabledBackgroundColor: yakTheme.backgroundDisabled,
-        disabledForegroundColor: yakTheme.textSecondary,
+        disabledForegroundColor: yakTheme.textDisabled,
         minimumSize: YakButtonHelpers.minimumSize(
           size: size,
           isExpanded: isExpanded,
@@ -47,7 +47,7 @@ class YakPrimaryButton extends StatelessWidget {
         label: label,
         isLoading: isLoading,
         loadingColor: scheme.onPrimary,
-        labelColor: isDisabled ? yakTheme.textSecondary : null,
+        labelColor: isDisabled ? yakTheme.textDisabled : scheme.onPrimary,
       ),
     );
   }

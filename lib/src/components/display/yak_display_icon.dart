@@ -60,41 +60,41 @@ class YakDisplayIcon extends StatelessWidget {
   }
 
   _IconColors _resolveColors(BuildContext context, YakThemeExtension yakTheme) {
-    final colorScheme = Theme.of(context).colorScheme;
+    final colors = context.yakColors;
 
     return switch (style) {
       YakDisplayIconStyle.primary => _IconColors(
-        background: colorScheme.primary,
-        foreground: colorScheme.onPrimary,
+        background: colors.backgroundPrimaryMain,
+        foreground: colors.textIconsOnLight,
       ),
       YakDisplayIconStyle.secondary => _IconColors(
-        background: colorScheme.surfaceContainerHighest,
-        foreground: colorScheme.onSurface,
+        background: colors.backgroundPrimarySecond,
+        foreground: colors.textIconsBaseMain,
       ),
       YakDisplayIconStyle.outline => _IconColors(
         background: Colors.transparent,
-        foreground: colorScheme.onSurface,
-        border: yakTheme.borderDefault,
+        foreground: colors.textIconsBaseMain,
+        border: colors.strokeBase,
       ),
       YakDisplayIconStyle.ghost => _IconColors(
         background: Colors.transparent,
-        foreground: colorScheme.onSurface,
+        foreground: colors.textIconsBaseMain,
       ),
       YakDisplayIconStyle.danger => _IconColors(
-        background: yakTheme.danger,
-        foreground: colorScheme.onError,
+        background: colors.backgroundDangerMain,
+        foreground: colors.textIconsOnDark,
       ),
       YakDisplayIconStyle.gray => _IconColors(
-        background: yakTheme.borderDefault.withValues(alpha: 0.2),
-        foreground: yakTheme.textSecondary,
+        background: colors.backgroundBaseThird,
+        foreground: colors.textIconsBaseSecond,
       ),
       YakDisplayIconStyle.success => _IconColors(
-        background: yakTheme.success,
-        foreground: Colors.white,
+        background: colors.backgroundSuccessMain,
+        foreground: colors.textIconsOnDark,
       ),
       YakDisplayIconStyle.warning => _IconColors(
-        background: yakTheme.warning,
-        foreground: Colors.white,
+        background: colors.backgroundWarningMain,
+        foreground: colors.textIconsOnDark,
       ),
     };
   }

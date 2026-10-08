@@ -4,11 +4,7 @@ import '../../theme/yak_theme_extension.dart';
 
 /// Linear progress (Supernova: Progress bar / progress).
 class YakProgressBar extends StatelessWidget {
-  const YakProgressBar({
-    super.key,
-    required this.value,
-    this.label,
-  });
+  const YakProgressBar({super.key, required this.value, this.label});
 
   final double value;
   final String? label;
@@ -18,7 +14,8 @@ class YakProgressBar extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (label != null) Text(label!, style: Theme.of(context).textTheme.labelMedium),
+        if (label != null)
+          Text(label!, style: Theme.of(context).textTheme.labelMedium),
         LinearProgressIndicator(value: value.clamp(0, 1)),
       ],
     );
@@ -140,7 +137,9 @@ class YakRating extends StatelessWidget {
           IconButton(
             padding: EdgeInsets.zero,
             constraints: const BoxConstraints(),
-            onPressed: onChanged == null ? null : () => onChanged!(i.toDouble()),
+            onPressed: onChanged == null
+                ? null
+                : () => onChanged!(i.toDouble()),
             icon: Icon(
               i <= value.round() ? Icons.star : Icons.star_border,
               color: context.yakTheme.warning,
@@ -154,11 +153,7 @@ class YakRating extends StatelessWidget {
 
 /// Step indicator (Supernova: Steps).
 class YakSteps extends StatelessWidget {
-  const YakSteps({
-    super.key,
-    required this.steps,
-    required this.currentStep,
-  });
+  const YakSteps({super.key, required this.steps, required this.currentStep});
 
   final List<String> steps;
   final int currentStep;
@@ -166,7 +161,7 @@ class YakSteps extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final yakTheme = context.yakTheme;
-    final active = Theme.of(context).colorScheme.primary;
+    final colors = context.yakColors;
 
     return Row(
       children: [
@@ -175,18 +170,24 @@ class YakSteps extends StatelessWidget {
             Expanded(
               child: Container(
                 height: 2,
-                color: i <= currentStep ? active : yakTheme.borderDefault,
+                color: i <= currentStep
+                    ? colors.strokePrimary
+                    : colors.strokeBase,
               ),
             ),
           Column(
             children: [
               CircleAvatar(
                 radius: 14,
-                backgroundColor: i <= currentStep ? active : yakTheme.borderDefault,
+                backgroundColor: i <= currentStep
+                    ? colors.backgroundPrimaryMain
+                    : colors.backgroundBaseThird,
                 child: Text(
                   '${i + 1}',
                   style: TextStyle(
-                    color: i <= currentStep ? Colors.white : yakTheme.textSecondary,
+                    color: i <= currentStep
+                        ? colors.textIconsOnLight
+                        : colors.textIconsBaseSecond,
                     fontSize: 12,
                   ),
                 ),
@@ -203,11 +204,7 @@ class YakSteps extends StatelessWidget {
 
 /// Numbered stepper (Supernova: Stepper).
 class YakStepper extends StatelessWidget {
-  const YakStepper({
-    super.key,
-    required this.steps,
-    required this.currentStep,
-  });
+  const YakStepper({super.key, required this.steps, required this.currentStep});
 
   final List<Widget> steps;
   final int currentStep;
@@ -321,11 +318,7 @@ class YakPasswordIndicator extends StatelessWidget {
 
 /// Horizontal pager (Supernova: carousel).
 class YakCarousel extends StatefulWidget {
-  const YakCarousel({
-    super.key,
-    required this.children,
-    this.height = 180,
-  });
+  const YakCarousel({super.key, required this.children, this.height = 180});
 
   final List<Widget> children;
   final double height;
@@ -364,7 +357,9 @@ class _YakCarouselState extends State<YakCarousel> {
           children: [
             for (var i = 0; i < widget.children.length; i++)
               Container(
-                margin: EdgeInsets.symmetric(horizontal: yakTheme.spacingXs / 2),
+                margin: EdgeInsets.symmetric(
+                  horizontal: yakTheme.spacingXs / 2,
+                ),
                 width: i == _page ? 16 : 8,
                 height: 8,
                 decoration: BoxDecoration(
@@ -402,8 +397,11 @@ class YakSwipeAction extends StatelessWidget {
       background: Container(
         alignment: Alignment.centerRight,
         padding: EdgeInsets.only(right: context.yakTheme.spacingMd),
-        color: context.yakTheme.danger,
-        child: Text(deleteLabel, style: const TextStyle(color: Colors.white)),
+        color: context.yakColors.backgroundDangerMain,
+        child: Text(
+          deleteLabel,
+          style: TextStyle(color: context.yakColors.textIconsOnDark),
+        ),
       ),
       onDismissed: (_) => onDelete?.call(),
       child: child,

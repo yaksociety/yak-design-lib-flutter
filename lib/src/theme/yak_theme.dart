@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../tokens/generated/colors.dart';
-import '../tokens/generated/text_styles.dart';
+import '../tokens/generated/semantic_colors.dart';
 import 'yak_theme_mapper.dart';
 
 /// Yak design system themes mapped to Flutter [ThemeData].
@@ -15,50 +14,32 @@ import 'yak_theme_mapper.dart';
 /// ```
 ///
 /// Then read tokens via Yak Society Context:
-/// `context.yakTheme`, `context.yakColorScheme`, `context.yakTextTheme`.
+/// `context.yakColors`, `context.yakTheme`, `context.yakColorScheme`,
+/// `context.yakTextTheme`.
 abstract final class YakTheme {
-  static ThemeData light() {
-    return ThemeData(
-      useMaterial3: true,
-      colorScheme: YakThemeMapper.lightColorScheme(),
-      scaffoldBackgroundColor: AppColors.backgroundBaseMain,
-      extensions: const [YakThemeMapper.lightExtension],
-      textTheme: YakThemeMapper.textTheme(AppColors.textIconsBaseMain),
-      filledButtonTheme: YakThemeMapper.filledButtonTheme(),
-      outlinedButtonTheme: YakThemeMapper.outlinedButtonTheme(),
-      textButtonTheme: YakThemeMapper.textButtonTheme(),
-      inputDecorationTheme: YakThemeMapper.inputDecorationTheme(),
-      appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.backgroundBaseSecond,
-        foregroundColor: AppColors.textIconsBaseMain,
-        elevation: 0,
-        titleTextStyle: AppTextStyles.headline3Semibold.copyWith(
-          color: AppColors.textIconsBaseMain,
-        ),
-      ),
-    );
-  }
+  static ThemeData light() =>
+      fromSemanticColors(YakSemanticColors.light, Brightness.light);
 
-  static ThemeData dark() {
+  static ThemeData dark() =>
+      fromSemanticColors(YakSemanticColors.dark, Brightness.dark);
+
+  static ThemeData fromSemanticColors(
+    YakSemanticColors colors,
+    Brightness brightness,
+  ) {
     return ThemeData(
       useMaterial3: true,
-      brightness: Brightness.dark,
-      colorScheme: YakThemeMapper.darkColorScheme(),
-      scaffoldBackgroundColor: AppColors.backgroundBaseDarkSecond,
-      extensions: const [YakThemeMapper.darkExtension],
-      textTheme: YakThemeMapper.textTheme(AppColors.textIconsOnColor),
-      filledButtonTheme: YakThemeMapper.filledButtonThemeDark(),
-      outlinedButtonTheme: YakThemeMapper.outlinedButtonThemeDark(),
-      textButtonTheme: YakThemeMapper.textButtonThemeDark(),
-      inputDecorationTheme: YakThemeMapper.inputDecorationThemeDark(),
-      appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.backgroundBaseDarkMain,
-        foregroundColor: AppColors.textIconsOnColor,
-        elevation: 0,
-        titleTextStyle: AppTextStyles.headline3Semibold.copyWith(
-          color: AppColors.textIconsOnColor,
-        ),
-      ),
+      brightness: brightness,
+      colorScheme: YakThemeMapper.colorScheme(colors, brightness),
+      scaffoldBackgroundColor: colors.backgroundBaseMain,
+      dividerColor: colors.strokeBase,
+      extensions: [colors, YakThemeMapper.extension(colors)],
+      textTheme: YakThemeMapper.textTheme(colors.textIconsBaseMain),
+      filledButtonTheme: YakThemeMapper.filledButtonTheme(colors),
+      outlinedButtonTheme: YakThemeMapper.outlinedButtonTheme(colors),
+      textButtonTheme: YakThemeMapper.textButtonTheme(colors),
+      inputDecorationTheme: YakThemeMapper.inputDecorationTheme(colors),
+      appBarTheme: YakThemeMapper.appBarTheme(colors),
     );
   }
 }

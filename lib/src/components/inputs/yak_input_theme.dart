@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/yak_theme_extension.dart';
-import '../../tokens/generated/colors.dart';
 import '../../tokens/generated/dimensions.dart';
 import '../../tokens/generated/radii.dart';
 import '../../tokens/generated/text_styles.dart';
@@ -43,33 +42,38 @@ abstract final class YakInputTheme {
     return heightForTheme(context, size);
   }
 
-  static TextStyle labelStyle({bool isDestructive = false}) {
+  static TextStyle labelStyle(
+    BuildContext context, {
+    bool isDestructive = false,
+  }) {
+    final colors = context.yakColors;
     return AppTextStyles.textSMedium.copyWith(
-      color: isDestructive
-          ? AppColors.textIconsDanger
-          : AppColors.textIconsBaseMain,
+      color: isDestructive ? colors.textIconsDanger : colors.textIconsBaseMain,
     );
   }
 
-  static TextStyle helperStyle({bool isDestructive = false}) {
+  static TextStyle helperStyle(
+    BuildContext context, {
+    bool isDestructive = false,
+  }) {
+    final colors = context.yakColors;
     return AppTextStyles.textSRegular.copyWith(
       color: isDestructive
-          ? AppColors.textIconsDanger
-          : AppColors.textIconsBaseSecond,
+          ? colors.textIconsDanger
+          : colors.textIconsBaseSecond,
     );
   }
 
-  static TextStyle fieldTextStyle({bool enabled = true}) {
+  static TextStyle fieldTextStyle(BuildContext context, {bool enabled = true}) {
+    final colors = context.yakColors;
     return AppTextStyles.textMRegular.copyWith(
-      color: enabled
-          ? AppColors.textIconsBaseMain
-          : AppColors.textIconsDisabled,
+      color: enabled ? colors.textIconsBaseMain : colors.textIconsDisabled,
     );
   }
 
-  static TextStyle placeholderStyle() {
+  static TextStyle placeholderStyle(BuildContext context) {
     return AppTextStyles.textMRegular.copyWith(
-      color: AppColors.textIconsBaseSecond,
+      color: context.yakColors.textIconsBaseSecond,
     );
   }
 
@@ -85,12 +89,13 @@ abstract final class YakInputTheme {
     bool isDestructive = false,
     EdgeInsetsGeometry? contentPadding,
   }) {
+    final colors = context.yakColors;
     final radius = BorderRadius.circular(AppRadii.roundnessRoundOutside);
     final borderColor = isDestructive
-        ? AppColors.strokeDanger
+        ? colors.strokeDanger
         : isFocused
-        ? AppColors.strokePrimary
-        : AppColors.strokeBase;
+        ? colors.strokePrimary
+        : colors.strokeBase;
     final borderWidth = isFocused ? 2.0 : 1.0;
 
     OutlineInputBorder border(Color color, {double width = 1}) {
@@ -110,14 +115,17 @@ abstract final class YakInputTheme {
       isDense: true,
       filled: true,
       fillColor: enabled
-          ? AppColors.backgroundBaseMain
-          : AppColors.backgroundDisabled,
+          ? colors.backgroundBaseMain
+          : colors.backgroundDisabled,
       hintText: hintText,
-      hintStyle: placeholderStyle(),
+      hintStyle: placeholderStyle(context),
       errorText: errorText,
       errorStyle: errorText == null
           ? null
-          : helperStyle(isDestructive: true).copyWith(height: 0, fontSize: 0),
+          : helperStyle(
+              context,
+              isDestructive: true,
+            ).copyWith(height: 0, fontSize: 0),
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
       contentPadding:
@@ -128,12 +136,12 @@ abstract final class YakInputTheme {
           ),
       enabledBorder: border(borderColor, width: borderWidth),
       focusedBorder: border(
-        isDestructive ? AppColors.strokeDanger : AppColors.strokePrimary,
+        isDestructive ? colors.strokeDanger : colors.strokePrimary,
         width: 2,
       ),
-      disabledBorder: border(AppColors.strokeBase),
-      errorBorder: border(AppColors.strokeDanger),
-      focusedErrorBorder: border(AppColors.strokeDanger, width: 2),
+      disabledBorder: border(colors.strokeBase),
+      errorBorder: border(colors.strokeDanger),
+      focusedErrorBorder: border(colors.strokeDanger, width: 2),
       border: border(borderColor, width: borderWidth),
     );
   }
@@ -145,40 +153,45 @@ abstract final class YakInputTheme {
     bool isDestructive = false,
     bool enabled = true,
   }) {
+    final colors = context.yakColors;
     final borderColor = isDestructive
-        ? AppColors.strokeDanger
+        ? colors.strokeDanger
         : isFocused
-        ? AppColors.strokePrimary
-        : AppColors.strokeBase;
+        ? colors.strokePrimary
+        : colors.strokeBase;
 
     return BoxDecoration(
-      color: enabled
-          ? AppColors.backgroundBaseMain
-          : AppColors.backgroundDisabled,
+      color: enabled ? colors.backgroundBaseMain : colors.backgroundDisabled,
       borderRadius: BorderRadius.circular(AppRadii.roundnessRoundOutside),
       border: Border.all(color: borderColor, width: isFocused ? 2 : 1),
     );
   }
 
-  static Color indicatorColor(YakInputIndicatorType type) {
+  static Color indicatorColor(
+    BuildContext context,
+    YakInputIndicatorType type,
+  ) {
+    final colors = context.yakColors;
     return switch (type) {
-      YakInputIndicatorType.active => AppColors.warning500,
-      YakInputIndicatorType.inactive => AppColors.neutral300,
-      YakInputIndicatorType.positive => AppColors.success500,
-      YakInputIndicatorType.negative => AppColors.danger500,
-      YakInputIndicatorType.number => AppColors.primary500,
+      YakInputIndicatorType.active => colors.backgroundWarningMain,
+      YakInputIndicatorType.inactive => colors.backgroundBaseThird,
+      YakInputIndicatorType.positive => colors.backgroundSuccessMain,
+      YakInputIndicatorType.negative => colors.backgroundDangerMain,
+      YakInputIndicatorType.number => colors.backgroundPrimaryMain,
     };
   }
 
-  static Color toggleTrackColor({required bool isOn}) {
-    return isOn ? AppColors.success500 : AppColors.neutral200;
+  static Color toggleTrackColor(BuildContext context, {required bool isOn}) {
+    final colors = context.yakColors;
+    return isOn ? colors.backgroundSuccessMain : colors.backgroundBaseThird;
   }
 
-  static Color toggleThumbColor() => AppColors.backgroundBaseMain;
+  static Color toggleThumbColor(BuildContext context) =>
+      context.yakColors.textIconsOnDark;
 
-  static TextStyle toggleLabelStyle() {
+  static TextStyle toggleLabelStyle(BuildContext context) {
     return AppTextStyles.textMMedium.copyWith(
-      color: AppColors.textIconsBaseMain,
+      color: context.yakColors.textIconsBaseMain,
     );
   }
 }

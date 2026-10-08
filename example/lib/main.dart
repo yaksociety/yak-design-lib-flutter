@@ -5,16 +5,106 @@ void main() {
   runApp(const YakDesignCatalogApp());
 }
 
+final _themeMode = ValueNotifier(ThemeMode.light);
+
 class YakDesignCatalogApp extends StatelessWidget {
   const YakDesignCatalogApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Yak Design Catalog',
-      theme: YakTheme.light(),
-      darkTheme: YakTheme.dark(),
-      home: const ComponentIndexPage(),
+    return ValueListenableBuilder(
+      valueListenable: _themeMode,
+      builder: (context, mode, _) => MaterialApp(
+        title: 'Yak Design Catalog',
+        theme: YakTheme.light(),
+        darkTheme: YakTheme.dark(),
+        themeMode: mode,
+        home: const ComponentIndexPage(),
+      ),
+    );
+  }
+}
+
+class _ThemeModeToggle extends StatelessWidget {
+  const _ThemeModeToggle();
+
+  @override
+  Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return IconButton(
+      tooltip: isDark ? 'Light mode' : 'Dark mode',
+      icon: Icon(isDark ? Icons.light_mode_outlined : Icons.dark_mode_outlined),
+      onPressed: () =>
+          _themeMode.value = isDark ? ThemeMode.light : ThemeMode.dark,
+    );
+  }
+}
+
+/// Every role from the Figma "Semantic: Color" collection for the active mode.
+class SemanticColorsPage extends StatelessWidget {
+  const SemanticColorsPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final yakTheme = context.yakTheme;
+    final colors = context.yakColors;
+    final textTheme = Theme.of(context).textTheme;
+    final groups = <String, List<MapEntry<String, Color>>>{};
+    for (final entry in colors.toMap().entries) {
+      final parts = entry.key.split('/');
+      final group = parts.take(parts.length - 1).join(' / ');
+      groups.putIfAbsent(group, () => []).add(entry);
+    }
+
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Semantic colors'),
+        actions: const [_ThemeModeToggle()],
+      ),
+      body: ListView(
+        padding: EdgeInsets.all(yakTheme.spacingMd),
+        children: [
+          for (final group in groups.entries) ...[
+            Padding(
+              padding: EdgeInsets.only(
+                top: yakTheme.spacingLg,
+                bottom: yakTheme.spacingSm,
+              ),
+              child: Text(group.key, style: textTheme.titleMedium),
+            ),
+            for (final entry in group.value)
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: yakTheme.spacingXs),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: entry.value,
+                        borderRadius: BorderRadius.circular(yakTheme.radiusSm),
+                        border: Border.all(color: colors.strokeBase),
+                      ),
+                    ),
+                    SizedBox(width: yakTheme.spacingMd),
+                    Expanded(
+                      child: Text(
+                        entry.key.split('/').last,
+                        style: textTheme.bodyMedium,
+                      ),
+                    ),
+                    Text(
+                      '#${entry.value.toARGB32().toRadixString(16).toUpperCase().padLeft(8, '0')}',
+                      style: textTheme.labelSmall?.copyWith(
+                        color: colors.textIconsBaseSecond,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+          ],
+        ],
+      ),
     );
   }
 }
@@ -37,10 +127,19 @@ class ComponentIndexPage extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute<void>(
+                builder: (_) => const SemanticColorsPage(),
+              ),
+            ),
+            child: const Text('Colors'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(context).push(
               MaterialPageRoute<void>(builder: (_) => const LivePreviewPage()),
             ),
             child: const Text('Live previews'),
           ),
+          const _ThemeModeToggle(),
         ],
       ),
       body: ListView(
@@ -134,6 +233,7 @@ class _LivePreviewPageState extends State<LivePreviewPage> {
           icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.of(context).maybePop(),
         ),
+        actions: const [_ThemeModeToggle()],
       ),
       body: ListView(
         padding: EdgeInsets.all(yakTheme.spacingMd),
@@ -734,7 +834,7 @@ class _SummaryCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(yakTheme.spacingMd),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
+        color: context.yakColors.backgroundPrimarySecond,
         borderRadius: BorderRadius.circular(yakTheme.radiusMd),
       ),
       child: Column(

@@ -3,27 +3,13 @@ import 'package:flutter/material.dart';
 import '../../theme/yak_theme_extension.dart';
 
 /// Avatar size tokens aligned with Supernova Avatar sizes.
-enum YakAvatarSize {
-  xs,
-  sm,
-  md,
-  lg,
-  xl,
-  xxl,
-}
+enum YakAvatarSize { xs, sm, md, lg, xl, xxl }
 
 /// Avatar content style (Supernova: Icon / Photo / Text).
-enum YakAvatarStyle {
-  icon,
-  photo,
-  text,
-}
+enum YakAvatarStyle { icon, photo, text }
 
 /// Avatar shape (Supernova: Circle / Square).
-enum YakAvatarShape {
-  circle,
-  square,
-}
+enum YakAvatarShape { circle, square }
 
 /// User or entity avatar (Supernova: Avatar).
 class YakAvatar extends StatelessWidget {
@@ -55,8 +41,8 @@ class YakAvatar extends StatelessWidget {
     final radius = shape == YakAvatarShape.circle
         ? BorderRadius.circular(dimension / 2)
         : BorderRadius.circular(yakTheme.radiusSm);
-    final bg = backgroundColor ?? yakTheme.borderDefault.withValues(alpha: 0.2);
-    final fg = foregroundColor ?? Theme.of(context).colorScheme.onSurface;
+    final bg = backgroundColor ?? context.yakColors.backgroundBaseThird;
+    final fg = foregroundColor ?? context.yakColors.textIconsBaseMain;
 
     return Container(
       width: dimension,
@@ -70,7 +56,8 @@ class YakAvatar extends StatelessWidget {
       ),
       alignment: Alignment.center,
       child: switch (style) {
-        YakAvatarStyle.photo => image == null ? _fallbackIcon(fg, dimension) : null,
+        YakAvatarStyle.photo =>
+          image == null ? _fallbackIcon(fg, dimension) : null,
         YakAvatarStyle.icon => Icon(
           icon ?? Icons.person,
           color: fg,
@@ -95,7 +82,9 @@ class YakAvatar extends StatelessWidget {
   String _resolvedInitials() {
     final value = initials?.trim();
     if (value == null || value.isEmpty) return '?';
-    return value.length <= 2 ? value.toUpperCase() : value.substring(0, 2).toUpperCase();
+    return value.length <= 2
+        ? value.toUpperCase()
+        : value.substring(0, 2).toUpperCase();
   }
 
   static double sizeFor(YakAvatarSize size) {

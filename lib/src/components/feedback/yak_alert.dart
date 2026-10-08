@@ -101,28 +101,48 @@ class YakAlert extends StatelessWidget {
     BuildContext context,
     YakThemeExtension yakTheme,
   ) {
-    final colorScheme = Theme.of(context).colorScheme;
-    final accent = switch (variant) {
-      YakAlertVariant.destructive => yakTheme.danger,
-      YakAlertVariant.success => yakTheme.success,
-      YakAlertVariant.warning => yakTheme.warning,
-      YakAlertVariant.gray => yakTheme.textSecondary,
-      YakAlertVariant.info => colorScheme.primary,
+    final colors = context.yakColors;
+    final (surface, foreground, stroke) = switch (variant) {
+      YakAlertVariant.destructive => (
+        colors.backgroundDangerSecond,
+        colors.textIconsDanger,
+        colors.strokeDanger,
+      ),
+      YakAlertVariant.success => (
+        colors.backgroundSuccessSecond,
+        colors.textIconsSuccess,
+        colors.strokeSuccess,
+      ),
+      YakAlertVariant.warning => (
+        colors.backgroundWarningSecond,
+        colors.textIconsWarning,
+        colors.strokeWarning,
+      ),
+      YakAlertVariant.gray => (
+        colors.backgroundBaseSecond,
+        colors.textIconsBaseSecond,
+        colors.strokeBase,
+      ),
+      YakAlertVariant.info => (
+        colors.backgroundPrimarySecond,
+        colors.textIconsPrimary,
+        colors.strokePrimary,
+      ),
     };
 
     return switch (style) {
       YakAlertStyle.filled => _AlertColors(
-        background: accent.withValues(alpha: 0.12),
-        foreground: accent,
+        background: surface,
+        foreground: foreground,
       ),
       YakAlertStyle.outline => _AlertColors(
         background: Colors.transparent,
-        foreground: accent,
-        border: accent,
+        foreground: foreground,
+        border: stroke,
       ),
       YakAlertStyle.onSurface => _AlertColors(
-        background: yakTheme.borderDefault.withValues(alpha: 0.08),
-        foreground: accent,
+        background: colors.backgroundBaseSecond,
+        foreground: foreground,
       ),
     };
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/yak_theme_extension.dart';
+import '../../tokens/generated/semantic_colors.dart';
 import '../feedback/yak_alert.dart';
 import '../surfaces/yak_accordion.dart';
 import 'yak_avatar.dart';
@@ -122,12 +123,11 @@ class YakBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final yakTheme = context.yakTheme;
-    final accent = _accent(context, yakTheme);
 
     return Container(
       padding: EdgeInsets.all(yakTheme.spacingMd),
       decoration: BoxDecoration(
-        color: accent.withValues(alpha: 0.1),
+        color: _surface(context.yakColors),
         borderRadius: BorderRadius.circular(yakTheme.radiusMd),
       ),
       child: Row(
@@ -151,13 +151,13 @@ class YakBanner extends StatelessWidget {
     );
   }
 
-  Color _accent(BuildContext context, YakThemeExtension yakTheme) {
+  Color _surface(YakSemanticColors colors) {
     return switch (variant) {
-      YakAlertVariant.destructive => yakTheme.danger,
-      YakAlertVariant.success => yakTheme.success,
-      YakAlertVariant.warning => yakTheme.warning,
-      YakAlertVariant.gray => yakTheme.textSecondary,
-      YakAlertVariant.info => Theme.of(context).colorScheme.primary,
+      YakAlertVariant.destructive => colors.backgroundDangerSecond,
+      YakAlertVariant.success => colors.backgroundSuccessSecond,
+      YakAlertVariant.warning => colors.backgroundWarningSecond,
+      YakAlertVariant.gray => colors.backgroundBaseSecond,
+      YakAlertVariant.info => colors.backgroundPrimarySecond,
     };
   }
 }
@@ -237,14 +237,15 @@ class YakTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final yakTheme = context.yakTheme;
+    final colors = context.yakColors;
 
     return ListTile(
       leading: leading,
       title: Text(title),
       subtitle: subtitle == null ? null : Text(subtitle!),
       selected: selected,
-      selectedTileColor: yakTheme.borderDefault.withValues(alpha: 0.15),
+      selectedColor: colors.textIconsBaseMain,
+      selectedTileColor: colors.interactionSelected,
       onTap: onTap,
       trailing: selected ? const Icon(Icons.check_circle) : null,
     );
@@ -266,9 +267,15 @@ class YakChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colors = context.yakColors;
     return FilterChip(
       label: Text(label),
       selected: selected,
+      selectedColor: colors.interactionSelected,
+      checkmarkColor: colors.textIconsBaseMain,
+      side: BorderSide(
+        color: selected ? colors.strokePrimary : colors.strokeBase,
+      ),
       onSelected: onTap == null ? null : (_) => onTap!(),
     );
   }
@@ -492,7 +499,7 @@ class YakChatBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final yakTheme = context.yakTheme;
-    final scheme = Theme.of(context).colorScheme;
+    final colors = context.yakColors;
 
     return Align(
       alignment: isMine ? Alignment.centerRight : Alignment.centerLeft,
@@ -502,8 +509,8 @@ class YakChatBubble extends StatelessWidget {
         constraints: const BoxConstraints(maxWidth: 280),
         decoration: BoxDecoration(
           color: isMine
-              ? scheme.primary.withValues(alpha: 0.15)
-              : yakTheme.borderDefault.withValues(alpha: 0.2),
+              ? colors.backgroundPrimarySecond
+              : colors.backgroundBaseSecond,
           borderRadius: BorderRadius.circular(yakTheme.radiusMd),
         ),
         child: Column(

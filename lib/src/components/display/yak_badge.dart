@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../theme/yak_theme_extension.dart';
+import '../../tokens/generated/semantic_colors.dart';
 
 /// Semantic badge color styles (Supernova: Badge).
 enum YakBadgeVariant { primary, gray, success, warning, danger }
@@ -21,13 +22,13 @@ class YakBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final yakTheme = context.yakTheme;
-    final color = _resolveColor(yakTheme, Theme.of(context).colorScheme);
+    final (surface, color, stroke) = _resolveColors(context.yakColors);
 
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: outlined ? Colors.transparent : color.withValues(alpha: 0.12),
+        color: outlined ? Colors.transparent : surface,
         borderRadius: BorderRadius.circular(yakTheme.radiusLg),
-        border: outlined ? Border.all(color: color) : null,
+        border: outlined ? Border.all(color: stroke) : null,
       ),
       child: Padding(
         padding: EdgeInsets.symmetric(
@@ -45,13 +46,35 @@ class YakBadge extends StatelessWidget {
     );
   }
 
-  Color _resolveColor(YakThemeExtension yakTheme, ColorScheme colorScheme) {
+  (Color surface, Color foreground, Color stroke) _resolveColors(
+    YakSemanticColors colors,
+  ) {
     return switch (variant) {
-      YakBadgeVariant.primary => colorScheme.primary,
-      YakBadgeVariant.gray => yakTheme.textSecondary,
-      YakBadgeVariant.success => yakTheme.success,
-      YakBadgeVariant.warning => yakTheme.warning,
-      YakBadgeVariant.danger => yakTheme.danger,
+      YakBadgeVariant.primary => (
+        colors.backgroundPrimarySecond,
+        colors.textIconsPrimary,
+        colors.strokePrimary,
+      ),
+      YakBadgeVariant.gray => (
+        colors.backgroundBaseSecond,
+        colors.textIconsBaseSecond,
+        colors.strokeBase,
+      ),
+      YakBadgeVariant.success => (
+        colors.backgroundSuccessSecond,
+        colors.textIconsSuccess,
+        colors.strokeSuccess,
+      ),
+      YakBadgeVariant.warning => (
+        colors.backgroundWarningSecond,
+        colors.textIconsWarning,
+        colors.strokeWarning,
+      ),
+      YakBadgeVariant.danger => (
+        colors.backgroundDangerSecond,
+        colors.textIconsDanger,
+        colors.strokeDanger,
+      ),
     };
   }
 }

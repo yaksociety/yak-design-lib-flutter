@@ -31,7 +31,7 @@ class YakDestructiveButton extends StatelessWidget {
         backgroundColor: yakTheme.danger,
         foregroundColor: yakTheme.textOnColor,
         disabledBackgroundColor: yakTheme.backgroundDisabled,
-        disabledForegroundColor: yakTheme.textSecondary,
+        disabledForegroundColor: yakTheme.textDisabled,
         minimumSize: YakButtonHelpers.minimumSize(
           size: size,
           isExpanded: isExpanded,
@@ -46,7 +46,7 @@ class YakDestructiveButton extends StatelessWidget {
         label: label,
         isLoading: isLoading,
         loadingColor: yakTheme.textOnColor,
-        labelColor: isDisabled ? yakTheme.textSecondary : yakTheme.textOnColor,
+        labelColor: isDisabled ? yakTheme.textDisabled : yakTheme.textOnColor,
       ),
     );
   }
