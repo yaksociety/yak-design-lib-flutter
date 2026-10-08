@@ -141,6 +141,9 @@ class YakTextField extends StatefulWidget {
     this.textInputAction,
     this.onSubmitted,
     this.inputFormatters,
+    this.autofillHints,
+    this.hintLocales,
+    this.textCapitalization = TextCapitalization.none,
   });
 
   final String? label;
@@ -161,6 +164,11 @@ class YakTextField extends StatefulWidget {
   final TextInputAction? textInputAction;
   final ValueChanged<String>? onSubmitted;
   final List<TextInputFormatter>? inputFormatters;
+  final Iterable<String>? autofillHints;
+
+  /// Preferred keyboard languages (e.g. `[Locale('th')]` for Thai input).
+  final List<Locale>? hintLocales;
+  final TextCapitalization textCapitalization;
 
   @override
   State<YakTextField> createState() => _YakTextFieldState();
@@ -213,6 +221,9 @@ class _YakTextFieldState extends State<YakTextField> {
           minLines: widget.minLines,
           textInputAction: widget.textInputAction,
           inputFormatters: widget.inputFormatters,
+          autofillHints: widget.autofillHints,
+          hintLocales: widget.hintLocales,
+          textCapitalization: widget.textCapitalization,
           textAlignVertical: widget.maxLines > 1
               ? TextAlignVertical.top
               : TextAlignVertical.center,
