@@ -303,6 +303,7 @@ class _LivePreviewPageState extends State<LivePreviewPage> {
           YakInputFieldShell(
             label: 'Custom shell',
             field: TextField(
+              onTapOutside: YakInputTheme.unfocusOnTapOutside,
               decoration: InputDecoration(
                 hintText: 'Wrapped field',
                 border: OutlineInputBorder(

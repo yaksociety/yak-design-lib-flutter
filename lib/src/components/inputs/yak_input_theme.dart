@@ -42,6 +42,12 @@ abstract final class YakInputTheme {
     return heightForTheme(context, size);
   }
 
+  /// Pass to `TextField.onTapOutside` so tapping anywhere else dismisses
+  /// focus and the keyboard. Taps on other text fields don't count as outside.
+  static void unfocusOnTapOutside(PointerDownEvent event) {
+    FocusManager.instance.primaryFocus?.unfocus();
+  }
+
   static TextStyle labelStyle(
     BuildContext context, {
     bool isDestructive = false,

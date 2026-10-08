@@ -203,6 +203,7 @@ class _YakTextFieldState extends State<YakTextField> {
         child: TextField(
           controller: widget.controller,
           focusNode: _focusNode,
+          onTapOutside: YakInputTheme.unfocusOnTapOutside,
           onChanged: widget.onChanged,
           onSubmitted: widget.onSubmitted,
           obscureText: widget.obscureText,
@@ -354,6 +355,7 @@ class _YakVerificationCodeInputState extends State<YakVerificationCodeInput> {
                     child: TextField(
                       controller: _controllers[i],
                       focusNode: _focusNodes[i],
+                      onTapOutside: YakInputTheme.unfocusOnTapOutside,
                       textAlign: TextAlign.center,
                       keyboardType: TextInputType.number,
                       maxLength: 1,
