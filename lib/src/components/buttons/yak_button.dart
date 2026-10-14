@@ -11,6 +11,9 @@ enum YakButtonStyle {
   outline,
   ghost,
   danger,
+
+  /// Light danger fill with danger label (e.g. cancel job).
+  dangerSecondary,
   gray,
   link,
   success,
@@ -51,6 +54,7 @@ class YakButton extends StatelessWidget {
       YakButtonStyle.primary ||
       YakButtonStyle.secondary ||
       YakButtonStyle.danger ||
+      YakButtonStyle.dangerSecondary ||
       YakButtonStyle.success ||
       YakButtonStyle.warning => FilledButton(
         onPressed: disabled ? null : onPressed,
@@ -112,6 +116,7 @@ class YakButton extends StatelessWidget {
       YakButtonStyle.success ||
       YakButtonStyle.warning => context.yakColors.textIconsOnDark,
       YakButtonStyle.secondary => YakButtonHelpers.secondaryColors(context).$2,
+      YakButtonStyle.dangerSecondary => context.yakColors.textIconsDanger,
       _ => context.yakColorScheme.primary,
     };
   }
@@ -131,6 +136,10 @@ class YakButton extends StatelessWidget {
       YakButtonStyle.danger => (
         colors.backgroundDangerMain,
         colors.textIconsOnDark,
+      ),
+      YakButtonStyle.dangerSecondary => (
+        colors.backgroundDangerSecond,
+        colors.textIconsDanger,
       ),
       YakButtonStyle.success => (
         colors.backgroundSuccessMain,
