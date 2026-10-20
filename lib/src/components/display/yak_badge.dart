@@ -4,7 +4,7 @@ import '../../theme/yak_theme_extension.dart';
 import '../../tokens/generated/semantic_colors.dart';
 
 /// Semantic badge color styles (Supernova: Badge).
-enum YakBadgeVariant { primary, gray, success, warning, danger }
+enum YakBadgeVariant { primary, gray, success, warning, danger, blue }
 
 /// Compact status label (Supernova: Badge).
 class YakBadge extends StatelessWidget {
@@ -13,11 +13,19 @@ class YakBadge extends StatelessWidget {
     required this.label,
     this.variant = YakBadgeVariant.primary,
     this.outlined = false,
+    this.solid = false,
+    this.icon,
   });
 
   final String label;
   final YakBadgeVariant variant;
   final bool outlined;
+
+  /// Solid fill (semantic *Main colors) instead of the light tint.
+  final bool solid;
+
+  /// Optional leading icon, rendered in the foreground color.
+  final IconData? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +35,7 @@ class YakBadge extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         color: outlined ? Colors.transparent : surface,
-        borderRadius: BorderRadius.circular(yakTheme.radiusLg),
+        borderRadius: BorderRadius.circular(yakTheme.radiusSm),
         border: outlined ? Border.all(color: stroke) : null,
       ),
       child: Padding(
@@ -35,12 +43,21 @@ class YakBadge extends StatelessWidget {
           horizontal: yakTheme.spacingSm,
           vertical: yakTheme.spacingXs,
         ),
-        child: Text(
-          label,
-          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-            color: color,
-            fontWeight: FontWeight.w600,
-          ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (icon != null) ...[
+              Icon(icon, size: 14, color: color),
+              SizedBox(width: yakTheme.spacingXs),
+            ],
+            Text(
+              label,
+              style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                color: color,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -49,6 +66,40 @@ class YakBadge extends StatelessWidget {
   (Color surface, Color foreground, Color stroke) _resolveColors(
     YakSemanticColors colors,
   ) {
+    if (solid) {
+      return switch (variant) {
+        YakBadgeVariant.primary => (
+          colors.backgroundPrimaryMain,
+          colors.textIconsOnLight,
+          colors.strokePrimary,
+        ),
+        YakBadgeVariant.gray => (
+          colors.backgroundBaseDarkMain,
+          colors.textIconsOnDark,
+          colors.strokeBaseDark,
+        ),
+        YakBadgeVariant.success => (
+          colors.backgroundSuccessMain,
+          colors.textIconsOnDark,
+          colors.strokeSuccess,
+        ),
+        YakBadgeVariant.warning => (
+          colors.backgroundWarningMain,
+          colors.textIconsOnDark,
+          colors.strokeWarning,
+        ),
+        YakBadgeVariant.danger => (
+          colors.backgroundDangerMain,
+          colors.textIconsOnDark,
+          colors.strokeDanger,
+        ),
+        YakBadgeVariant.blue => (
+          colors.backgroundBlueMain,
+          colors.textIconsOnDark,
+          colors.strokeBlue,
+        ),
+      };
+    }
     return switch (variant) {
       YakBadgeVariant.primary => (
         colors.backgroundPrimarySecond,
@@ -74,6 +125,11 @@ class YakBadge extends StatelessWidget {
         colors.backgroundDangerSecond,
         colors.textIconsDanger,
         colors.strokeDanger,
+      ),
+      YakBadgeVariant.blue => (
+        colors.backgroundBlueSecond,
+        colors.textIconsBlue,
+        colors.strokeBlue,
       ),
     };
   }
