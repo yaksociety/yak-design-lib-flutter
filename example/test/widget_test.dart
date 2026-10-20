@@ -9,4 +9,17 @@ void main() {
     expect(find.text('Supernova coverage'), findsOneWidget);
     expect(find.text('Flutter widgets'), findsOneWidget);
   });
+
+  testWidgets('Tapping a widget opens only that widget preview', (
+    tester,
+  ) async {
+    await tester.pumpWidget(const YakDesignCatalogApp());
+
+    await tester.tap(find.text('Accordion'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('Accordion'), findsWidgets);
+    expect(find.text('FAQ'), findsOneWidget);
+    expect(find.text('Primary (YakButton)'), findsNothing);
+  });
 }
